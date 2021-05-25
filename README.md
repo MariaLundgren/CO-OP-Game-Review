@@ -30,6 +30,8 @@ As a registered user
 
 ## Structure
 
+Since the main purpose of this website is for people to share can take part of each other reviews playing coop videogames this is the most important part of the website and everything else implemented on the website it there to support this function. This make the reviews the most important content on the website also so they will be easy to access even before signing up to the website as a user. 
+
 ## Skeleton
 
 ## Surface 
