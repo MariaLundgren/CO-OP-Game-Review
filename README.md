@@ -34,6 +34,15 @@ Since the main purpose of this website is for people to share can take part of e
 
 ## Skeleton
 
+Figma was used to create wireframes that are linked below.
+
+- [Desktop](assets/docs/wireframes/desktop-wireframes.pdf)
+- [Desktop when logged in](assets/docs/wireframes/desktop-wireframes-logged-in.pdf) 
+- [Tablet](assets/docs/wireframes/tablet-wireframes.pdf) 
+- [Tablet when logged in](assets/docs/wireframes/tablet-wireframes-logged-in.pdf) 
+- [Mobile](assets/docs/wireframes/mobile-wireframes.pdf) 
+- [Mobile when logged in](assets/docs/wireframes/mobile-wireframes-logged-in.pdf)
+
 ## Surface 
 
 ### Colors
