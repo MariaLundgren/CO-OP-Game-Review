@@ -56,6 +56,51 @@ The fonts choosen for the project are found on Google Fonts. Montrerrat are used
 
 ## Existing features
 
+- Navbar 
+    - The navbar contains links to navigate to different parts of the website and the logo. The navbar is sticky so that the user always easily can navigate to different parts of the webpage. 
+- Footer 
+    - The footer contains links to social media and the logo. 
+- Home page 
+    - Navbar (described under navbar) 
+    - The homepage contains a hero image underneath the navbar. 
+    - Below the hero image it is a search field so that the user immediately can start searching amongst the game titles on the website and see their reviews. 
+    - Footer (described under footer) 
+- Log In page
+    - Navbar (described under navbar) 
+    - The log in page contains a field for filling in your email address and password and a button to log in to your account as a registered user. 
+    - Footer (described under footer) 
+- Register page
+    - Navbar (described under navbar) 
+    - The register page will contain a field for filling in your Username, email address, password and confirm your password and a button to register as a user on the webpage. 
+    - Footer (described under footer) 
+- Contact page 
+    - Navbar (described under navbar) 
+    - The contact page contains a form if the user wants to contact the site owner. The user will have to fill in their name, email address and message in the contact form and then press submit to send the message. A modal shows after submitting the form to tell the user if the form was sent successfully or if an error occurred. 
+    - Footer (described under footer) 
+- Logged in start page 
+    - Navbar (described under navbar)
+    - On the start page when a user is logged in there is a search field where the user can search amongst the titles.
+    - Underneath the search bar the most recent titles added is showing and when the user clicks on a title they will go to the title page of that title. 
+    - Footer (described under footer) 
+- Profile page 
+    - Navbar (described under navbar) 
+    - On the profile page the user can change and update their profile, they can add a profile image, the console they are playing on and their favorite game. 
+    - Underneath the profile area the user can see all the titles and reviews that they have added to the website and can edit or delete them.  
+    - Footer (described under footer)
+- New review page
+    - Navbar (described under navbar) 
+    - This page contains the function to add a new review to a title. The user writes their review and their rating and then they can submit the review to the website on the submit button. 
+    - Footer (described under footer)  
+- New Title page 
+    - Navbar (described under navbar) 
+    - The new title page contains the function to add a new game title to the webpage. The user fills out the title of the game, adds a URL to an image, a description of the game, the console it is available on, and if you can play it local, online or both and then they can submit the new title to the webpage on the submit button. 
+    - Footer (described under footer) 
+- Title page 
+    - Navbar (described under navbar) 
+    - The title page contains all the information on the game title, the title, average rating, consoles, if you can play it local or online, a description and a button to add a new review to that game title. 
+    - Underneath the game title are all the reviews that are added to that specific game title. 
+    - Footer (described under footer) 
+
 ## Features left to implement
 
 # Technologies Used 
