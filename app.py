@@ -26,6 +26,11 @@ def get_titles():
     return render_template("titles.html", titles=titles)
 
 
+@app.route("/add_game_title")
+def add_game_title():
+    return render_template("add_game_title.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
