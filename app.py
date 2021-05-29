@@ -26,8 +26,17 @@ def get_titles():
     return render_template("titles.html", titles=titles)
 
 
-@app.route("/add_game_title")
+@app.route("/add_game_title", methods = ["GET", "POST"])
 def add_game_title():
+    if request.method == "POST":
+        title = {
+            "title_name": request.form.get("title_name"),
+            "image_url": request.form.get("image_url"),
+            "description": request.form.get("description"),
+            "consoles": request.form.getlist("consoles"),
+            "local_or_online": request.form.getlist("local_or_online")
+        }
+        mongo.db.titles.insert_one(title)
     return render_template("add_game_title.html")
 
 

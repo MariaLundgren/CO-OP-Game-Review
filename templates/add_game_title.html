@@ -4,7 +4,7 @@
     <h2 class="center-align">Add Title</h2>
 
     <div class="row">
-        <form class="col s12">
+        <form class="col s12" method ="POST" action="{{ url_for('add_game_title') }}">
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
                     <input id="title_name" name="title_name" minlength="5" maxlength="100" type="text" class="validate" required>
