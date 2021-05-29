@@ -22,7 +22,14 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_titles")
 def get_titles():
-    titles = mongo.db.titles.find()
+    titles = list(mongo.db.titles.find())
+    return render_template("titles.html", titles=titles)
+
+
+@app.route("/search", methods=["GET", "POST"])
+def search():
+    query = request.form.get("query")
+    titles = list(mongo.db.titles.find({"$text": {"$search": query}}))
     return render_template("titles.html", titles=titles)
 
 
@@ -43,6 +50,7 @@ def add_game_title():
 @app.route("/selected_game_title")
 def selected_game_title():
     return render_template("selected_game_title.html")
+
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
