@@ -26,7 +26,7 @@ def get_titles():
     return render_template("titles.html", titles=titles)
 
 
-@app.route("/add_game_title", methods = ["GET", "POST"])
+@app.route("/add_game_title", methods=["GET", "POST"])
 def add_game_title():
     if request.method == "POST":
         title = {
@@ -39,6 +39,10 @@ def add_game_title():
         mongo.db.titles.insert_one(title)
     return render_template("add_game_title.html")
 
+
+@app.route("/selected_game_title")
+def selected_game_title():
+    return render_template("selected_game_title.html")
 
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
