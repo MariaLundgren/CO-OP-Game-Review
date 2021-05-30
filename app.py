@@ -53,6 +53,17 @@ def selected_game_title(title_id):
     return render_template("selected_game_title.html", title=title)
 
 
+@app.route("/add_review", methods=["GET", "POST"])
+def add_review():
+    if request.method == "POST":
+        review = {
+                "review": request.form.get("review"),
+                "rating": request.form.get("rating")
+            }
+        mongo.db.reviews.insert_one(review)
+    return render_template("add_review.html")
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
