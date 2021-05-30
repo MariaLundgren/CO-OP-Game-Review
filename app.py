@@ -47,9 +47,10 @@ def add_game_title():
     return render_template("add_game_title.html")
 
 
-@app.route("/selected_game_title")
-def selected_game_title():
-    return render_template("selected_game_title.html")
+@app.route("/selected_game_title/<title_id>")
+def selected_game_title(title_id):
+    title = mongo.db.titles.find_one({"_id": ObjectId(title_id)})
+    return render_template("selected_game_title.html", title=title)
 
 
 if __name__ == "__main__":
