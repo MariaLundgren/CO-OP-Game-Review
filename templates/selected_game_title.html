@@ -1,21 +1,26 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h2>Selected game title</h2>
-<div class="row">
-    <div class="col s12 m6 offset-m3">
-        <div class="card">
-            <div class="card-image">
-                <img src="{{ title.image_url }}">
-            </div>
-            <div class="card-content">
-                <span class="card-title">{{ title.title_name }}</span>
-                <p>{{ title.title_rating }}</p>
-                <p>{{ title.consoles }}</p>
-                <p>{{ title.local_or_online }}</p>
+    <h2>Selected game title</h2>
+    <div class="row">
+        <div class="col s12 m6 offset-m3">
+            <div class="card">
+                <div class="card-image">
+                    <img src="{{ title.image_url }}">
+                </div>
+                <div class="card-content">
+                    <span class="card-title">{{ title.title_name }}</span>
+                    <p>{{ title.title_rating }}</p>
+                    <p>{{ title.consoles }}</p>
+                    <p>{{ title.local_or_online }}</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <div class="row">
+        <div class="col s12 m6 offset-m3">
+            <a href="{{ url_for('add_review', title_id=title._id) }}" class="btn" >Add a review</a>
+        </div> 
+    </div>
 
 {% endblock %}
