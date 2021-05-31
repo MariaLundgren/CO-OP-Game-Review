@@ -26,6 +26,12 @@ def get_titles():
     return render_template("titles.html", titles=titles)
 
 
+@app.route("/get_reviews")
+def get_reviews():
+    reviews = list(mongo.db.reviews.find())
+    return render_template("selected_game_title.html", reviews=reviews)
+
+
 @app.route("/search", methods=["GET", "POST"])
 def search():
     query = request.form.get("query")
@@ -50,7 +56,9 @@ def add_game_title():
 @app.route("/selected_game_title/<title_id>")
 def selected_game_title(title_id):
     title = mongo.db.titles.find_one({"_id": ObjectId(title_id)})
-    return render_template("selected_game_title.html", title=title)
+    reviews = mongo.db.reviews.find()
+    return render_template(
+        "selected_game_title.html", title=title, reviews=reviews)
 
 
 @app.route("/add_review", methods=["GET", "POST"])
