@@ -20,11 +20,13 @@
         </div>
     </div>
     <!-- add review button-->
-    <div class="row">
-        <div class="col s12 m6 offset-m3">
-            <a href="{{ url_for('add_review', title_id=title._id) }}" class="btn" >Add a review</a>
-        </div> 
-    </div>
+    {% if session.user %}
+        <div class="row">
+            <div class="col s12 m6 offset-m3">
+                <a href="{{ url_for('add_review', title_id=title._id) }}" class="btn" >Add a review</a>
+            </div> 
+        </div>
+    {% endif %}
     <!--reviews-->
     <h2>Reviews</h2>
     <div class="row">
