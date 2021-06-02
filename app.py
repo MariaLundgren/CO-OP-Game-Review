@@ -56,7 +56,7 @@ def add_game_title():
 @app.route("/selected_game_title/<title_id>")
 def selected_game_title(title_id):
     title = mongo.db.titles.find_one({"_id": ObjectId(title_id)})
-    reviews = mongo.db.reviews.find()
+    reviews = mongo.db.reviews.find({"title_id": (title_id)})
     return render_template(
         "selected_game_title.html", title=title, reviews=reviews)
 
