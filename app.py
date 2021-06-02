@@ -48,7 +48,8 @@ def add_game_title():
             "image_url": request.form.get("image_url"),
             "description": request.form.get("description"),
             "consoles": request.form.getlist("consoles"),
-            "local_or_online": request.form.getlist("local_or_online")
+            "local_or_online": request.form.getlist("local_or_online"),
+            "creadted_by": session["user"]
         }
         mongo.db.titles.insert_one(title)
     return render_template("add_game_title.html")
@@ -69,7 +70,8 @@ def add_review(title_id):
         review = {
                 "title_id": request.form.get("title_id"),
                 "review": request.form.get("review"),
-                "rating": request.form.get("rating")
+                "rating": request.form.get("rating"),
+                "creadted_by": session["user"]
             }
         mongo.db.reviews.insert_one(review)
     return render_template("add_review.html", title=title)
