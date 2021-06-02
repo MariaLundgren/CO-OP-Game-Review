@@ -4,6 +4,7 @@
 <div class="row">
     <form action="{{ url_for('search') }}" method="POST">
         <div class="input-field col s12 m6 offset-m3">
+            <i class="material-icons prefix">search</i>
             <input id="query" name="query" minlength="5" maxlength="100" type="text" class="validate" required>
             <label for="query">Search Title</label>
         </div>
