@@ -61,15 +61,17 @@ def selected_game_title(title_id):
         "selected_game_title.html", title=title, reviews=reviews)
 
 
-@app.route("/add_review", methods=["GET", "POST"])
-def add_review():
+@app.route("/add_review/<title_id>", methods=["GET", "POST"])
+def add_review(title_id):
+    title = mongo.db.titles.find_one({"_id": ObjectId(title_id)})
     if request.method == "POST":
         review = {
+                "title_id": request.form.get("title_id"),
                 "review": request.form.get("review"),
                 "rating": request.form.get("rating")
             }
         mongo.db.reviews.insert_one(review)
-    return render_template("add_review.html")
+    return render_template("add_review.html", title=title)
 
 
 if __name__ == "__main__":

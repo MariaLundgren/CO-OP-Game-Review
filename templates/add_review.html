@@ -4,8 +4,8 @@
     <h2 class="center-align">Add Review</h2>
 
     <div class="row">
-        <form class="col s12" method ="POST" action="{{ url_for('add_review') }}">
-            <input type="hidden" value="{{ title_id }}" id="title_id" name="title_id"/>
+        <form class="col s12" method ="POST" action="{{ url_for('add_review', title_id=title._id) }}">
+            <input type="hidden" value="{{ title._id }}" id="title_id" name="title_id"/>
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
                     <textarea id="review" name="review" class="materialize-textarea" minlength="20" maxlength="500" required></textarea>
