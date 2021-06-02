@@ -4,6 +4,7 @@ from flask import (
     request, session, url_for)
 from flask_pymongo import PyMongo
 from bson.objectid import ObjectId
+from werkzeug.security import generate_password_hash, check_password_hash
 from os import path
 if os.path.exists("env.py"):
     import env
@@ -72,6 +73,11 @@ def add_review(title_id):
             }
         mongo.db.reviews.insert_one(review)
     return render_template("add_review.html", title=title)
+
+
+@app.route("/register", methods=["GET", "POST"])
+def register():
+    return render_template("register.html")
 
 
 if __name__ == "__main__":
