@@ -118,6 +118,20 @@ def log_in():
     return render_template("log_in.html")
 
 
+@app.route("/profile/<username>", methods=["GET", "POST"])
+def profile(username):
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})["username"]
+    return render_template("profile.html", username=username)
+
+
+@app.route("/log_out")
+def log_out():
+    flash("You have been logged out")
+    session.pop("user")
+    return redirect(url_for("log_in"))
+
+
 if __name__ == "__main__":
     app.run(host=os.environ.get("IP"),
             port=int(os.environ.get("PORT")),
