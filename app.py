@@ -149,6 +149,14 @@ def edit_game_title(title_id):
     return render_template("edit_game_title.html", title=title)
 
 
+@app.route("/delete_game_title/<title_id>")
+def delete_game_title(title_id):
+    mongo.db.titles.remove({"_id": ObjectId(title_id)})
+    mongo.db.reviews.remove({"title_id": (title_id)})
+    flash("Title deleted")
+    return redirect(url_for("profile", username=session["user"]))
+
+
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
     if request.method == "POST":
@@ -167,7 +175,7 @@ def edit_review(review_id):
 @app.route("/delete_review/<review_id>")
 def delete_review(review_id):
     mongo.db.reviews.remove({"_id": ObjectId(review_id)})
-    flash("Task deleted")
+    flash("Review deleted")
     return redirect(url_for("profile", username=session["user"]))
 
 
