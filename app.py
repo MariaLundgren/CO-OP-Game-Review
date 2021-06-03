@@ -154,9 +154,10 @@ def edit_review(review_id):
     if request.method == "POST":
         submit = {
             "review": request.form.get("review"),
-            "rating": request.form.get("rating")
+            "rating": request.form.get("rating"),
+            "created_by": session["user"]
         }
-        mongo.db.review.update({"_id": ObjectId(review_id)}, submit)
+        mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
         flash("Review Updated")
 
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})

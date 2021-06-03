@@ -4,7 +4,7 @@
     <h2 class="center-align">Edit Review</h2>
 
     <div class="row">
-        <form class="col s12" method ="POST" action="{{ url_for('edit_review', review_id=review_id) }}">
+        <form class="col s12" method ="POST" action="{{ url_for('edit_review', review_id=review._id) }}">
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
                     <textarea id="review" name="review" class="materialize-textarea" minlength="20" maxlength="500" required>{{ review.review }}</textarea>
