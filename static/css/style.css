@@ -15,4 +15,24 @@ h1, h2, h3, h4, p {
     color: #cccccc;
 }
 
+/* navbar */ 
 
+.nav-wrapper{
+    background-color: #14A098;
+    padding-left: 1rem;
+}
+
+.sidenav {
+    background-color: #14A098;
+}
+
+.brand-logo {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    color: #cccccc !important;
+}
+
+.nav-links {
+    font-family: "Raleway", sans-serif;
+    font-weight: 500;
+}

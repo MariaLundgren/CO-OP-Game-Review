@@ -16,7 +16,7 @@
         <div class="nav-wrapper">
             <a href="#!" class="brand-logo">CO-OP GR</a>
             <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="material-icons">dehaze</i></a>
-            <ul class="right hide-on-med-and-down">
+            <ul class="right hide-on-med-and-down nav-links">
                 <li><a href="{{ url_for('get_titles')}}">Home</a></li>
                 {% if session.user %}
                     <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
@@ -32,7 +32,7 @@
     </nav>
 
     <!-- mobile collapsable nav from materialized -->
-    <ul class="sidenav" id="mobile-demo">
+    <ul class="sidenav nav-links" id="mobile-demo">
         <li><a href="{{ url_for('get_titles')}}">Home</a></li>
         {% if session.user %}
             <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
