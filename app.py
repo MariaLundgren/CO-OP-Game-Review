@@ -131,6 +131,21 @@ def profile(username):
         "profile.html", username=username, reviews=reviews, titles=titles)
 
 
+@app.route("/edit_profile/<user_id>", methods=["GET", "POST"])
+def edit_profile(user_id):
+    if request.method == "POST":
+        submit = {
+                "user": request.form.get("user"),
+                "profile_image_url": request.form.get("profile_image_url"),
+                "favourite_game": request.form.get("favourite_game")
+        }
+        mongo.db.users.update({"_id": ObjectId["user_id"]}, submit)
+        flash("Profile Updated")
+
+    user = mongo.db.users.find_one({"_id": ObjectId["user_id"]})
+    return render_template("edit_profile.html", user=user)
+
+
 @app.route("/edit_game_title/<title_id>", methods=["GET", "POST"])
 def edit_game_title(title_id):
     if request.method == "POST":
