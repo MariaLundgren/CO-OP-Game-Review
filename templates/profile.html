@@ -26,6 +26,7 @@
                     <p>{{ title.consoles }}</p>
                     <p>{{ title.local_or_online }}</p>
                 </div>
+                <a href="{{ url_for('edit_game_title', title_id=title._id) }}" class="btn" >Edit</a>
             </div>
             {% endif %}
         </div>

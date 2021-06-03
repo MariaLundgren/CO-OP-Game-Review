@@ -131,6 +131,24 @@ def profile(username):
         "profile.html", username=username, reviews=reviews, titles=titles)
 
 
+@app.route("/edit_game_title/<title_id>", methods=["GET", "POST"])
+def edit_game_title(title_id):
+    if request.method == "POST":
+        submit = {
+            "title_name": request.form.get("title_name"),
+            "image_url": request.form.get("image_url"),
+            "description": request.form.get("description"),
+            "consoles": request.form.getlist("consoles"),
+            "local_or_online": request.form.getlist("local_or_online"),
+            "created_by": session["user"]
+        }
+        mongo.db.titles.update({"_id": ObjectId(title_id)}, submit)
+        flash("Title Updated")
+
+    title = mongo.db.titles.find_one({"_id": ObjectId(title_id)})
+    return render_template("edit_game_title.html", title=title)
+
+
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
     if request.method == "POST":
