@@ -23,8 +23,12 @@
                     <span class="card-title">{{ title.title_name }}</span>
                     <p>{{ title.description }}</p>
                     <p>{{ title.title_rating }}</p>
-                    <p>{{ title.consoles }}</p>
-                    <p>{{ title.local_or_online }}</p>
+                    {% for console in title.consoles %}
+                        <p>{{ console }}</p>
+                    {% endfor %}
+                    {% for local_online in title.local_or_online %}
+                        <p>{{ local_online }}</p>
+                    {% endfor %}
                 </div>
                 <a href="{{ url_for('edit_game_title', title_id=title._id) }}" class="btn" >Edit</a>
                 <a href="{{ url_for('delete_game_title', title_id=title._id) }}" class="btn" >Delete</a>
