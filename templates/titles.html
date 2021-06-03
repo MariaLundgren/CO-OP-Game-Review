@@ -8,9 +8,9 @@
             <input id="query" name="query" minlength="5" maxlength="100" type="text" class="validate" required>
             <label for="query">Search Title</label>
         </div>
-        <div class="col s12 m6 offset-m3">
-            <button class="btn" type="submit" name="action">Search</button>
-            <a href="{{ url_for('get_titles') }}" class="btn" >Reset</a>
+        <div class="col s12 center-align">
+            <button class="btn green-button" type="submit" name="action">Search</button>
+            <a href="{{ url_for('get_titles') }}" class="btn pink-button" >Reset</a>
         </div>
     </form>
 </div>
@@ -20,16 +20,17 @@
         <div class="col s12 m6 offset-m3">
             {% for title in titles %}
             <a href="{{ url_for('selected_game_title', title_id=title._id) }}">
-                <div class="card">
-                    <div class="card-image">
-                        <img src="{{ title.image_url }}">
-                    </div>
+                <div class="card horizontal title-card">
+                        <img class="card-image title-image" src="{{ title.image_url }}">
                     <div class="card-content">
                         <span class="card-title">{{ title.title_name }}</span>
                         <p>{{ title.title_rating }}</p>
-                        {% for console in title.consoles %}
-                            <p>{{ console }}</p>
-                        {% endfor %}
+                        <span class="consoles">
+                            <p>Consoles:</p>
+                            {% for console in title.consoles %}
+                                <p>{{ console }}</p>
+                            {% endfor %}
+                        </span>
                         {% for local_online in title.local_or_online %}
                         <p>{{ local_online }}</p>
                         {% endfor %}

@@ -11,8 +11,28 @@ body {
     background-color: #0F292F;
 }
 
-h1, h2, h3, h4, p {
+h1, h2, h3, h4, p, i {
     color: #cccccc;
+}
+
+input {
+    color: #cccccc;
+}
+
+.green-button{
+    background-color: #14A098;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+.pink-button{
+    background-color: #cb2d6f;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+    border-radius: 5px;
+    margin-bottom: 2rem;
 }
 
 /* navbar */ 
@@ -35,4 +55,26 @@ h1, h2, h3, h4, p {
 .nav-links {
     font-family: "Raleway", sans-serif;
     font-weight: 500;
+}
+
+/* home */
+
+.title-card {
+    height: 200px;
+    background-color: #501f3a;
+}
+
+.card-title {
+    font-family: "Montserrat", sans-serif;
+    color: #cccccc !important;
+}
+
+.title-image {
+    height: 190px;
+    width: 190px;
+    margin: 5px;
+}
+
+.consoles {
+    display: inline-block !important;
 }
