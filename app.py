@@ -145,6 +145,12 @@ def edit_review(review_id):
     return render_template("edit_review.html", review=review)
 
 
+@app.route("/delete_review/<review_id>")
+def delete_review(review_id):
+    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+    flash("Task deleted")
+    return redirect(url_for("profile", username=session["user"]))
+
 
 @app.route("/log_out")
 def log_out():
