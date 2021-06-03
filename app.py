@@ -131,6 +131,21 @@ def profile(username):
         "profile.html", username=username, reviews=reviews, titles=titles)
 
 
+@app.route("/edit_review/<review_id>", methods=["GET", "POST"])
+def edit_review(review_id):
+    if request.method == "POST":
+        submit = {
+            "review": request.form.get("review"),
+            "rating": request.form.get("rating")
+        }
+        mongo.db.review.update({"_id": ObjectId(review_id)}, submit)
+        flash("Review Updated")
+
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    return render_template("edit_review.html", review=review)
+
+
+
 @app.route("/log_out")
 def log_out():
     flash("You have been logged out")
