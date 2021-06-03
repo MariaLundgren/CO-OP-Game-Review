@@ -27,8 +27,12 @@
                     <div class="card-content">
                         <span class="card-title">{{ title.title_name }}</span>
                         <p>{{ title.title_rating }}</p>
-                        <p>{{ title.consoles }}</p>
-                        <p>{{ title.local_or_online }}</p>
+                        {% for console in title.consoles %}
+                            <p>{{ console }}</p>
+                        {% endfor %}
+                        {% for local_online in title.local_or_online %}
+                        <p>{{ local_online }}</p>
+                        {% endfor %}
                     </div>
                 </div>
             </a>
