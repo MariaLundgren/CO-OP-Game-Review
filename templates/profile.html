@@ -5,6 +5,9 @@
         <div class="col s12 m6 offset-m3">
             <div class="card">
                 <h2>{{ username.username }}'s Profile</h2>
+                <img src="{{ username.profile_image_url }}">
+                <p>Favourite Game: {{ username.favourite_game }}</p>
+                <p>Console: {{ username.console }}</p>
                 
                 <a href="{{ url_for('edit_profile') }}" class="btn" >Edit Profile</a>
             </div>
