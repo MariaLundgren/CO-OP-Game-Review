@@ -77,7 +77,7 @@ input {
     margin: 5px;
 }
 
-.consoles {
+.inline-elements {
     display: inline-block !important;
 }
 
