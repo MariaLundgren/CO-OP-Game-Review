@@ -121,29 +121,29 @@ def log_in():
     return render_template("log_in.html")
 
 
-@app.route("/profile/<username>", methods=["GET", "POST"])
-def profile(username):
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
     username = mongo.db.users.find_one(
-        {"username": session["user"]})["username"]
+        {"username": session["user"]})
     reviews = mongo.db.reviews.find()
     titles = mongo.db.titles.find()
     return render_template(
         "profile.html", username=username, reviews=reviews, titles=titles)
 
 
-@app.route("/edit_profile/<user_id>", methods=["GET", "POST"])
-def edit_profile(user_id):
+@app.route("/edit_profile", methods=["GET", "POST"])
+def edit_profile():
     if request.method == "POST":
-        submit = {
-                "user": request.form.get("user"),
+        user_update = {"$set":
+            {
                 "profile_image_url": request.form.get("profile_image_url"),
                 "favourite_game": request.form.get("favourite_game")
-        }
-        mongo.db.users.update({"_id": ObjectId["user_id"]}, submit)
+            }}
+        mongo.db.users.update({"username": session["user"]}, user_update)
         flash("Profile Updated")
 
-    user = mongo.db.users.find_one({"_id": ObjectId["user_id"]})
-    return render_template("edit_profile.html", user=user)
+    mongo.db.users.find_one({"username": session["user"]})
+    return render_template("edit_profile.html")
 
 
 @app.route("/edit_game_title/<title_id>", methods=["GET", "POST"])
@@ -155,7 +155,7 @@ def edit_game_title(title_id):
             "description": request.form.get("description"),
             "consoles": request.form.getlist("consoles"),
             "local_or_online": request.form.getlist("local_or_online"),
-            "created_by": session["user"]
+            "created_by": request.form.getlist("created_by")
         }
         mongo.db.titles.update({"_id": ObjectId(title_id)}, submit)
         flash("Title Updated")
