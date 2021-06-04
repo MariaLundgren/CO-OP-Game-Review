@@ -15,6 +15,11 @@ h1, h2, h3, h4, p, i {
     color: #cccccc;
 }
 
+h1, h2, h3, h4 {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+}
+
 input {
     color: #cccccc;
 }
@@ -24,7 +29,6 @@ input {
     font-family: "Raleway", sans-serif;
     font-weight: 600;
     border-radius: 5px;
-    margin-bottom: 2rem;
 }
 
 .pink-button{
@@ -32,9 +36,7 @@ input {
     font-family: "Raleway", sans-serif;
     font-weight: 600;
     border-radius: 5px;
-    margin-bottom: 2rem;
 }
-
 /* navbar */ 
 
 .nav-wrapper{
@@ -77,4 +79,10 @@ input {
 
 .consoles {
     display: inline-block !important;
+}
+
+/* Log In */ 
+
+.login-card {
+    background-color: #501f3a;
 }

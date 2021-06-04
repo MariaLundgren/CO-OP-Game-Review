@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>Login</h2>
+    <h2 class="col center-align">Log In</h2>
 
     <div class="row">
         <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('log_in') }}">
-            <div class="card-panel">
+            <div class="card-panel login-card">
                 <!-- Username -->
-                <div class="row">
+                <div class="row login-input">
                     <div class="input-field col s12 m10 offset-m1">
                         <i class="material-icons prefix">account_circle</i>
                         <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
@@ -23,8 +23,8 @@
                     </div>
                 </div>
                 <!-- Register button -->
-                <div class="row">
-                    <button class="btn" type="submit" name="action">Log In
+                <div class="row center-align">
+                    <button class="btn green-button" type="submit" name="action">Log In
                         <i class="material-icons right"></i>
                     </button>
                 </div>
