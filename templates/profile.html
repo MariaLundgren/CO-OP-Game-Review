@@ -3,63 +3,67 @@
 
     <div class="row">
         <div class="col s12 m6 offset-m3">
-            <div class="card">
+            <div class="card center-align profile-card">
                 <h2>{{ username.username }}'s Profile</h2>
                 <img src="{{ username.profile_image_url }}">
                 <p>Favourite Game: {{ username.favourite_game }}</p>
                 <p>Console: {{ username.console }}</p>
                 
-                <a href="{{ url_for('edit_profile') }}" class="btn" >Edit Profile</a>
+                <a href="{{ url_for('edit_profile') }}" class="btn green-button edit-button" >Edit Profile</a>
             </div>
         </div>
     </div>
 
-    <h2>Game titles</h2>
+    <h2 class="center-align">Game titles</h2>
     <!-- Game titles added by user-->
-    {% for title in titles %}
     <div class="row">
         <div class="col s12 m6 offset-m3">
+            {% for title in titles %}
             {% if session.user|lower == title.created_by|lower %}
-            <div class="card">
-                <div class="card-image">
-                    <img src="{{ title.image_url }}">
-                </div>
+            <div class="card horizontal title-card hoverable">
+                    <img class="card-image title-image" src="{{ title.image_url }}">
                 <div class="card-content">
                     <span class="card-title">{{ title.title_name }}</span>
-                    <p>{{ title.description }}</p>
                     <p>{{ title.title_rating }}</p>
-                    {% for console in title.consoles %}
-                        <p>{{ console }}</p>
-                    {% endfor %}
-                    {% for local_online in title.local_or_online %}
-                        <p>{{ local_online }}</p>
-                    {% endfor %}
+                    <div>
+                        <p class="inline-elements">Consoles:</p>
+                        {% for console in title.consoles %}
+                            <p class="inline-elements">{{ console }}</p>
+                        {% endfor %}
+                    </div>
+                    <div>
+                        <p class="inline-elements">Co-op type:</p>
+                        {% for local_online in title.local_or_online %}
+                            <p class="inline-elements">{{ local_online }}</p>
+                        {% endfor %}
+                    </div>
                 </div>
-                <a href="{{ url_for('edit_game_title', title_id=title._id)}}" class="btn" >Edit</a>
-                <a href="{{ url_for('delete_game_title', title_id=title._id) }}" class="btn" >Delete</a>
+                    <a href="{{ url_for('edit_game_title', title_id=title._id)}}" class="btn green-button" >Edit</a>
+                    <a href="{{ url_for('delete_game_title', title_id=title._id) }}" class="btn pink-button" >Delete</a>
             </div>
             {% endif %}
+            {% endfor %}
         </div>
     </div>
-    {% endfor %}
 
-    <h2>Reviews</h2>
+    <h2 class="center-align">Reviews</h2>
     <!-- Reviews added by user-->
-    {% for review in reviews %}
     <div class="row">
         <div class="col s12 m6 offset-m3">
+            {% for review in reviews %}
             {% if session.user|lower == review.created_by|lower %}
-                    <div class="card">
+                    <div class="card review-card">
                         <div class="card-content">
-                            <p>{{ review.review }}</p>
-                            <p>{{ review.rating }}</p>
+                            <p>Review: {{ review.review }}</p>
+                            <p>Rating: {{ review.rating }}</p>
+                            <p>Created by: {{ review.created_by }}</p>
                         </div>
-                        <a href="{{ url_for('edit_review', review_id=review._id) }}" class="btn" >Edit</a>
-                        <a href="{{ url_for('delete_review', review_id=review._id) }}" class="btn" >Delete</a>
+                        <a href="{{ url_for('edit_review', review_id=review._id) }}" class="btn green-button" >Edit</a>
+                        <a href="{{ url_for('delete_review', review_id=review._id) }}" class="btn pink-button">Delete</a>
                     </div>
             {% endif %}
+            {% endfor %}
         </div>    
     </div>
-    {% endfor %}
 
 {% endblock %}
