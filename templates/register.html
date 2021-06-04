@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <h2>Register</h2>
+    <h2 class="col center-align">Register</h2>
 
     <div class="row">
         <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('register') }}">
-            <div class="card-panel">
+            <div class="card-panel register-card">
                 <!-- Username -->
                 <div class="row">
                     <div class="input-field col s12 m10 offset-m1">
@@ -31,8 +31,8 @@
                     </div>
                 </div>
                 <!-- Register button -->
-                <div class="row">
-                    <button class="btn" type="submit" name="action">Register
+                <div class="row center-align">
+                    <button class="btn green-button" type="submit" name="action">Register
                         <i class="material-icons right"></i>
                     </button>
                 </div>
