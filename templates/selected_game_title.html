@@ -9,8 +9,9 @@
                 <div class="card-image">
                     <img src="{{ title.image_url }}">
                 </div>
-                <div class="card-content">
+                <div class="card-content title-card">
                     <span class="card-title">{{ title.title_name }}</span>
+                    <p>{{ title_ratings }}</p>
                     <p>{{ title.description }}</p>
                     <p>{{ title.title_rating }}</p>
                     {% for console in title.consoles %}

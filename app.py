@@ -24,7 +24,14 @@ mongo = PyMongo(app)
 @app.route("/get_titles")
 def get_titles():
     titles = list(mongo.db.titles.find())
-    return render_template("titles.html", titles=titles)
+    title_ratings = list(mongo.db.reviews.aggregate([
+                {"$group": {
+                    "_id": "$title_id",
+                        "avg_rating": {"$avg": "$rating"}}}
+                ]))
+    return render_template("titles.html",
+                           titles=titles,
+                           title_ratings=title_ratings)
 
 
 @app.route("/get_reviews")
@@ -59,8 +66,14 @@ def add_game_title():
 def selected_game_title(title_id):
     title = mongo.db.titles.find_one({"_id": ObjectId(title_id)})
     reviews = mongo.db.reviews.find({"title_id": (title_id)})
-    return render_template(
-        "selected_game_title.html", title=title, reviews=reviews)
+    title_ratings = list(mongo.db.reviews.aggregate([
+                {"$group": {
+                    "_id": "$title_id",
+                        "avg_rating": {"$avg": "$rating"}}}
+                ]))
+    return render_template("selected_game_title.html",
+                           title=title, reviews=reviews,
+                           title_ratings=title_ratings)
 
 
 @app.route("/add_review/<title_id>", methods=["GET", "POST"])
