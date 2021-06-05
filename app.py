@@ -83,7 +83,7 @@ def add_review(title_id):
         review = {
                 "title_id": request.form.get("title_id"),
                 "review": request.form.get("review"),
-                "rating": request.form.get("rating"),
+                "rating": int(request.form.get("rating")),
                 "created_by": session["user"]
             }
         mongo.db.reviews.insert_one(review)
