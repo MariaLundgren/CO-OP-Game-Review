@@ -31,7 +31,7 @@ def get_titles():
                 ]))
     return render_template("titles.html",
                            titles=titles,
-                           title_ratings=title_ratings)
+                           title_ratings=title_ratings,)
 
 
 @app.route("/get_reviews")
