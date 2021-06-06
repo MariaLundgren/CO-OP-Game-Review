@@ -120,3 +120,35 @@ input {
 .review-card {
     background-color: #501f3a;
 }
+
+/* selected game title */ 
+
+.selected-game-card {
+    background-color: #501f3a;
+    padding: 20px;
+    min-height: 600px;
+}
+
+.selected-game-img {
+    max-width: 300px;
+    max-height: 300px;
+    margin: 0 auto;
+}
+
+.rating {
+    font-size: 18pt;
+}
+
+.review-button {
+    position: absolute;
+    bottom: 5%;
+    right: 5%;
+}
+
+/* media queries */ 
+
+@media(max-width: 960px) {
+    .selected-game-card {
+    min-height: 650px;
+    }
+}
