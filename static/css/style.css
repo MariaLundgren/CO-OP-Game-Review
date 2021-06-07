@@ -170,3 +170,16 @@ input {
     height: 600px;
 }
 
+.hero-img {
+    width: 100%;
+    padding-top: 20px;
+}
+
+.hero-text {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    font-size: 250%;
+    font-weight: 700;
+}
