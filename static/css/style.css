@@ -159,9 +159,7 @@ input {
 }
 
 .review-button {
-    position: absolute;
-    bottom: 5%;
-    right: 5%;
+    margin-bottom: 10px;
 }
 
 /* titles */ 
