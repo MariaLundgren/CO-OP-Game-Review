@@ -17,10 +17,10 @@
     <h2 class="center-align">Game titles</h2>
     <!-- Game titles added by user-->
     <div class="row">
-        <div class="col offset-m3"></div>
-        <div class="col s12 m6 l3">
             {% for title in titles %}
             {% if session.user|lower == title.created_by|lower %}
+            <div class="col offset-m3"></div>
+            <div class="col s12 m6 l3">
             <div class="card title-card hoverable">
                 <div class="card-image">
                     <img src="{{ title.image_url }}">
@@ -46,9 +46,9 @@
                     <a href="{{ url_for('delete_game_title', title_id=title._id) }}" class="btn pink-button title-buttons" >Delete</a>
                 </div>
             </div>
+        </div>
             {% endif %}
             {% endfor %}
-        </div>
     </div>
 
     <h2 class="center-align">Reviews</h2>
