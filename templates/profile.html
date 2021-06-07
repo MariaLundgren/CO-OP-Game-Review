@@ -58,8 +58,10 @@
                             <p>Rating: {{ review.rating }}</p>
                             <p>Created by: {{ review.created_by }}</p>
                         </div>
-                        <a href="{{ url_for('edit_review', review_id=review._id) }}" class="btn green-button" >Edit</a>
-                        <a href="{{ url_for('delete_review', review_id=review._id) }}" class="btn pink-button">Delete</a>
+                        <div class="center-align">
+                            <a href="{{ url_for('edit_review', review_id=review._id) }}" class="btn green-button review-buttons" >Edit</a>
+                            <a href="{{ url_for('delete_review', review_id=review._id) }}" class="btn pink-button review-buttons">Delete</a>
+                        </div>
                     </div>
             {% endif %}
             {% endfor %}

@@ -119,6 +119,10 @@ input {
     background-color: #501f3a;
 }
 
+.review-buttons {
+    margin-bottom: 10px;
+}
+
 /* selected game title */ 
 
 .rating {
