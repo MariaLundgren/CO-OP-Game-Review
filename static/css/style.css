@@ -41,6 +41,22 @@ input {
 .pink-button:hover {
     background-color: #ff3c8d !important;
 }
+
+/* title card */ 
+
+.title-card {
+    background-color: #501f3a;
+}
+
+.card-title {
+    font-family: "Montserrat", sans-serif;
+    color: #cccccc !important;
+}
+
+.inline-elements {
+    display: inline-block !important;
+}
+
 /* navbar */ 
 
 .nav-wrapper{
@@ -61,28 +77,6 @@ input {
 .nav-links {
     font-family: "Raleway", sans-serif;
     font-weight: 500;
-}
-
-/* home */
-
-.title-card {
-    height: 200px;
-    background-color: #501f3a;
-}
-
-.card-title {
-    font-family: "Montserrat", sans-serif;
-    color: #cccccc !important;
-}
-
-.title-image {
-    height: 190px;
-    width: 190px;
-    margin: 5px;
-}
-
-.inline-elements {
-    display: inline-block !important;
 }
 
 /* Log In */ 
@@ -127,18 +121,6 @@ input {
 
 /* selected game title */ 
 
-.selected-game-card {
-    background-color: #501f3a;
-    padding: 20px;
-    min-height: 600px;
-}
-
-.selected-game-img {
-    max-width: 300px;
-    max-height: 300px;
-    margin: 0 auto;
-}
-
 .rating {
     font-size: 18pt;
 }
@@ -149,10 +131,9 @@ input {
     right: 5%;
 }
 
-/* media queries */ 
+/* titles */ 
 
-@media(max-width: 960px) {
-    .selected-game-card {
-    min-height: 650px;
-    }
+.titles-card {
+    height: 600px;
 }
+
