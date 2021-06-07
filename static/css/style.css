@@ -20,14 +20,6 @@ h1, h2, h3, h4 {
     font-weight: 500;
 }
 
-input {
-    color: #cccccc;
-}
-
-.materialize-textarea {
-    color: #cccccc;
-}
-
 .green-button{
     background-color: #14A098;
     font-family: "Raleway", sans-serif;
@@ -44,6 +36,20 @@ input {
 
 .pink-button:hover {
     background-color: #ff3c8d !important;
+}
+
+/* forms */ 
+
+input {
+    color: #cccccc;
+}
+
+.materialize-textarea {
+    color: #cccccc;
+}
+
+.caret {
+    fill: #cccccc !important;
 }
 
 /* title card */ 
