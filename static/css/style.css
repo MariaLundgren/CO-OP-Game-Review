@@ -67,6 +67,21 @@ input {
     display: inline-block !important;
 }
 
+/* flash messages */
+
+.flash-messages {
+    line-height: 2;
+    background-color: #cccccc;
+    margin-top: 10px;
+    font-size: 200%;
+    border-radius: 5px;
+}
+
+.flash-messages h4 {
+    color: #0F292F;
+    font-family: "Montserrat", sans-serif;
+}
+
 /* navbar */ 
 
 .nav-wrapper{
