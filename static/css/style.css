@@ -165,7 +165,8 @@ input {
 /* titles */ 
 
 .titles-card {
-    height: 600px;
+    height: 650px;
+    max-width: 450px;
 }
 
 .hero-img {
@@ -188,3 +189,4 @@ input {
     padding-right: 20px;
     padding-top: 10px;
 }
+
