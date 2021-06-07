@@ -41,8 +41,10 @@
                         {% endfor %}
                     </div>
                 </div>
-                    <a href="{{ url_for('edit_game_title', title_id=title._id)}}" class="btn green-button" >Edit</a>
-                    <a href="{{ url_for('delete_game_title', title_id=title._id) }}" class="btn pink-button" >Delete</a>
+                <div class="center-align">
+                    <a href="{{ url_for('edit_game_title', title_id=title._id)}}" class="btn green-button title-buttons" >Edit</a>
+                    <a href="{{ url_for('delete_game_title', title_id=title._id) }}" class="btn pink-button title-buttons" >Delete</a>
+                </div>
             </div>
             {% endif %}
             {% endfor %}
