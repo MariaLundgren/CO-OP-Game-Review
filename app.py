@@ -138,8 +138,8 @@ def log_in():
 def profile():
     username = mongo.db.users.find_one(
         {"username": session["user"]})
-    reviews = mongo.db.reviews.find()
-    titles = mongo.db.titles.find()
+    reviews = mongo.db.reviews.find().sort("_id", -1)
+    titles = mongo.db.titles.find().sort("_id", -1)
     return render_template(
         "profile.html", username=username, reviews=reviews, titles=titles)
 
