@@ -37,6 +37,10 @@ input {
     font-weight: 600;
     border-radius: 5px;
 }
+
+.pink-button:hover {
+    background-color: #ff3c8d !important;
+}
 /* navbar */ 
 
 .nav-wrapper{
