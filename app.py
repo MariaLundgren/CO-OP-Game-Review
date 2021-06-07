@@ -36,7 +36,7 @@ def get_titles():
 
 @app.route("/get_reviews")
 def get_reviews():
-    reviews = list(mongo.db.reviews.find())
+    reviews = list(mongo.db.reviews.find().sort("_id", -1))
     return render_template("selected_game_title.html", reviews=reviews)
 
 
