@@ -181,3 +181,19 @@ input {
     font-size: 250%;
     font-weight: 700;
 }
+
+/* footer */ 
+
+.page-footer {
+    background-color: #14A098;
+}
+
+.social-text {
+    margin-top: 10px;
+}
+
+.social-icon {
+    font-size: 275%;
+    padding-right: 20px;
+    padding-top: 10px;
+}
