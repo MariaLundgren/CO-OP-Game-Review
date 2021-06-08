@@ -1,17 +1,19 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!-- edit profile -->
     <h2 class="center-align">Edit Profile</h2>
-
     <div class="row">
         <form class="col s12" method="POST" action="{{ url_for('edit_profile') }}">
+            <!-- profile img -->
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
-                    <input id="profile_image_url" name="profile_image_url" value="{{ profile_image_url }}"
-                        minlength="5" maxlength="100" type="text" class="validate" required>
+                    <input id="profile_image_url" name="profile_image_url" value="{{ profile_image_url }}" minlength="5"
+                        maxlength="100" type="text" class="validate" required>
                     <label for="profile_image_url">Profile Image URL</label>
                 </div>
             </div>
+            <!-- favourite game -->
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
                     <input id="favourite_game" name="favourite_game" value="{{ favourite_game }}" minlength="5"
@@ -19,11 +21,12 @@
                     <label for="favourite_game">Favourite game</label>
                 </div>
             </div>
+            <!-- edit profile button -->
             <div class="row">
                 <div class=" col offset-m3">
                     <button class="btn" type="submit" name="action">Edit Profile
                     </button>
-            
+
                 </div>
         </form>
     </div>
