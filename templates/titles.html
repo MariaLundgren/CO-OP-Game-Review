@@ -1,68 +1,71 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="row">
-    <div class="col s12 m6 offset-m3">
-            <img src="{{ url_for('static', filename='images/hero4.png') }}" class="hero-img" alt="" />
-    </div>
-</div>
-
-<div class="row">
-    <form action="{{ url_for('search') }}" method="POST">
-        <div class="input-field col s12 m6 offset-m3">
-            <i class="material-icons prefix">search</i>
-            <input id="query" name="query" type="text" class="validate" required>
-            <label for="query">Search Title</label>
-        </div>
-        <div class="col s12 center-align">
-            <button class="btn green-button" type="submit" name="action">Search</button>
-            <a href="{{ url_for('get_titles') }}" class="btn pink-button" >Reset</a>
-        </div>
-    </form>
-</div>
-
-    {% if titles|length >= 1 %}
+    <!-- hero img-->
     <div class="row">
-            {% for title in titles %}
-            <div class="col offset-m3"></div>
-            <div class="col s12 m6 l3">
-            <a href="{{ url_for('selected_game_title', title_id=title._id) }}">
-                <div class="card title-card hoverable titles-card">
-                    <div class="card-image">
-                        <img src="{{ title.image_url }}">
-                    </div>
-                    <div class="card-content">
-                        <span class="card-title">{{ title.title_name }}</span>
-                        <div>
-                            <i class="material-icons inline-elements">star</i>
-                            {% for avg_rating in title_ratings %}
-                            {% if avg_rating._id == title._id|string %}
-                            <p class="inline-elements">{{ avg_rating.avg_rating }}</p>
-                            {% endif %}
-                            {% endfor %}
-                        </div>
-                        <div>
-                            <p class="inline-elements">Consoles:</p>
-                            {% for console in title.consoles %}
-                                <p class="inline-elements">{{ console }}</p>
-                            {% endfor %}
-                        </div>
-                        <div>
-                            <p class="inline-elements">Co-op type:</p>
-                            {% for local_online in title.local_or_online %}
-                            <p class="inline-elements">{{ local_online }}</p>
-                            {% endfor %}
-                            <p>Created by: {{ title.created_by }}</p>
-                        </div>
-                    </div>
-                </div>
-            </a>
+        <div class="col s12 m6 offset-m3">
+            <img src="{{ url_for('static', filename='images/hero4.png') }}" class="hero-img" alt="" />
         </div>
-            {% endfor %}
-        <div class="col offset-m3"></div>
     </div>
-    {% else %}
-    <p class="search-error center-align">Couldn't find game title.</p>
+
+    <!--serach -->
+    <div class="row">
+        <form action="{{ url_for('search') }}" method="POST">
+            <div class="input-field col s12 m6 offset-m3">
+                <i class="material-icons prefix">search</i>
+                <input id="query" name="query" type="text" class="validate" required>
+                <label for="query">Search Title</label>
+            </div>
+            <div class="col s12 center-align">
+                <button class="btn green-button" type="submit" name="action">Search</button>
+                <a href="{{ url_for('get_titles') }}" class="btn pink-button">Reset</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- game titles -->
+    {% if titles|length >= 1 %}
+        <div class="row">
+            {% for title in titles %}
+                <div class="col offset-m3"></div>
+                <div class="col s12 m6 l3">
+                    <a href="{{ url_for('selected_game_title', title_id=title._id) }}">
+                        <div class="card title-card hoverable titles-card">
+                            <div class="card-image">
+                                <img src="{{ title.image_url }}">
+                            </div>
+                            <div class="card-content">
+                                <span class="card-title">{{ title.title_name }}</span>
+                                <div>
+                                    <i class="material-icons inline-elements">star</i>
+                                    {% for avg_rating in title_ratings %}
+                                        {% if avg_rating._id == title._id|string %}
+                                            <p class="inline-elements">{{ avg_rating.avg_rating }}</p>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                                <div>
+                                    <p class="inline-elements">Consoles:</p>
+                                        {% for console in title.consoles %}
+                                            <p class="inline-elements">{{ console }}</p>
+                                        {% endfor %}
+                                </div>
+                                <div>
+                                    <p class="inline-elements">Co-op type:</p>
+                                        {% for local_online in title.local_or_online %}
+                                            <p class="inline-elements">{{ local_online }}</p>
+                                        {% endfor %}
+                                    <p>Created by: {{ title.created_by }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+            <div class="col offset-m3"></div>
+        </div>
+        {% else %}
+            <p class="search-error center-align">Couldn't find game title.</p>
     {% endif %}
 
 {% endblock %}
