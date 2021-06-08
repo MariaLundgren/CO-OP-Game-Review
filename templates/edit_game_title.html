@@ -46,12 +46,12 @@
             <!-- co-op type -->
             <div class="row">
                 <div class="input-field col s12 m3 offset-m3">
-                    <select id="local_or_online" name="local_or_online" multiple required>
-                        <option value="" disabled selected>Co-op type:</option>
+                    <select id="co_op_type" name="co_op_type" multiple required>
+                        <option value="{{ title.co_op_type }}" disabled selected></option>
                         <option value="Local">Local</option>
                         <option value="Online">Online</option>
                     </select>
-                    <label for="local_or_online">Coop Experience</label>
+                    <label for="co_op_type">Coop Experience</label>
                 </div>
             </div>
             <!-- edit title button -->

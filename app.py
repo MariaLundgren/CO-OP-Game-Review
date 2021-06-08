@@ -60,7 +60,7 @@ def add_game_title():
             "image_url": request.form.get("image_url"),
             "description": request.form.get("description"),
             "consoles": request.form.getlist("consoles"),
-            "local_or_online": request.form.getlist("local_or_online"),
+            "co_op_type": request.form.getlist("co_op_type"),
             "created_by": session["user"]
         }
         mongo.db.titles.insert_one(title)
@@ -193,7 +193,7 @@ def edit_game_title(title_id):
             "image_url": request.form.get("image_url"),
             "description": request.form.get("description"),
             "consoles": request.form.getlist("consoles"),
-            "local_or_online": request.form.getlist("local_or_online"),
+            "co_op_type": request.form.getlist("co_op_type"),
             "created_by": request.form.getlist("created_by")
         }
         mongo.db.titles.update({"_id": ObjectId(title_id)}, submit)
