@@ -63,6 +63,9 @@ input {
 
 .title-card {
     background-color: #501f3a;
+    height: 650px;
+    max-width: 450px;
+    
 }
 
 .card-title {
@@ -170,11 +173,6 @@ input {
 }
 
 /* titles */ 
-
-.titles-card {
-    height: 650px;
-    max-width: 450px;
-}
 
 .hero-img {
     width: 100%;
