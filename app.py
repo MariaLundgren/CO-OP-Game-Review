@@ -87,6 +87,8 @@ def add_review(title_id):
                 "created_by": session["user"]
             }
         mongo.db.reviews.insert_one(review)
+        flash("Review added.")
+        return redirect(url_for("selected_game_title", title_id=title_id))
     return render_template("add_review.html", title=title)
 
 
