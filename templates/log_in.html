@@ -1,8 +1,8 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!-- log in -->
     <h2 class="col center-align">Log In</h2>
-
     <div class="row">
         <form class="col s12 m6 offset-m3" method="POST" action="{{ url_for('log_in') }}">
             <div class="card-panel login-card">
@@ -10,7 +10,8 @@
                 <div class="row login-input">
                     <div class="input-field col s12 m10 offset-m1">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="username" name="username" type="text" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <input id="username" name="username" type="text" minlength="5" maxlength="15"
+                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="username">Username</label>
                     </div>
                 </div>
@@ -18,7 +19,8 @@
                 <div class="row">
                     <div class="input-field col s12 m10 offset-m1">
                         <i class="material-icons prefix">lock_outline</i>
-                        <input id="password" name="password" type="password" minlength="5" maxlength="15" pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
+                        <input id="password" name="password" type="password" minlength="5" maxlength="15"
+                            pattern="^[a-zA-Z0-9]{5,15}$" class="validate" required>
                         <label for="password">Password</label>
                     </div>
                 </div>
