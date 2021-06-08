@@ -5,7 +5,7 @@
     <div class="row">
         <div class="col s12 m6 offset-m3">
             <div class="card center-align profile-card">
-                <h2>{{ username.username }}'s Profile</h2>
+                <h2 class="username">{{ username.username }}'s Profile</h2>
                 <img src="{{ username.profile_image_url }}">
                 <p>Favourite Game: {{ username.favourite_game }}</p>
                 <a href="{{ url_for('edit_profile') }}" class="btn green-button edit-button">

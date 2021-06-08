@@ -136,6 +136,9 @@ input {
     background-color: #501f3a;
 }
 
+.username {
+    font-size: 250%;
+}
 .profile-card img, p {
     padding-top: 10px;
 }
