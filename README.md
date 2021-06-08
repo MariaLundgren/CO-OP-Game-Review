@@ -64,27 +64,19 @@ The fonts choosen for the project are found on Google Fonts. Montrerrat are used
     - Navbar (described under navbar) 
     - The homepage contains a hero image underneath the navbar. 
     - Below the hero image it is a search field so that the user immediately can start searching amongst the game titles on the website and see their reviews. 
+    - Underneath the search field are the game titles presented. 
     - Footer (described under footer) 
 - Log In page
     - Navbar (described under navbar) 
-    - The log in page contains a field for filling in your email address and password and a button to log in to your account as a registered user. 
+    - The log in page contains a field for filling in your username and password and a button to log in to your account as a registered user. 
     - Footer (described under footer) 
 - Register page
     - Navbar (described under navbar) 
-    - The register page will contain a field for filling in your Username, email address, password and confirm your password and a button to register as a user on the webpage. 
-    - Footer (described under footer) 
-- Contact page 
-    - Navbar (described under navbar) 
-    - The contact page contains a form if the user wants to contact the site owner. The user will have to fill in their name, email address and message in the contact form and then press submit to send the message. A modal shows after submitting the form to tell the user if the form was sent successfully or if an error occurred. 
-    - Footer (described under footer) 
-- Logged in start page 
-    - Navbar (described under navbar)
-    - On the start page when a user is logged in there is a search field where the user can search amongst the titles.
-    - Underneath the search bar the most recent titles added is showing and when the user clicks on a title they will go to the title page of that title. 
-    - Footer (described under footer) 
+    - The register page will contain a field for filling in your Username, email address, password and a button to register as a user on the webpage. 
+    - Footer (described under footer)
 - Profile page 
     - Navbar (described under navbar) 
-    - On the profile page the user can change and update their profile, they can add a profile image, the console they are playing on and their favorite game. 
+    - On the profile page the user can change and update their profile, they can add a profile image and their favorite game. 
     - Underneath the profile area the user can see all the titles and reviews that they have added to the website and can edit or delete them.  
     - Footer (described under footer)
 - New review page
