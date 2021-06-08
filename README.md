@@ -14,11 +14,11 @@ User’s goal: To share their own experiences playing coop videogames and take p
 
 As an anonymous user 
 -	I want to be able to register to join the community.
--	I want to be able to see the reviews and titles that others have posted. 
--	I want to be able to contact those who made the webpage if I have any questions.
+-	I want to be able to see the reviews and titles that others have posted.
 -	I want to be able to search amongst the posts if I am looking for something specific.
 
 As a registered user 
+- I want to be able to log in to my account.
 -	I want to be able write my own game reviews. 
 -	I want to be able to delete my own game reviews.  
 -	I want to be able to edit game reviews that I have already posted.  
