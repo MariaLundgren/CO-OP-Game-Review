@@ -33,11 +33,14 @@
                     </div>
                     <div class="card-content">
                         <span class="card-title">{{ title.title_name }}</span>
-                        {% for avg_rating in title_ratings %}
-                        {% if avg_rating._id == title._id|string %}
-                        <p>{{ avg_rating.avg_rating }}</p>
-                        {% endif %}
-                        {% endfor %}
+                        <div>
+                            <i class="material-icons inline-elements">star</i>
+                            {% for avg_rating in title_ratings %}
+                            {% if avg_rating._id == title._id|string %}
+                            <p class="inline-elements">{{ avg_rating.avg_rating }}</p>
+                            {% endif %}
+                            {% endfor %}
+                        </div>
                         <div>
                             <p class="inline-elements">Consoles:</p>
                             {% for console in title.consoles %}
