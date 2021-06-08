@@ -63,9 +63,11 @@ input {
 
 .title-card {
     background-color: #501f3a;
+}
+
+.title-cards {
     height: 650px;
     max-width: 450px;
-    
 }
 
 .card-title {
