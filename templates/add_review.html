@@ -1,30 +1,34 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!-- add review -->
     <h2 class="center-align">Add Review</h2>
-
     <div class="row">
-        <form class="col s12" method ="POST" action="{{ url_for('add_review', title_id=title._id) }}">
-            <input type="hidden" value="{{ title._id }}" id="title_id" name="title_id"/>
+        <form class="col s12" method="POST" action="{{ url_for('add_review', title_id=title._id) }}">
+            <input type="hidden" value="{{ title._id }}" id="title_id" name="title_id" />
+            <!-- review -->
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
-                    <textarea id="review" name="review" class="materialize-textarea" minlength="20" maxlength="500" required></textarea>
+                    <textarea id="review" name="review" class="materialize-textarea" minlength="20" maxlength="500"
+                        required></textarea>
                     <label for="review">Review</label>
                 </div>
             </div>
+            <!-- rating -->
             <div class="row">
                 <div class="input-field col s12 m3 offset-m3">
                     <select id="rating" name="rating" type="number" required>
-                      <option value="" disabled selected>Choose rating 1 to 5</option>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
+                        <option value="" disabled selected>Choose rating 1 to 5</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
                     </select>
                     <label for="rating">Rating</label>
-                  </div>    
+                </div>
             </div>
+            <!-- add review button -->
             <div class="row">
                 <div class=" col offset-m3">
                     <button class="btn" type="submit" name="action">Add Review
