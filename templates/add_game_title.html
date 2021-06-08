@@ -1,50 +1,58 @@
 {% extends "base.html" %}
 {% block content %}
 
+    <!-- add game title -->
     <h2 class="center-align">Add Title</h2>
-
     <div class="row">
-        <form class="col s12" method ="POST" action="{{ url_for('add_game_title') }}">
+        <form class="col s12" method="POST" action="{{ url_for('add_game_title') }}">
+            <!-- name -->
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
-                    <input id="title_name" name="title_name" minlength="5" maxlength="100" type="text" class="validate" required>
+                    <input id="title_name" name="title_name" minlength="5" maxlength="100" type="text" class="validate"
+                        required>
                     <label for="title_name">Title</label>
                 </div>
             </div>
+            <!-- title img -->
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
                     <input id="image_url" name="image_url" minlength="5" maxlength="100" type="text" class="validate">
                     <label for="imgae_url">Image URL</label>
                 </div>
             </div>
+            <!-- description -->
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
-                    <textarea id="description" name="description" class="materialize-textarea" minlength="20" maxlength="500" required></textarea>
+                    <textarea id="description" name="description" class="materialize-textarea" minlength="20"
+                        maxlength="500" required></textarea>
                     <label for="description">Description</label>
                 </div>
             </div>
+            <!-- consoles -->
             <div class="row">
                 <div class="input-field col s12 m3 offset-m3">
                     <select id="consoles" name="consoles" multiple required>
-                      <option value="" disabled selected>Avalibe on</option>
-                      <option value="ps">PS</option>
-                      <option value="x-box">X-box</option>
-                      <option value="pc">PC</option>
-                      <option value="other">Other</option>
+                        <option value="" disabled selected>Avalibe on</option>
+                        <option value="ps">PS</option>
+                        <option value="x-box">X-box</option>
+                        <option value="pc">PC</option>
+                        <option value="other">Other</option>
                     </select>
                     <label for="consoles">Consoles</label>
-                  </div>    
+                </div>
             </div>
+            <!-- co-op type -->
             <div class="row">
                 <div class="input-field col s12 m3 offset-m3">
                     <select id="local_or_online" name="local_or_online" multiple required>
-                      <option value="" disabled selected>Online or local co-op</option>
-                      <option value="local">Local</option>
-                      <option value="online">Online</option>
+                        <option value="" disabled selected>Online or local co-op</option>
+                        <option value="local">Local</option>
+                        <option value="online">Online</option>
                     </select>
                     <label for="local_or_online">Coop Experience</label>
-                  </div>    
+                </div>
             </div>
+            <!-- add title button -->
             <div class="row">
                 <div class=" col offset-m3">
                     <button class="btn" type="submit" name="action">Add title
