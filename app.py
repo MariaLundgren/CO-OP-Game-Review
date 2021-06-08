@@ -194,7 +194,7 @@ def edit_game_title(title_id):
             "description": request.form.get("description"),
             "consoles": request.form.getlist("consoles"),
             "co_op_type": request.form.getlist("co_op_type"),
-            "created_by": request.form.getlist("created_by")
+            "created_by": session["user"]
         }
         mongo.db.titles.update({"_id": ObjectId(title_id)}, submit)
         flash("Title Updated")
