@@ -59,6 +59,8 @@ def add_game_title():
             "created_by": session["user"]
         }
         mongo.db.titles.insert_one(title)
+        flash("Game title added.")
+        return redirect(url_for("get_titles"))
     return render_template("add_game_title.html")
 
 
