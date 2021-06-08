@@ -170,6 +170,8 @@ def profile():
 
 @app.route("/edit_profile", methods=["GET", "POST"])
 def edit_profile():
+    username = mongo.db.users.find_one(
+        {"username": session["user"]})
     # updates users profile
     if request.method == "POST":
         user_update = {"$set":
@@ -181,7 +183,7 @@ def edit_profile():
         flash("Profile Updated")
 
     mongo.db.users.find_one({"username": session["user"]})
-    return render_template("edit_profile.html")
+    return render_template("edit_profile.html", username=username)
 
 
 @app.route("/edit_game_title/<title_id>", methods=["GET", "POST"])

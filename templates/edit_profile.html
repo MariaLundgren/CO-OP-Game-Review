@@ -8,7 +8,7 @@
             <!-- profile img -->
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
-                    <input id="profile_image_url" name="profile_image_url" value="{{ profile_image_url }}" minlength="5"
+                    <input id="profile_image_url" name="profile_image_url" value="{{ username.profile_image_url }}" minlength="5"
                         maxlength="100" type="text" class="validate" required>
                     <label for="profile_image_url">Profile Image URL</label>
                 </div>
@@ -16,7 +16,7 @@
             <!-- favourite game -->
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
-                    <input id="favourite_game" name="favourite_game" value="{{ favourite_game }}" minlength="5"
+                    <input id="favourite_game" name="favourite_game" value="{{ username.favourite_game }}" minlength="5"
                         maxlength="100" type="text" class="validate" required>
                     <label for="favourite_game">Favourite game</label>
                 </div>
