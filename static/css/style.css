@@ -9,6 +9,13 @@
 
 body {
     background-color: #0F292F;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
 }
 
 h1, h2, h3, h4, p, i {
