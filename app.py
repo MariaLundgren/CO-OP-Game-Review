@@ -33,7 +33,7 @@ def get_titles():
                 ]))
     return render_template("titles.html",
                            titles=titles,
-                           title_ratings=title_ratings,)
+                           title_ratings=title_ratings)
 
 
 @app.route("/get_reviews")
@@ -54,19 +54,22 @@ def search():
 @app.route("/add_game_title", methods=["GET", "POST"])
 def add_game_title():
     # adds a game title to the db
-    if request.method == "POST":
-        title = {
-            "title_name": request.form.get("title_name"),
-            "image_url": request.form.get("image_url"),
-            "description": request.form.get("description"),
-            "consoles": request.form.getlist("consoles"),
-            "co_op_type": request.form.getlist("co_op_type"),
-            "created_by": session["user"]
-        }
-        mongo.db.titles.insert_one(title)
-        flash("Game title added.")
-        # redirects user to titles template
-        return redirect(url_for("get_titles"))
+    if "user" in session:
+        if request.method == "POST":
+            title = {
+                "title_name": request.form.get("title_name"),
+                "image_url": request.form.get("image_url"),
+                "description": request.form.get("description"),
+                "consoles": request.form.getlist("consoles"),
+                "co_op_type": request.form.getlist("co_op_type"),
+                "created_by": session["user"]
+            }
+            mongo.db.titles.insert_one(title)
+            flash("Game title added.")
+            # redirects user to titles template
+            return redirect(url_for("get_titles"))
+    else:
+        return redirect(url_for("log_in"))
     return render_template("add_game_title.html")
 
 
@@ -91,17 +94,20 @@ def selected_game_title(title_id):
 def add_review(title_id):
     title = mongo.db.titles.find_one({"_id": ObjectId(title_id)})
     # adds a game review to the db
-    if request.method == "POST":
-        review = {
-                "title_id": request.form.get("title_id"),
-                "review": request.form.get("review"),
-                "rating": int(request.form.get("rating")),
-                "created_by": session["user"]
-            }
-        mongo.db.reviews.insert_one(review)
-        flash("Review added.")
+    if "user" in session:
+        if request.method == "POST":
+            review = {
+                    "title_id": request.form.get("title_id"),
+                    "review": request.form.get("review"),
+                    "rating": int(request.form.get("rating")),
+                    "created_by": session["user"]
+                }
+            mongo.db.reviews.insert_one(review)
+            flash("Review added.")
         # redirects user to selected_game_title template
-        return redirect(url_for("selected_game_title", title_id=title_id))
+            return redirect(url_for("selected_game_title", title_id=title_id))
+    else:
+        return redirect(url_for("log_in"))
     return render_template("add_review.html", title=title)
 
 
@@ -157,51 +163,60 @@ def log_in():
 
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
-    # gets session user from db
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})
+    if "user" in session:
+        # gets session user from db
+        username = mongo.db.users.find_one(
+            {"username": session["user"]})
 
-    reviews = mongo.db.reviews.find().sort("_id", -1)
-    # gets game titles added by user from db
-    titles = mongo.db.titles.find().sort("_id", -1)
+        reviews = mongo.db.reviews.find().sort("_id", -1)
+        # gets game titles added by user from db
+        titles = mongo.db.titles.find().sort("_id", -1)
+    else:
+        return redirect("log_in")
     return render_template(
         "profile.html", username=username, reviews=reviews, titles=titles)
 
 
 @app.route("/edit_profile", methods=["GET", "POST"])
 def edit_profile():
-    username = mongo.db.users.find_one(
-        {"username": session["user"]})
     # updates users profile
-    if request.method == "POST":
-        user_update = {"$set":
-            {
-                "profile_image_url": request.form.get("profile_image_url"),
-                "favourite_game": request.form.get("favourite_game")
-            }}
-        mongo.db.users.update({"username": session["user"]}, user_update)
-        flash("Profile Updated")
+    if "user" in session:
+        username = mongo.db.users.find_one(
+        {"username": session["user"]})
+        if request.method == "POST":
+            user_update = {"$set":
+                {
+                    "profile_image_url": request.form.get("profile_image_url"),
+                    "favourite_game": request.form.get("favourite_game")
+                }}
+            mongo.db.users.update({"username": session["user"]}, user_update)
+            flash("Profile Updated")
 
-    mongo.db.users.find_one({"username": session["user"]})
+        mongo.db.users.find_one({"username": session["user"]})
+    else:
+        return redirect("log_in")
     return render_template("edit_profile.html", username=username)
 
 
 @app.route("/edit_game_title/<title_id>", methods=["GET", "POST"])
 def edit_game_title(title_id):
     # updates game title
-    if request.method == "POST":
-        submit = {
-            "title_name": request.form.get("title_name"),
-            "image_url": request.form.get("image_url"),
-            "description": request.form.get("description"),
-            "consoles": request.form.getlist("consoles"),
-            "co_op_type": request.form.getlist("co_op_type"),
-            "created_by": session["user"]
-        }
-        mongo.db.titles.update({"_id": ObjectId(title_id)}, submit)
-        flash("Title Updated")
+    if "user" in session:
+        if request.method == "POST":
+            submit = {
+                "title_name": request.form.get("title_name"),
+                "image_url": request.form.get("image_url"),
+                "description": request.form.get("description"),
+                "consoles": request.form.getlist("consoles"),
+                "co_op_type": request.form.getlist("co_op_type"),
+                "created_by": session["user"]
+            }
+            mongo.db.titles.update({"_id": ObjectId(title_id)}, submit)
+            flash("Title Updated")
 
-    title = mongo.db.titles.find_one({"_id": ObjectId(title_id)})
+        title = mongo.db.titles.find_one({"_id": ObjectId(title_id)})
+    else:
+        return redirect("log_in")
     return render_template("edit_game_title.html", title=title)
 
 
@@ -218,16 +233,18 @@ def delete_game_title(title_id):
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
     # updates review
-    if request.method == "POST":
-        submit = {
-            "review": request.form.get("review"),
-            "rating": request.form.get("rating"),
-            "created_by": session["user"]
-        }
-        mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
-        flash("Review Updated")
-
-    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    if "user" in session:
+        review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+        if request.method == "POST":
+            submit = {
+                "review": request.form.get("review"),
+                "rating": request.form.get("rating"),
+                "created_by": session["user"]
+            }
+            mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
+            flash("Review Updated")
+    else:
+        return redirect("log_in")
     return render_template("edit_review.html", review=review)
 
 
