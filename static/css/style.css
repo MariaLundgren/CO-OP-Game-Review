@@ -27,6 +27,10 @@ h1, h2, h3, h4 {
     font-weight: 500;
 }
 
+.green-text{
+    color: #0F292F !important;
+}
+
 .green-button{
     background-color: #14A098;
     font-family: "Raleway", sans-serif;
@@ -108,7 +112,6 @@ input {
 .brand-logo {
     font-family: "Montserrat", sans-serif;
     font-weight: 700;
-    color: #cccccc !important;
 }
 
 .nav-links {
@@ -198,11 +201,12 @@ input {
 
 .social-text {
     margin-top: 10px;
+    color: #0F292F;
 }
 
 .social-icon {
     font-size: 275%;
     padding-right: 20px;
     padding-top: 10px;
+    color: #0F292F;
 }
-
