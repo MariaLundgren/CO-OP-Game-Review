@@ -33,12 +33,11 @@
             <div class="row">
                 <div class="input-field col s12 m3 offset-m3">
                     <select id="consoles" name="consoles" class="validate" multiple required>
-                        <option value="console" disabled selected>Avalibe on</option>
-                            <option value="PS">PS</option>
-                            <option value="Xbox">X-box</option>
-                            <option value="Nintendo Switch">Nintendo Switch</option>
-                        <option value="PC">PC</option>
-                        <option value="Other">Other</option>
+                        <option value="PS" {% if "PS" in title.consoles %} selected {% endif %}>PS</option>
+                        <option value="Xbox" {% if "Xbox" in title.consoles %} selected {% endif %}>X-box</option>
+                        <option value="Nintendo Switch" {% if "Nintendo Switch" in title.consoles %} selected {% endif %}>Nintendo Switch</option>
+                        <option value="PC" {% if "PC" in title.consoles %} selected {% endif %}>PC</option>
+                        <option value="Other" {% if "Other" in title.consoles %} selected {% endif %}>Other</option>
                     </select>
                     <label for="consoles">Consoles</label>
                 </div>
@@ -47,9 +46,8 @@
             <div class="row">
                 <div class="input-field col s12 m3 offset-m3">
                     <select id="co_op_type" name="co_op_type" multiple required>
-                        <option value="{{ title.co_op_type }}" disabled selected></option>
-                        <option value="Local">Local</option>
-                        <option value="Online">Online</option>
+                        <option value="Local" {% if "Local" in title.co_op_type %} selected="selected" {% endif %}>Local</option>
+                        <option value="Online" {% if "Online" in title.co_op_type %} selected="selected" {% endif %}>Online</option>
                     </select>
                     <label for="co_op_type">Coop Experience</label>
                 </div>
