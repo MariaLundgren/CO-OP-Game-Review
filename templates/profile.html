@@ -64,12 +64,11 @@
         <div class="col s12 m6 offset-m3">
             {% for review in reviews %}
                 {% if session.user|lower == review.created_by|lower %}
-                    <div class="card review-card">
-                        <div class="card-content">
-                            <p>Review: {{ review.review }}</p>
+                <div class="card review-card">
+                    <div class="card-content">
+                        <p>Review: {{ review.review }}</p>
                             <p><i class="material-icons inline-elements">star</i> {{ review.rating }}</p>
                             <p>Created by: {{ review.created_by }}</p>
-                        </div>
                         <div class="center-align">
                             <a href="{{ url_for('edit_review', review_id=review._id) }}"
                                 class="btn green-button review-buttons">Edit
@@ -79,6 +78,7 @@
                             </a>
                         </div>
                     </div>
+                </div>
                 {% endif %}
             {% endfor %}
         </div>
