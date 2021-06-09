@@ -97,6 +97,25 @@ The fonts choosen for the project are found on Google Fonts. Montrerrat are used
 
 # Technologies Used 
 
+- [HTML5](https://en.wikipedia.org/wiki/HTML5) used to make the structure of the website.
+- [CSS3](https://en.wikipedia.org/wiki/CSS) used to add style to the project. 
+- [Python3](https://www.python.org/) 
+- [JQuery](https://jquery.com/)
+- [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
+- [PyMongo]() 
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/) 
+- [MongoDB](https://www.mongodb.com/) used to host the database.
+- [Heroku](https://www.heroku.com/) used to deply live website. 
+- [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/)
+- [Materialize](https://materializecss.com/) used to style certain elements and to make the website responsive. 
+- [Font Awesome](https://fontawesome.com/) used for the icons in the footer. 
+- [Google Fonts](https://fonts.google.com/) was used to import the fonts used in the project. 
+- [Gitpod](https://www.gitpod.io/) used to develop the project. 
+- [Github](https://github.com/) used to store the project. 
+- [Figma](https://www.figma.com/) used to make wireframes for the project.  
+- [Illustrator](https://www.adobe.com/products/illustrator.html) used to make some changes in the hero image. 
+- [RandomKeyGen](https://randomkeygen.com/) to generate the SECRET KEY.  
+
 # Testing
 
 ## Validation 
