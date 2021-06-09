@@ -48,7 +48,7 @@ Figma was used to create wireframes that are linked below.
 ### Colors
 
 The colors choosen for this project are choosen to create a visual intrest with a dark background and stronger colors used on elements that should be highlighted. 
-![Color scheme](assets/docs/images/color-scheme.jpeg)
+![Color scheme](static/images/color-scheme.jpeg)
 ### Typography
 The fonts choosen for the project are found on Google Fonts. Montrerrat are used for the headings in the project and Raleway are used for the body text, these were suggested as a popular paring by Google Fonts. The fallback font for both fonts is Sans-Serif. 
 
