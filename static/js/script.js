@@ -6,6 +6,8 @@ $(document).ready(function () {
 
   validateMaterializeSelect();
 
+  // Validation for select fields in forms. 
+  // Code taken from Code institute lesson. 
   function validateMaterializeSelect() {
     let classValid = {
       "border-bottom": "1px solid #4caf50",
