@@ -23,9 +23,13 @@ mongo = PyMongo(app)
 @app.route("/")
 @app.route("/get_titles")
 def get_titles():
-    # gets titles from db and sort them newest first
+    '''
+    Gets game titles from db and sort them newest first.
+    Calculates the avg rating from reviews with the same title_id.
+    Returns:
+    Renders titles page.
+    '''
     titles = list(mongo.db.titles.find().sort("_id", -1))
-    # get avg rating to title from reviews
     title_ratings = list(mongo.db.reviews.aggregate([
                 {"$group": {
                     "_id": "$title_id",
@@ -38,14 +42,22 @@ def get_titles():
 
 @app.route("/get_reviews")
 def get_reviews():
-    # gets reviews from db and sort them newest first
+    '''
+    Gets reviews from db and sort them newest first.
+    Returns:
+    Renders selected_game_title page.
+    '''
     reviews = list(mongo.db.reviews.find().sort("_id", -1))
     return render_template("selected_game_title.html", reviews=reviews)
 
 
 @app.route("/search", methods=["GET", "POST"])
 def search():
-    # search based on game title
+    '''
+    Searches game titles based on name of title.
+    Returns:
+    Renders the search results on titles page.
+    '''
     query = request.form.get("query")
     titles = list(mongo.db.titles.find({"$text": {"$search": query}}))
     return render_template("titles.html", titles=titles)
@@ -53,7 +65,12 @@ def search():
 
 @app.route("/add_game_title", methods=["GET", "POST"])
 def add_game_title():
-    # adds a game title to the db
+    '''
+    Adds a new game title.
+    Returns:
+    If request is POST redirects the user to get_titles page.
+    If request is GET renders add_game_title page.
+    '''
     if "user" in session:
         if request.method == "POST":
             title = {
@@ -66,7 +83,6 @@ def add_game_title():
             }
             mongo.db.titles.insert_one(title)
             flash("Game title added.")
-            # redirects user to titles template
             return redirect(url_for("get_titles"))
     else:
         return redirect(url_for("log_in"))
@@ -75,11 +91,16 @@ def add_game_title():
 
 @app.route("/selected_game_title/<title_id>")
 def selected_game_title(title_id):
-    # find selected title based on title_id
+    '''
+    Finds the selected game title and reviews with the same title_id.
+    Calculates the avg rating from reviews with the same title_id.
+    Args:
+    title_id: id of a title and reviews with the same title_id.
+    Returns:
+    Renders selected_game_title page.
+    '''
     title = mongo.db.titles.find_one({"_id": ObjectId(title_id)})
-    # find reviews to selected title based on title_id
     reviews = mongo.db.reviews.find({"title_id": (title_id)})
-    # gets avg title rating from reviews
     title_ratings = list(mongo.db.reviews.aggregate([
                 {"$group": {
                     "_id": "$title_id",
@@ -92,8 +113,15 @@ def selected_game_title(title_id):
 
 @app.route("/add_review/<title_id>", methods=["GET", "POST"])
 def add_review(title_id):
+    '''
+    Adds a review for a given title.
+    Args:
+    title_id: id of a title to review.
+    Returns:
+    If request is POST redirects the user to selected_game_title page.
+    If request is GET renders the add_review page.
+    '''
     title = mongo.db.titles.find_one({"_id": ObjectId(title_id)})
-    # adds a game review to the db
     if "user" in session:
         if request.method == "POST":
             review = {
@@ -104,7 +132,6 @@ def add_review(title_id):
                 }
             mongo.db.reviews.insert_one(review)
             flash("Review added.")
-        # redirects user to selected_game_title template
             return redirect(url_for("selected_game_title", title_id=title_id))
     else:
         return redirect(url_for("log_in"))
@@ -113,8 +140,12 @@ def add_review(title_id):
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
+    '''
+    Adds a new users if the user don't already exists in db.
+    Returns:
+    Renders register page.
+    '''
     if request.method == "POST":
-        # checks if user already exists
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
@@ -122,7 +153,6 @@ def register():
             flash("Username already exist. Please choose another username.")
             return redirect(url_for("register"))
 
-        # adds user to db
         register = {
             "username": request.form.get("username").lower(),
             "email": request.form.get("email"),
@@ -137,13 +167,19 @@ def register():
 
 @app.route("/log_in", methods=["GET", "POST"])
 def log_in():
+    '''
+    Log in user if the user exist in db and
+    the username and password is correct.
+    Returns:
+    If request is POST and username and password is correct,
+    redirect user to profile page.
+    If request is GET renders the log_in page.
+    '''
     if request.method == "POST":
-        # chack if user exists in db
         existing_user = mongo.db.users.find_one(
             {"username": request.form.get("username").lower()})
 
         if existing_user:
-            # checks if password is correct
             if check_password_hash(
                existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
@@ -151,25 +187,27 @@ def log_in():
                 return redirect(url_for("profile", username=session["user"]))
             else:
                 flash("Incorrect username and/or password")
-                # redirects user back to log_in tempalte if password is wrong
                 return redirect(url_for("log_in"))
 
         else:
             flash("Incorrect username and/or password")
-            # redirects back to log_in template if username don't exist in db
             return redirect(url_for("log_in"))
     return render_template("log_in.html")
 
 
 @app.route("/profile", methods=["GET", "POST"])
 def profile():
+    '''
+    Gets session user and the titles and reviews that
+    that user have created, sorted newest first.
+    Returns:
+    Renders profile page.
+    '''
     if "user" in session:
-        # gets session user from db
         username = mongo.db.users.find_one(
             {"username": session["user"]})
 
         reviews = mongo.db.reviews.find().sort("_id", -1)
-        # gets game titles added by user from db
         titles = mongo.db.titles.find().sort("_id", -1)
     else:
         return redirect("log_in")
@@ -179,7 +217,12 @@ def profile():
 
 @app.route("/edit_profile", methods=["GET", "POST"])
 def edit_profile():
-    # updates users profile
+    '''
+    Gets session user and edits the user's profile.
+    Returns:
+    If request is POST redirects user to profile page.
+    If request is GET renders the edit_profile page.
+    '''
     if "user" in session:
         username = mongo.db.users.find_one(
         {"username": session["user"]})
@@ -201,7 +244,14 @@ def edit_profile():
 
 @app.route("/edit_game_title/<title_id>", methods=["GET", "POST"])
 def edit_game_title(title_id):
-    # updates game title
+    '''
+    Updates a game title.
+    Args:
+    title_id: id of a title.
+    Returns:
+    If request is POST redirects the user to profile page.
+    If request is GET renders the edit_game_title page.
+    '''
     title = mongo.db.titles.find_one({"_id": ObjectId(title_id)})
     if "user" in session:
         if title:
@@ -229,11 +279,16 @@ def edit_game_title(title_id):
 
 @app.route("/delete_game_title/<title_id>")
 def delete_game_title(title_id):
-    # finds game title in db based on id
+    '''
+    Deletes a game title and all reviews to that title.
+    Args:
+    title_id: id of a title.
+    Returns:
+    Redirects user to profile page.
+    '''
     title = mongo.db.titles.find_one({"_id": ObjectId(title_id)})
     if title['created_by'] == session["user"]:
         mongo.db.titles.remove({"_id": ObjectId(title_id)})
-        # removes game title in db based on id
         mongo.db.reviews.remove({"title_id": (title_id)})
         flash("Title deleted")
     else:
@@ -243,7 +298,14 @@ def delete_game_title(title_id):
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
-    # updates review
+    '''
+    Updates a review.
+    Args:
+    review_id: id of a review.
+    Returns:
+    If request is POST redirects the user to profile page.
+    If request is GET renders the edit_review page.
+    '''
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     if "user" in session:
         if review:
@@ -269,9 +331,15 @@ def edit_review(review_id):
 
 @app.route("/delete_review/<review_id>")
 def delete_review(review_id):
+    '''
+    Deletes a review.
+    Args:
+    review_id: id of a review.
+    Returns:
+    Redirects user to profile page.
+    '''
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     if review['created_by'] == session["user"]:
-        # removes review in db based on id
         mongo.db.reviews.remove({"_id": ObjectId(review_id)})
         flash("Review deleted")
     else:
@@ -281,6 +349,11 @@ def delete_review(review_id):
 
 @app.route("/log_out")
 def log_out():
+    '''
+    Removes user from session cookie.
+    Returns:
+    Redirects user to log_in page.
+    '''
     # removes user from session coockie
     flash("You have been logged out")
     session.pop("user")
