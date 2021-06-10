@@ -45,7 +45,7 @@
             <!-- co-op type -->
             <div class="row">
                 <div class="input-field col s12 m3 offset-m3">
-                    <select id="co_op_type" name="co_op_type" multiple required>
+                    <select id="co_op_type" name="co_op_type" class="validate" multiple required>
                         <option value="Local" {% if "Local" in title.co_op_type %} selected="selected" {% endif %}>Local</option>
                         <option value="Online" {% if "Online" in title.co_op_type %} selected="selected" {% endif %}>Online</option>
                     </select>

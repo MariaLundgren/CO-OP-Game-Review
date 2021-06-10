@@ -16,7 +16,7 @@
             <!-- title img -->
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
-                    <input id="image_url" name="image_url" minlength="5" maxlength="100" type="text" class="validate">
+                    <input id="image_url" name="image_url" minlength="5" maxlength="100" type="text" class="validate" required>
                     <label for="imgae_url">Image URL</label>
                 </div>
             </div>
@@ -24,15 +24,14 @@
             <div class="row">
                 <div class="input-field col s12 m6 offset-m3">
                     <textarea id="description" name="description" class="materialize-textarea" minlength="20"
-                        maxlength="500" required></textarea>
+                        maxlength="500" class="validate" required></textarea>
                     <label for="description">Description</label>
                 </div>
             </div>
             <!-- consoles -->
             <div class="row">
                 <div class="input-field col s12 m3 offset-m3">
-                    <select id="consoles" name="consoles" multiple required>
-                        <option value="" disabled selected>Avalibe on</option>
+                    <select id="consoles" name="consoles" class="validate" multiple required>
                         <option value="PS">PS</option>
                         <option value="Xbox">Xbox</option>
                         <option value="Nintendo Switch">Nintendo Switch</option>
@@ -45,8 +44,7 @@
             <!-- co-op type -->
             <div class="row">
                 <div class="input-field col s12 m3 offset-m3">
-                    <select id="co_op_type" name="co_op_type" multiple required>
-                        <option value="" disabled selected>Co-op type:</option>
+                    <select id="co_op_type" name="co_op_type" class="validate" multiple required>
                         <option value="Local">Local</option>
                         <option value="Online">Online</option>
                     </select>
