@@ -217,6 +217,7 @@ def edit_game_title(title_id):
                     }
                     mongo.db.titles.update({"_id": ObjectId(title_id)}, submit)
                     flash("Title Updated")
+                    return redirect(url_for("profile"))
             else:
                 return redirect(url_for("get_titles"))
         else:
@@ -253,7 +254,8 @@ def edit_review(review_id):
                         "rating": request.form.get("rating"),
                         "created_by": session["user"]
                     }
-                    mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
+                    mongo.db.reviews.update(
+                        {"_id": ObjectId(review_id)}, submit)
                     flash("Review Updated")
             else:
                 return redirect(url_for("get_titles"))
