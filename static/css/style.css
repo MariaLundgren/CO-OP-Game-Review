@@ -215,8 +215,8 @@ input {
 
 /* 404 */
 
-.text-404 {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 900;
-    color: #cb2d6f;
+.img-404 {
+    max-width: 100%;
+    width: 500px;
+    margin-bottom: 50px;
 }

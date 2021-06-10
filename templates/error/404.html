@@ -1,9 +1,0 @@
-{% extends "base.html" %}
-{% block content %}
-
-    <div class="center-align">
-        <img src="{{ url_for('static', filename='images/404.png') }}" alt="image with 404 text"/>
-        <a href="{{ url_for('get_titles') }}" class="waves-effect waves-light btn-large">Take me back</a>
-    </div>
-
-    {% endblock %}
