@@ -201,20 +201,22 @@ def edit_profile():
 @app.route("/edit_game_title/<title_id>", methods=["GET", "POST"])
 def edit_game_title(title_id):
     # updates game title
+    title = mongo.db.titles.find_one({"_id": ObjectId(title_id)})
     if "user" in session:
-        if request.method == "POST":
-            submit = {
-                "title_name": request.form.get("title_name"),
-                "image_url": request.form.get("image_url"),
-                "description": request.form.get("description"),
-                "consoles": request.form.getlist("consoles"),
-                "co_op_type": request.form.getlist("co_op_type"),
-                "created_by": session["user"]
-            }
-            mongo.db.titles.update({"_id": ObjectId(title_id)}, submit)
-            flash("Title Updated")
-
-        title = mongo.db.titles.find_one({"_id": ObjectId(title_id)})
+        if title['created_by'] == session["user"]:
+            if request.method == "POST":
+                submit = {
+                    "title_name": request.form.get("title_name"),
+                    "image_url": request.form.get("image_url"),
+                    "description": request.form.get("description"),
+                    "consoles": request.form.getlist("consoles"),
+                    "co_op_type": request.form.getlist("co_op_type"),
+                    "created_by": session["user"]
+                }
+                mongo.db.titles.update({"_id": ObjectId(title_id)}, submit)
+                flash("Title Updated")
+        else:
+            return redirect(url_for("get_titles"))
     else:
         return redirect(url_for("log_in"))
     return render_template("edit_game_title.html", title=title)
@@ -223,26 +225,33 @@ def edit_game_title(title_id):
 @app.route("/delete_game_title/<title_id>")
 def delete_game_title(title_id):
     # finds game title in db based on id
-    mongo.db.titles.remove({"_id": ObjectId(title_id)})
-    # removes game title in db based on id
-    mongo.db.reviews.remove({"title_id": (title_id)})
-    flash("Title deleted")
+    title = mongo.db.titles.find_one({"_id": ObjectId(title_id)})
+    if title['created_by'] == session["user"]:
+        mongo.db.titles.remove({"_id": ObjectId(title_id)})
+        # removes game title in db based on id
+        mongo.db.reviews.remove({"title_id": (title_id)})
+        flash("Title deleted")
+    else:
+        return redirect(url_for("get_titles"))
     return redirect(url_for("profile", username=session["user"]))
 
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
 def edit_review(review_id):
     # updates review
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     if "user" in session:
-        review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
-        if request.method == "POST":
-            submit = {
-                "review": request.form.get("review"),
-                "rating": request.form.get("rating"),
-                "created_by": session["user"]
-            }
-            mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
-            flash("Review Updated")
+        if review['created_by'] == session["user"]:
+            if request.method == "POST":
+                submit = {
+                    "review": request.form.get("review"),
+                    "rating": request.form.get("rating"),
+                    "created_by": session["user"]
+                }
+                mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
+                flash("Review Updated")
+        else:
+            return redirect(url_for("get_titles"))
     else:
         return redirect(url_for("log_in"))
     return render_template("edit_review.html", review=review)
@@ -250,9 +259,13 @@ def edit_review(review_id):
 
 @app.route("/delete_review/<review_id>")
 def delete_review(review_id):
-    # removes review in db based on id
-    mongo.db.reviews.remove({"_id": ObjectId(review_id)})
-    flash("Review deleted")
+    review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
+    if review['created_by'] == session["user"]:
+        # removes review in db based on id
+        mongo.db.reviews.remove({"_id": ObjectId(review_id)})
+        flash("Review deleted")
+    else:
+        return redirect(url_for("get_titles"))
     return redirect(url_for("profile", username=session["user"]))
 
 
