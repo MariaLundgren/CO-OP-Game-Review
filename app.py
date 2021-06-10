@@ -203,18 +203,21 @@ def edit_game_title(title_id):
     # updates game title
     title = mongo.db.titles.find_one({"_id": ObjectId(title_id)})
     if "user" in session:
-        if title['created_by'] == session["user"]:
-            if request.method == "POST":
-                submit = {
-                    "title_name": request.form.get("title_name"),
-                    "image_url": request.form.get("image_url"),
-                    "description": request.form.get("description"),
-                    "consoles": request.form.getlist("consoles"),
-                    "co_op_type": request.form.getlist("co_op_type"),
-                    "created_by": session["user"]
-                }
-                mongo.db.titles.update({"_id": ObjectId(title_id)}, submit)
-                flash("Title Updated")
+        if title:
+            if title['created_by'] == session["user"]:
+                if request.method == "POST":
+                    submit = {
+                        "title_name": request.form.get("title_name"),
+                        "image_url": request.form.get("image_url"),
+                        "description": request.form.get("description"),
+                        "consoles": request.form.getlist("consoles"),
+                        "co_op_type": request.form.getlist("co_op_type"),
+                        "created_by": session["user"]
+                    }
+                    mongo.db.titles.update({"_id": ObjectId(title_id)}, submit)
+                    flash("Title Updated")
+            else:
+                return redirect(url_for("get_titles"))
         else:
             return redirect(url_for("get_titles"))
     else:
@@ -241,15 +244,18 @@ def edit_review(review_id):
     # updates review
     review = mongo.db.reviews.find_one({"_id": ObjectId(review_id)})
     if "user" in session:
-        if review['created_by'] == session["user"]:
-            if request.method == "POST":
-                submit = {
-                    "review": request.form.get("review"),
-                    "rating": request.form.get("rating"),
-                    "created_by": session["user"]
-                }
-                mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
-                flash("Review Updated")
+        if review:
+            if review['created_by'] == session["user"]:
+                if request.method == "POST":
+                    submit = {
+                        "review": request.form.get("review"),
+                        "rating": request.form.get("rating"),
+                        "created_by": session["user"]
+                    }
+                    mongo.db.reviews.update({"_id": ObjectId(review_id)}, submit)
+                    flash("Review Updated")
+            else:
+                return redirect(url_for("get_titles"))
         else:
             return redirect(url_for("get_titles"))
     else:
