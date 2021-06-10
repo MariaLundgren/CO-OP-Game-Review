@@ -72,6 +72,7 @@ input {
 .title-cards {
     height: 650px;
     max-width: 450px;
+    overflow-wrap: break-word;
 }
 
 .card-title {
@@ -164,6 +165,7 @@ input {
 
 .review-card {
     background-color: #501f3a;
+    overflow-wrap: break-word;
 }
 
 .review-buttons {
