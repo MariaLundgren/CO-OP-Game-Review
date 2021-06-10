@@ -360,7 +360,11 @@ def log_out():
 
 
 @app.errorhandler(404)
-def page_not_found(e):
+def page_not_found(error):
+    '''
+    Page not found error handler.
+    Returns: Renders 404 page.
+    '''
     return render_template("404.html"), 404
 
 
