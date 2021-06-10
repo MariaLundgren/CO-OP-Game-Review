@@ -257,6 +257,7 @@ def edit_review(review_id):
                     mongo.db.reviews.update(
                         {"_id": ObjectId(review_id)}, submit)
                     flash("Review Updated")
+                    return redirect(url_for("profile"))
             else:
                 return redirect(url_for("get_titles"))
         else:
