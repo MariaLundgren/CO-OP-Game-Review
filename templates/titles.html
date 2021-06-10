@@ -40,7 +40,7 @@
                                     <i class="material-icons inline-elements">star</i>
                                     {% for avg_rating in title_ratings %}
                                         {% if avg_rating._id == title._id|string %}
-                                            <p class="inline-elements">{{ avg_rating.avg_rating }}</p>
+                                            <p class="inline-elements">{{ '%0.1f'|format(avg_rating.avg_rating) }}</p>
                                         {% endif %}
                                     {% endfor %}
                                 </div>
