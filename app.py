@@ -191,6 +191,7 @@ def edit_profile():
                 }}
             mongo.db.users.update({"username": session["user"]}, user_update)
             flash("Profile Updated")
+            return redirect(url_for("profile"))
 
         mongo.db.users.find_one({"username": session["user"]})
     else:
