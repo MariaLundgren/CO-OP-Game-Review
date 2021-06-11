@@ -100,6 +100,10 @@ The reviews are connected to the game titles by the title_id which is added to t
     - Below the hero image it is a search field so that the user immediately can start searching amongst the game titles on the website and see their reviews.
     - Underneath the search field are the game titles presented. Clicking on a game title takes the user to the selected game title page for that specific game title. 
     - Footer (described under footer) 
+- Selected game title 
+    - Navbar (described under navbar) 
+    - The selected game title page contains a card with an image of the selected game title and all the information avalible on that title.
+    - Underneath the game title all the reviews to that specific game title are presented.
 - Log In page
     - Navbar (described under navbar) 
     - The log in page contains a field for filling in your username and password and a button to log in to your account as a registered user. 
