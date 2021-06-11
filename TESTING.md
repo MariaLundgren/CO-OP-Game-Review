@@ -124,8 +124,8 @@ and the user gets added to the users collection in mongodb.
 - Hovering over edit buttons on reviews and game titles to make sure it become lighter when hovering over.
 - Clicking on edit button on review and this takes the user to edit review page. 
 - Clicking on edit button on game title and this takes the user to edit title page.
-- Saving the url for a logged in users profile page and tries to access it after logging out and this bring me to the log in page.
-- Saving the url for a logged in users profile page and tries to access it after logging in as a different user and this brings me to the current users profile page.
+- Saving the url for a logged in users profile page and tries to access it after logging out and this brings the user to the log in page.
+- Saving the url for a logged in users profile page and tries to access it after logging in as a different user and this brings the user to the current users profile page.
 
 ### Edit Profile
 
