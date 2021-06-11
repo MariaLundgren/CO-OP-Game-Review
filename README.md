@@ -119,8 +119,12 @@ The reviews are connected to the game titles by the title_id which is added to t
     - Footer (described under footer)
 - Profile page 
     - Navbar (described under navbar) 
-    - On the profile page the user can change and update their profile, they can add a profile image and their favorite game. 
+    - On the profile page the user can see the information they have added to their profile.
     - Underneath the profile area the user can see all the titles and reviews that they have added to the website and can edit or delete them.  
+    - Footer (described under footer)
+- Edit profile page 
+    - Navbar (described under navbar) 
+    - On the edit profile page the user can change their profile, they can add a profile image and their favorite game. 
     - Footer (described under footer)
 - New review page
     - Navbar (described under navbar) 
