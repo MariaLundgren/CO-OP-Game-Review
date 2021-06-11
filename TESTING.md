@@ -104,7 +104,31 @@ and the user gets added to the users collection in mongodb.
 
 ### Profile
 
+#### User stories testing Profile
+
+-	I want to be able to delete my own game reviews.  
+    - On the users profile page they can see all the reviews that the user have added. 
+    On each review there are a delete button that the user can click on if they want to delete that specific review.
+-	I want to be able to delete a game title that I have added, including the reviews added to that title. 
+    - On the users profile page they can see all the game titles that the user have added. 
+    On each game title there are a delete button that the user can click on if they want to delete that specific title,
+    the user will also delete all the reviews that have been added to that game title even if added by another user.
+
+#### Manual testing of Profile
+
+- Hovering over edit profile button to make sure it become lighter when hovering over.
+- Clicking on edit profile button and this takes the user to edit profile page.
+- Hovering over delete buttons on reviews and game titles to make sure it become lighter when hovering over.
+- Clicking on delete button on review and this deletes the review and flash message "Review deleted" appears.
+- Clicking on delete button on game title and this deletes the title and flash message "Title deleted" appears.
+- Hovering over edit buttons on reviews and game titles to make sure it become lighter when hovering over.
+- Clicking on edit button on review and this takes the user to edit review page. 
+- Clicking on edit button on game title and this takes the user to edit title page.
+- Saving the url for a logged in users profile page and tries to access it after logging out and this bring me to the log in page.
+- Saving the url for a logged in users profile page and tries to access it after logging in as a different user and this brings me to the current users profile page.
+
 ### Edit Profile
+
 
 ### New Review
 
