@@ -103,6 +103,7 @@ The reviews are connected to the game titles by the title_id which is added to t
 - Selected game title 
     - Navbar (described under navbar) 
     - The selected game title page contains a card with an image of the selected game title and all the information avalible on that title.
+    - If the user are a registred user that are logged in to their account there is also a add review button on the game title where the user can add their own review to that specific game title. 
     - Underneath the game title all the reviews to that specific game title are presented.
 - Log In page
     - Navbar (described under navbar) 
