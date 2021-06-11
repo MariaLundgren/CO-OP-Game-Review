@@ -21,6 +21,11 @@
 
 ### Footer 
 
+#### User stories testing footer
+
+- I want to be able to find the website's social channels.
+    - In the footer there are links to the website's social media channels. 
+
 ### Home
 
 ### Log In
