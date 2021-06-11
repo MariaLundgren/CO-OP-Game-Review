@@ -63,6 +63,21 @@ Also tested to search in all lower and uppercase to see that this also works, an
 
 ### Log In
 
+#### User stories testing Log In
+
+- I want to be able to log in to my account.
+    - On the Log In page the user can Log In to their account with their username and password. 
+
+#### Manual testing of Log In
+
+- Trying to log in without filling out the username field and a message appears to fill out this field.
+- Trying to log in with the wrong username and the flash message "Incorrect username and/or password" appears.
+- Trying to log in without filling out the password field and a message appears to fill out this field.
+- Trying to log in with the wrong password and the flash message "Incorrect username and/or password" appears.
+- Trying to log in with the wrong username and the wrong password the flash message "Incorrect username and/or password" appears.
+- Trying to log in with an existing user and correct password and this brings me to the profile page of this user,
+and shows flash message "Welcome, username". 
+
 ### Register
 
 ### Profile
