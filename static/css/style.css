@@ -86,11 +86,16 @@ input {
 
 .card-title {
     font-family: "Montserrat", sans-serif;
+    font-weight: 500;
     color: #cccccc !important;
 }
 
 .inline-elements {
     display: inline-block !important;
+}
+
+.title-name {
+    font-size: 16pt !important;
 }
 
 /* flash messages */
