@@ -106,10 +106,10 @@ and the user gets added to the users collection in mongodb.
 
 #### User stories testing Profile
 
--	I want to be able to delete my own game reviews.  
+- I want to be able to delete my own game reviews.  
     - On the users profile page they can see all the reviews that the user have added. 
     On each review there are a delete button that the user can click on if they want to delete that specific review.
--	I want to be able to delete a game title that I have added, including the reviews added to that title. 
+- I want to be able to delete a game title that I have added, including the reviews added to that title. 
     - On the users profile page they can see all the game titles that the user have added. 
     On each game title there are a delete button that the user can click on if they want to delete that specific title,
     the user will also delete all the reviews that have been added to that game title even if added by another user.
@@ -128,6 +128,12 @@ and the user gets added to the users collection in mongodb.
 - Saving the url for a logged in users profile page and tries to access it after logging in as a different user and this brings the user to the current users profile page.
 
 ### Edit Profile
+
+#### User stories testing Edit Prfofile
+
+- I want to be able to add an image and information to my profile.
+    - On the edit profile page the user can edit their profile, the user can add/edit their profile image
+    and edd/edit what their favourite game is. 
 
 
 ### New Review
