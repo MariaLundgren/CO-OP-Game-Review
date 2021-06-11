@@ -212,6 +212,10 @@ input {
     color: #0F292F;
 }
 
+.social-icon:hover {
+    color: #163e47;
+}
+
 /* 404 */
 
 .img-404 {
