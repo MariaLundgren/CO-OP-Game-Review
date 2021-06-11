@@ -50,10 +50,16 @@ Also tested to search in all lower and uppercase to see that this also works, an
 
 ### Selected Game Title
 
-#### User stories testing Home 
+#### User stories testing Selected Game Title
+
 - I want to be able to see the reviews and titles that others have posted.
     - On the selected game title page the user cal see all the avalible information about the selected game title. 
     Underneath the game title the user can also see all the reviews that have been added to that speceific game title.
+
+#### Manual testing of Selected Game Title
+
+- Hovering over add review button to make sure it become lighter when hovering over.
+- Clicking on add review button and this brings the user to the add review page. 
 
 ### Log In
 
