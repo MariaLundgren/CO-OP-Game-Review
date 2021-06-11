@@ -124,9 +124,11 @@ input {
     background-color: #14A098;
 }
 
-.brand-logo {
+.logo {
     font-family: "Montserrat", sans-serif;
-    font-weight: 700;
+    font-weight: 800;
+    font-size: 25pt;
+    margin-top: 15px;
 }
 
 .nav-links {
@@ -261,5 +263,11 @@ input {
 @media (min-width: 1600px) {
     .title-card {
         height: 600px;
+    }
+}
+
+@media (max-width: 720px) {
+    .logo {
+        font-size: 18pt;
     }
 }
