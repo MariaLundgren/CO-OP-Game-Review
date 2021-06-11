@@ -123,6 +123,7 @@ and shows flash message "Welcome, username".
 - Hovering over edit buttons on reviews and game titles to make sure it become lighter when hovering over.
 - Clicking on edit button on review and this takes the user to edit review page. 
 - Clicking on edit button on game title and this takes the user to edit title page.
+- Clicking on the card of a geme title brings me to the selected game title page of that specific title.
 - Saving the url for a logged in users profile page and tries to access it after logging out and this redirects the user to the log in page.
 - Saving the url for a logged in users profile page and tries to access it after logging in as a different user and this brings the user to their own profile page.
 
