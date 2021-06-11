@@ -48,7 +48,12 @@ Also tested to search in all lower and uppercase to see that this also works, an
 - Clicking on the restet button after a search and this shows all tha added game titles again, as expected. 
 - Clicking on the card of a geme title brings me to the selected game title page of that specific title.
 
-#### Selected Game Title
+### Selected Game Title
+
+#### User stories testing Home 
+- I want to be able to see the reviews and titles that others have posted.
+    - On the selected game title page the user cal see all the avalible information about the selected game title. 
+    Underneath the game title the user can also see all the reviews that have been added to that speceific game title.
 
 ### Log In
 
