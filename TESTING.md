@@ -99,8 +99,7 @@ and shows flash message "Welcome, username".
 - Trying to register a password with more than 15 characters and the form wont let me fill in more than 15 characters. 
 - Trying to register a password with a charachter that is not allowed and a message appears that the username must match requested format. 
 - Trying to register a user with a username that already exist in the db and flash message "Username already exist. Please choose another username." appears. 
-- Trying to register with all the forms filled out correctlly and the user gets redirect to their profile page with the flash message "Registration Successful" showing,
-and the user gets added to the users collection in mongodb. 
+- Trying to register with all the forms filled out correctlly and the user gets redirect to their profile page with the flash message "Registration Successful" showing, and the user gets added to the users collection in mongodb. 
 
 ### Profile
 
@@ -124,8 +123,8 @@ and the user gets added to the users collection in mongodb.
 - Hovering over edit buttons on reviews and game titles to make sure it become lighter when hovering over.
 - Clicking on edit button on review and this takes the user to edit review page. 
 - Clicking on edit button on game title and this takes the user to edit title page.
-- Saving the url for a logged in users profile page and tries to access it after logging out and this brings the user to the log in page.
-- Saving the url for a logged in users profile page and tries to access it after logging in as a different user and this brings the user to the current users profile page.
+- Saving the url for a logged in users profile page and tries to access it after logging out and this redirects the user to the log in page.
+- Saving the url for a logged in users profile page and tries to access it after logging in as a different user and this brings the user to their own profile page.
 
 ### Edit Profile
 
@@ -135,6 +134,17 @@ and the user gets added to the users collection in mongodb.
     - On the edit profile page the user can edit their profile, the user can add/edit their profile image
     and edd/edit what their favourite game is. 
 
+#### Manual testing of Edit Profile
+- Try to add an image in the input field for image url and clicking on edit profile button.
+This brings the user back to the profile back, an image is shown on the profile, flash message "Profile Updated" appears,
+and the image url is stored on the user in the db. 
+- Tryes to add more than 30 characters in favourite game input field and the field wont let me put in more than 30 characters. 
+- Try to add a favourite game in the input field for favourite game and clicking on edit profile.
+This brings the user back to the profile back, a favourite game is shown on the profile, flash message "Profile Updated" appears,
+and the favourite game is stored on the user in the db. 
+- Saving the url for the edit profile page and tries to access it after logging out and this redirects the user to the log in page.
+- Saving the url for the edit profile page and tries to access it after logging in as a different user and this brings the user to their
+own edit profile page. 
 
 ### New Review
 
