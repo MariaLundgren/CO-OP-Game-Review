@@ -16,6 +16,7 @@ As an anonymous user
 -	I want to be able to register to join the community.
 -	I want to be able to see the reviews and titles that others have posted.
 -	I want to be able to search amongst the posts if I am looking for something specific.
+-   I want to be able to find the website's social channels.
 
 As a registered user 
 - I want to be able to log in to my account.
