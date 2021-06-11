@@ -151,19 +151,7 @@ The reviews are connected to the game titles by the title_id which is added to t
 
 # Testing
 
-For lenth reasons the testing part is in a sepeate document. Click [here](TESTING.md) to go to the testing document. 
-
-## Validation 
-
-## Features 
-
-## Responsiveness 
-
-## Browsers 
-
-## Performance with lighthouse 
-
-## Bugs 
+For lenth reasons the testing part is in a sepeate document. Click [here](TESTING.md) to go to the testing document.
 
 # Deployment 
 
