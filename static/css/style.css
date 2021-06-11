@@ -178,7 +178,11 @@ input {
 }
 
 .review-button {
-    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.selected-game-title {
+    background-color: #501f3a;
 }
 
 /* titles */ 
