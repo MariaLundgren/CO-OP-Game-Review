@@ -26,9 +26,9 @@
     <!-- game titles -->
     {% if titles|length >= 1 %}
         <div class="row">
+            <div class="offset">
             {% for title in titles %}
-                <div class="col offset-m3"></div>
-                <div class="col s12 m6 l3">
+                <div class="col s12 m6 l4">
                     <a href="{{ url_for('selected_game_title', title_id=title._id) }}">
                         <div class="card title-card title-cards hoverable">
                             <div class="card-image">
@@ -62,7 +62,8 @@
                     </a>
                 </div>
             {% endfor %}
-            <div class="col offset-m3"></div>
+        </div>
+        </div>
         </div>
         {% else %}
             <p class="search-error center-align">Couldn't find game title.</p>
