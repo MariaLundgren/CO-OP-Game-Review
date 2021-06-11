@@ -3,10 +3,12 @@
 
     <!-- users profile -->
     <div class="row">
-        <div class="col s12 m6 offset-m3">
+        <div class="col s12 m6 offset-m3 center-align">
             <div class="card center-align profile-card">
                 <h2 class="username">{{ username.username }}'s Profile</h2>
+                <div class="img-circl row cecenter-align">
                 <img src="{{ username.profile_image_url }}">
+                </div>
                 <p>Favourite Game: {{ username.favourite_game }}</p>
                 <a href="{{ url_for('edit_profile') }}" class="btn green-button edit-button">
                     Edit Profile
@@ -28,7 +30,7 @@
                         <img src="{{ title.image_url }}">
                     </div>
                     <div class="card-content">
-                        <span class="card-title title-name">{{ title.title_name }}</span>
+                        <span class="card-title">{{ title.title_name }}</span>
                         <p>{{ title.title_rating }}</p>
                         <div>
                             <p class="inline-elements">Consoles:</p>

@@ -165,7 +165,11 @@ input {
 }
 
 .profile-card img {
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
+    object-fit: cover;
+    max-width: 100%;
 }
 
 .profile-card h2 {
