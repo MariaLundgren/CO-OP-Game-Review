@@ -24,7 +24,14 @@
 #### User stories testing footer
 
 - I want to be able to find the website's social channels.
-    - In the footer there are links to the website's social media channels. 
+    - In the footer there are links to the website's social media channels.
+
+#### Manual testing of Navbar
+
+- Clicking the Facebook icon brings user to facebook.com in a new browser window.
+- Clicking the Instagram icon brings user to instagram.com in a new browser window.
+- Hovering over the contact link and social icons to make sure they become lighter when hovering over them.
+- This was repeated on all pages to make sure the footer works on every page.
 
 ### Home
 
