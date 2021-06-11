@@ -87,6 +87,21 @@ and shows flash message "Welcome, username".
 - I want to be able to register to join the community.
     - On the register page an anonymous user can register by adding a username, emailadress and password to get an account and become a registered user.
 
+#### Manual testing of Register
+
+- Trying to register without filling out the username field and a message appears to fill out this field.
+- Trying to register a username with less than 5 characters and a message appears that the username must match requested format. 
+- Trying to register a username with more than 15 characters and the form wont let me fill in more than 15 characters. 
+- Trying to register a username with a charachter that is not allowed and a message appears that the username must match requested format. 
+- Trying to register without filling out the email field and a message appears to fill out this field.
+- Trying to register without filling out the password field and a message appears to fill out this field.
+- Trying to register a password with less than 5 characters and a message appears that the username must match requested format.
+- Trying to register a password with more than 15 characters and the form wont let me fill in more than 15 characters. 
+- Trying to register a password with a charachter that is not allowed and a message appears that the username must match requested format. 
+- Trying to register a user with a username that already exist in the db and flash message "Username already exist. Please choose another username." appears. 
+- Trying to register with all the forms filled out correctlly and the user gets redirect to their profile page with the flash message "Registration Successful" showing,
+and the user gets added to the users collection in mongodb. 
+
 ### Profile
 
 ### Edit Profile
