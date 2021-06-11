@@ -268,10 +268,10 @@ def edit_game_title(title_id):
                     return redirect(url_for("profile"))
             else:
                 flash(
-                    "You don't have access to the page you tying to visit")
+                    "You don't have access to the page you tried to visit")
                 return redirect(url_for("get_titles"))
         else:
-            flash("The title you are trying to update don't exist")
+            flash("The title you are trying to edit don't exist")
             return redirect(url_for("get_titles"))
     else:
         return redirect(url_for("log_in"))
@@ -322,8 +322,11 @@ def edit_review(review_id):
                     flash("Review Updated")
                     return redirect(url_for("profile"))
             else:
+                flash(
+                    "You don't have access to the page you tried to visit")
                 return redirect(url_for("get_titles"))
         else:
+            flash("The review you are trying to edit don't exist")
             return redirect(url_for("get_titles"))
     else:
         return redirect(url_for("log_in"))
