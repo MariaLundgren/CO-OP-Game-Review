@@ -106,7 +106,9 @@ The reviews are connected to the game titles by the title_id which is added to t
     - Underneath the game title all the reviews to that specific game title are presented.
 - Log In page
     - Navbar (described under navbar) 
-    - The log in page contains a field for filling in your username and password and a button to log in to your account as a registered user. 
+    - The log in page contains a field for filling in your username and password and a button to log in to your account as a registered user.
+    If the user inputs correct username and password of an existing user this brings the user to their profile page with the flash message "Welcome, username"shown. 
+    If the user trys to log in with either the wrong password or username the flash message "Incorrect username and/or password" appears.
     - Footer (described under footer) 
 - Register page
     - Navbar (described under navbar) 
