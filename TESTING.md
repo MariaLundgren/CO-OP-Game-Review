@@ -35,6 +35,13 @@
 
 ### Home
 
+#### User stories testing Home 
+
+-	I want to be able to search amongst the posts if I am looking for something specific.
+    - On the homepage the user can search among the titles for a specific game title.
+
+#### Selected Game Title
+
 ### Log In
 
 ### Register
