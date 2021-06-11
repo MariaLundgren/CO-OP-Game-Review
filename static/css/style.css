@@ -227,19 +227,19 @@ input {
 /* media queries */ 
 @media (min-width: 720px){
     .offset {
-        margin-left: 12.5%;
-        margin-right: 12.5%;
+        margin-left: 25%;
+        margin-right: 25%;
     }
 }
 
 @media screen and (min-width: 720px) and (max-width: 1600px) {
     .title-card {
-        height: 600px;
+        height: 550px;
     }
 }
 
 @media (min-width: 1600px) {
     .title-card {
-        height: 675px;
+        height: 600px;
     }
 }
