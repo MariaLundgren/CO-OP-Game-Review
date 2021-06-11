@@ -37,7 +37,7 @@
 
 #### User stories testing Home 
 
--	I want to be able to search amongst the posts if I am looking for something specific.
+- I want to be able to search amongst the posts if I am looking for something specific.
     - On the homepage the user can search among the titles for a specific game title.
 
 #### Manual testing of Home
@@ -81,6 +81,11 @@ Also tested to search in all lower and uppercase to see that this also works, an
 and shows flash message "Welcome, username". 
 
 ### Register
+
+#### User stories testing Register
+
+- I want to be able to register to join the community.
+    - On the register page an anonymous user can register by adding a username, emailadress and password to get an account and become a registered user.
 
 ### Profile
 
