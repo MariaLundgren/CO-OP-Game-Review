@@ -97,8 +97,8 @@ The reviews are connected to the game titles by the title_id which is added to t
 - Home page 
     - Navbar (described under navbar) 
     - The homepage contains a hero image underneath the navbar. 
-    - Below the hero image it is a search field so that the user immediately can start searching amongst the game titles on the website and see their reviews. 
-    - Underneath the search field are the game titles presented. 
+    - Below the hero image it is a search field so that the user immediately can start searching amongst the game titles on the website and see their reviews.
+    - Underneath the search field are the game titles presented. Clicking on a game title takes the user to the selected game title page for that specific game title. 
     - Footer (described under footer) 
 - Log In page
     - Navbar (described under navbar) 
