@@ -58,8 +58,10 @@ Also tested to search in all lower and uppercase to see that this also works, an
 
 #### Manual testing of Selected Game Title
 
+- Visit the selected game title page as an anonymous user to make sure the add game title button isn't appearing.
+- Visit the site as a regitred user that are logged in to their account and the add a review button is visible. 
 - Hovering over add review button to make sure it become lighter when hovering over.
-- Clicking on add review button and this brings the user to the add review page. 
+- Clicking on add review button and this brings the user to the add review page.
 
 ### Log In
 
