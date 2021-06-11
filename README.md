@@ -91,7 +91,9 @@ The reviews are connected to the game titles by the title_id which is added to t
 ## Existing features
 
 - Navbar 
-    - The navbar contains links to navigate to different parts of the website and the logo. The navbar is sticky so that the user always easily can navigate to different parts of the webpage. 
+    - The navbar contains links to navigate to different parts of the website and the logo. The navbar is sticky so that the user always easily can navigate to different parts of the webpage.
+    - As an anonymous user you will have access to the pages Home, Log In and Resgister in the navbar. 
+    - As a regitstered user logged in to your account you will have access to the pages Home, Profile, New Game Title, and Log Out in the nabar.
 - Footer 
     - The footer contains links to social media and the logo. 
 - Home page 
