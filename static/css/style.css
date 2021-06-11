@@ -152,6 +152,7 @@ input {
     margin-top: 3rem;
     padding-top: 1rem;
     background-color: #501f3a;
+    overflow-wrap: break-word;
 }
 
 .username {
