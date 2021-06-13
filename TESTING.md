@@ -21,12 +21,12 @@
 
 ### Footer 
 
-#### User stories testing footer
+#### User stories testing Footer
 
 - I want to be able to find the website's social channels.
     - In the footer there are links to the website's social media channels.
 
-#### Manual testing of Navbar
+#### Manual testing of Footer
 
 - Clicking the Facebook icon brings user to facebook.com in a new browser window.
 - Clicking the Instagram icon brings user to instagram.com in a new browser window.
@@ -154,21 +154,30 @@ own edit profile page.
     - On the add review page a registered user that are logged in to their account can add a review to a game title and
     add a rating from one to five.
 
-#### Manual testing of Edit Profile
+#### Manual testing of New Review
 - Trying to add a review without filling out the review field and a message appears to fill out this field. 
 - Trying to add a review with less than 20 charachters and a message appears that the text needs to be 20 charachters or more. 
 - Trying to add a review without chhosing a rating and a message appers that i need to select one item from the list. 
 - Trying to add a review with both field filled out correcttly and the user gets redirected back to the selected game title page,
 a flash message appear with the text "review added", the review are added underneath the game title with the rating and the review
 gets added to the reviews collection in mongodb.
-- Saving the url for the add a review page and tries to access it after logging out and this brings the redirects to the log in page.
+- Saving the url for the add a review page and tries to access it after logging out and this redirects the user to the log in page.
 
 ### Edit Review
 
-#### User stories testing New Review
+#### User stories testing Edit Review
 
 -	I want to be able to edit game reviews that I have already posted.
     -    On the edit review page the user can change a review and rating that has been added by the user. 
+
+#### Manual testing of Edit Review
+
+- Trying to delete the review and save the changes on the review and a message appears to fill out this field.
+- Trying to change the review to be less than 20 characthers and a message appears that the text needs to be 20 charachters or more.
+- Trying to edit the review and save the changed and the user gets redirected back to the profile page, a flash message appears with the text "review updated", the review and rating has been changed and the changes gets added to the review in mongodb. 
+- Saving the url for the edit review page and tries to access it after logging out and this redirects the user to the log in page.
+-  Saving the url for the edit review page as one user and tries to access it after loggin in as a differnt user and this redirects the user to the home page with a flash message "You don't have access to the page you tried to visit" shows.
+- Saving the url for the edit a review page for one review that then are deleted and try to access the url and the user gets redirected back to the home page with a flash message "The review you are trying to edit don't exist" shows. 
 
 ### New Title 
 
