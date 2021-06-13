@@ -169,6 +169,8 @@ gets added to the reviews collection in mongodb.
 
 -	I want to be able to edit game reviews that I have already posted.
     -    On the edit review page the user can change a review and rating that has been added by the user. 
+- I should not be able to edit the game titles or reviews that others have shared.  
+    - On the edit review page there are security so that the user can't edit a review if they aren't a registed user that are logged in to their account, if another user has created that game title or if the title has alrady been deltet fom the db. 
 
 #### Manual testing of Edit Review
 
@@ -208,7 +210,9 @@ gets added to the titles collection in mongodb.
 #### User stories testing Edit Title
 
 - I want to be able to edit a game title that I have added.
-    - On the edit title page the user can make changes on a game title that has been added by the user. 
+    - On the edit title page the user can make changes on a game title that has been added by the user.
+- I should not be able to edit the game titles or reviews that others have shared.  
+    - On the edit title page there are security so that the user can't edit a game title if they aren't a registed user that are logged in to their account, if another user has created that game title or if the title has alrady been deltet fom the db. 
 
 #### Manual testing of Edit Title
 
@@ -223,6 +227,8 @@ gets added to the titles collection in mongodb.
 - Saving the url for the edit title page and tries to access it after logging out and this redirects the user to the log in page.
 
 ### Title
+
+
 
 ## Responsiveness 
 
