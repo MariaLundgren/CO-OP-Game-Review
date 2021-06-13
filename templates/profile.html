@@ -49,9 +49,20 @@
                         <a href="{{ url_for('edit_game_title', title_id=title._id)}}"
                             class="btn green-button title-buttons">Edit
                         </a>
-                        <a href="{{ url_for('delete_game_title', title_id=title._id) }}"
-                            class="btn pink-button title-buttons">Delete
+                        <a data-target="modal1"
+                            class="btn pink-button title-buttons modal-trigger">Delete
                         </a>
+                        <!-- Modal game title -->
+                        <div id="modal1" class="modal">
+                            <div class="modal-content">
+                                <h4>Are you sure you want to delete this game title and all reviews added to it?</h4>
+                            </div>
+                            <div class="modal-footer">
+                                <a href="#!" class="modal-close waves-effect waves-green btn-flat green-button">Cansel</a>
+                                <a href="{{ url_for('delete_game_title', title_id=title._id) }}"
+                                    class="modal-close waves-effect waves-green btn-flat pink-button">Delete</a>
+                            </div>
+                        </div>
                     </div>
                 </a>
             </div>
@@ -66,23 +77,33 @@
     <div class="row">
         <div class="col s12 m6 offset-m3">
             {% for review in reviews %}
-                {% if session.user|lower == review.created_by|lower %}
-                <div class="card review-card">
-                    <div class="card-content">
-                        <p>Review: {{ review.review }}</p>
-                            <p><i class="material-icons inline-elements">star</i> {{ review.rating }}</p>
-                            <p>Created by: {{ review.created_by }}</p>
-                        <div class="center-align">
-                            <a href="{{ url_for('edit_review', review_id=review._id) }}"
-                                class="btn green-button review-buttons">Edit
-                            </a>
-                            <a href="{{ url_for('delete_review', review_id=review._id) }}"
-                                class="btn pink-button review-buttons">Delete
-                            </a>
+            {% if session.user|lower == review.created_by|lower %}
+            <div class="card review-card">
+                <div class="card-content">
+                    <p>Review: {{ review.review }}</p>
+                    <p><i class="material-icons inline-elements">star</i> {{ review.rating }}</p>
+                    <p>Created by: {{ review.created_by }}</p>
+                    <div class="center-align">
+                        <a href="{{ url_for('edit_review', review_id=review._id) }}"
+                            class="btn green-button review-buttons">Edit
+                        </a>
+                        <a data-target="modal2" class="btn pink-button review-buttons modal-trigger">Delete
+                        </a>
+                        <!-- Modal review -->
+                        <div id="modal2" class="modal">
+                            <div class="modal-content">
+                                <h4>Are you sure you want to delete this review?</h4>
+                            </div>
+                                <div class="modal-footer">
+                                    <a href="#!" class="modal-close waves-effect waves-green btn-flat green-button">Cansel</a>
+                                    <a href="{{ url_for('delete_review', review_id=review._id) }}"
+                                        class="modal-close waves-effect waves-green btn-flat pink-button">Delete</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-                {% endif %}
+            </div>
+            {% endif %}
             {% endfor %}
         </div>
     </div>

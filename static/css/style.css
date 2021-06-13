@@ -49,11 +49,16 @@ h2 {
     color: #0F292F;
 }
 
+.green-button:hover {
+    background-color: #1db6ae;
+}
+
 .pink-button{
     background-color: #cb2d6f;
     font-family: "Raleway", sans-serif;
     font-weight: 600;
     border-radius: 5px;
+    color: #fff;
 }
 
 .pink-button:hover {
@@ -96,6 +101,13 @@ input {
 
 .title-name {
     font-size: 16pt !important;
+}
+
+/* reviews card */
+
+.review-card {
+    background-color: #501f3a;
+    overflow-wrap: break-word;
 }
 
 /* flash messages */
@@ -184,13 +196,20 @@ input {
     margin-bottom: 10px;
 }
 
-.review-card {
-    background-color: #501f3a;
-    overflow-wrap: break-word;
-}
-
 .review-buttons {
     margin-bottom: 10px;
+}
+
+.modal {
+    background-color: #cccccc;
+}
+
+.modal-footer {
+    background-color: #cccccc !important;
+}
+
+.modal h4 {
+    color: #0F292F;
 }
 
 /* selected game title */ 

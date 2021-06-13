@@ -3,11 +3,10 @@ $(document).ready(function () {
     edge: "right"
   });
   $('select').formSelect();
-
-  validateMaterializeSelect();
-
+  $('.modal').modal();
   // Validation for select fields in forms. 
-  // Code taken from Code institute lesson. 
+  // Code taken from Code institute lesson.   
+  validateMaterializeSelect();
   function validateMaterializeSelect() {
     let classValid = {
       "border-bottom": "1px solid #4caf50",
