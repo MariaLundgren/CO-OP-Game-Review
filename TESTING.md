@@ -241,6 +241,32 @@ gets added to the titles collection in mongodb.
 
 ## Responsiveness 
 
+To test the responsiveness Chrome and Mozilla Firefox DevTools have been used.
+
+In Chrome DevTools following devices have been tested for responsiveness: 
+
+- Moto 4
+- Galaxy S5
+- Pixel 2
+- Pixel 2 XL
+- iPhone 5/SE
+- iPhone 6/7/8
+- iPhone 6/7/8 Plus
+- iPhone X
+- iPad
+- iPad Pro
+- Surface Duo
+- Galaxy Fold
+
+In Mozilla Firefox following devices have been tested for responsiveness:
+
+- Galaxy S9/S9+
+- iPad
+- iPhone 6/7/8
+- iPhone 6/7/8 Plus
+- iPhone X/XS
+- Kindle Fire HDX
+
 ## Browsers 
 
 The website is tested in following browsers: 
@@ -254,7 +280,6 @@ The website is tested in following browsers:
 Not supported browsers:
 
 - Internet Explorer
-
 
 ## Performance with lighthouse 
 
