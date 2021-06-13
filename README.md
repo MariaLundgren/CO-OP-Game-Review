@@ -171,7 +171,52 @@ The reviews are connected to the game titles by the title_id which is added to t
 
 For lenth reasons the testing part is in a sepeate document. Click [here](TESTING.md) to go to the testing document.
 
-# Deployment 
+# Deployment
+
+## Deploy 
+
+Start with seting up the files that heroku needs to run the application. In your terminal write: 
+- `pip3 freeze --local > requirements.txt`
+- `eco web: python app.py > Procfile`
+- `git add requirements.txt`
+- `git commit -m "Added requirements.txt"`
+- `git add Procfile`
+- `git commit -m "Added Procfile"`
+- `git push`
+
+Create a new app on heroku. 
+- Create an account on Heroku if you don't have one. 
+- Log in to your Heroku account and to the right on the screen and choose **Create New App**.
+- Fill in a unique name in the app name text field. 
+- Choose the region closest to you in the choose a region dropdown list. 
+- Click on **Create App**. 
+
+Set up automatic deplyment from your GitHub repository. 
+- On your heroku app under the deploy tap click on **Connect To GitHub**. 
+- Make sure your hitHub profile is displayed. 
+- Add the name of the GitHub repository in the search field and click on **Search**. 
+- When your reposity has been found click on **Connect**. 
+
+Add your environment variables to heroku. 
+- Still in your keroku app click on the setting tab. 
+- And then click on **Reveal Config Vars**.
+- Now you fill in the information from your env.py file. Fill in the IP, PORT, SECRET_KEY, MONGO_URI and MONGO_DBNAME. 
+
+Now go back to heroku to enable deplyment. 
+- In you heroku app under the deply tap click on **Enable Automatic Deploys**. 
+- And then choose the master branch and click on **Deploy Branch**. 
+- Now heroku will receive the code from GitHub and start bulding the app, this can take a few minutes to build. 
+- When it is done you see the message "Your app was successfully deployed."
+- Beneath the success message click on **View** to launch your new app.
+- Now your deplyed site is avalible and will update when you push changes to the GitHub repository. 
+
+## Run code locally
+
+- Find the repository you want and click on it.
+- Above all the files in the repository click on the green Gitpod button.
+- This opens a new copy of the workspace on Gitpod. You should only do this once and then you can access the workspace directly from Gitpod. If you press the green Gitpod button again it will create a new copy of the workspace on Gitpod.
+- You can now edit the workspace locally.
+- If you want to open a preview window of the workspace in the browser you can type in the command: `python3 app.py` in the terminal and then click open browser in the pop-up window down to the right.
 
 # Credits 
 
