@@ -243,6 +243,19 @@ gets added to the titles collection in mongodb.
 
 ## Browsers 
 
+The website is tested in following browsers: 
+
+- Google Chrome
+- Microsoft Edge 
+- Opera
+- Safari 
+- Mozilla Firefox
+
+Not supported browsers:
+
+- Internet Explorer
+
+
 ## Performance with lighthouse 
 
 ## Bugs 
