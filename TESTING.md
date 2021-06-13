@@ -182,8 +182,24 @@ gets added to the reviews collection in mongodb.
 ### New Title 
 
 #### User stories testing New title
+
 - I want to be able to add a new game title. 
     - On the add game title a registred user that are logged in can add a game title to the website. 
+
+
+#### Manual testing of New Title 
+
+- Trying to add a game title without filling out the title field and a message appears to fill out this field. 
+- Trying to add a game title with the title field beeing less than five charachters and a message appears that the text needs to be five charachters or more.
+- Trying to add a game title without filling out the image URL field and a message appears to fill out this field. 
+- Trying to add a game title without filling out the description field and a message appears to fill out this field. 
+- Trying to add a game title with the description field beeing less than 20 charachters and a message appears that the text needs to be 20 charachters or more.
+- Trying to add a game title without chosing at least one console and a message appears to select an item from the list. 
+- Trying to add a game title without chosing at least one option in coop experience  and a message appears to select an item from the list. 
+- Trying to add a game title with all field filled out correcttly and the user gets redirected back to the selected game title page,
+a flash message appear with the text "Game title added", the game title are added and the game title
+gets added to the titles collection in mongodb.
+- - Saving the url for the add game title page and tries to access it after logging out and this redirects the user to the log in page.
 
 ### Edit Title
 
