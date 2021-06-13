@@ -181,6 +181,10 @@ gets added to the reviews collection in mongodb.
 
 ### New Title 
 
+#### User stories testing New title
+- I want to be able to add a new game title. 
+    - On the add game title a registred user that are logged in can add a game title to the website. 
+
 ### Edit Title
 
 ### Title
