@@ -228,6 +228,10 @@ gets added to the titles collection in mongodb.
 
 ### Title
 
+#### User stories testing Title 
+
+- I want to be able to see the reviews and titles that others have posted.
+    - On the titles page the user can see all the avalible information on a specific game title and all the reviews that have been added to that specific game title.
 
 
 ## Responsiveness 
