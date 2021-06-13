@@ -161,9 +161,14 @@ own edit profile page.
 - Trying to add a review with both field filled out correcttly and the user gets redirected back to the selected game title page,
 a flash message appear with the text "review added", the review are added underneath the game title with the rating and the review
 gets added to the reviews collection in mongodb.
-- Saving the url for the add a review page and tries to access it after logging out and this brings the redirects to the log in page. 
+- Saving the url for the add a review page and tries to access it after logging out and this brings the redirects to the log in page.
 
 ### Edit Review
+
+#### User stories testing New Review
+
+-	I want to be able to edit game reviews that I have already posted.
+    -    On the edit review page the user can change a review and rating that has been added by the user. 
 
 ### New Title 
 
