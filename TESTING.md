@@ -149,6 +149,20 @@ own edit profile page.
 
 ### New Review
 
+#### User stories testing New Review
+- I want to be able write my own game reviews. 
+    - On the add review page a registered user that are logged in to their account can add a review to a game title and
+    add a rating from one to five.
+
+#### Manual testing of Edit Profile
+- Trying to add a review without filling out the review field and a message appears to fill out this field. 
+- Trying to add a review with less than 20 charachters and a message appears that the text needs to be 20 charachters or more. 
+- Trying to add a review without chhosing a rating and a message appers that i need to select one item from the list. 
+- Trying to add a review with both field filled out correcttly and the user gets redirected back to the selected game title page,
+a flash message appear with the text "review added", the review are added underneath the game title with the rating and the review
+gets added to the reviews collection in mongodb.
+- Saving the url for the add a review page and tries to access it after logging out and this brings the redirects to the log in page. 
+
 ### Edit Review
 
 ### New Title 
