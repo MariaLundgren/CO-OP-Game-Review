@@ -195,13 +195,32 @@ gets added to the reviews collection in mongodb.
 - Trying to add a game title without filling out the description field and a message appears to fill out this field. 
 - Trying to add a game title with the description field beeing less than 20 charachters and a message appears that the text needs to be 20 charachters or more.
 - Trying to add a game title without chosing at least one console and a message appears to select an item from the list. 
-- Trying to add a game title without chosing at least one option in coop experience  and a message appears to select an item from the list. 
+- Trying to add a game title without chosing at least one option in coop experience and a message appears to select an item from the list. 
 - Trying to add a game title with all field filled out correcttly and the user gets redirected back to the selected game title page,
 a flash message appear with the text "Game title added", the game title are added and the game title
 gets added to the titles collection in mongodb.
-- - Saving the url for the add game title page and tries to access it after logging out and this redirects the user to the log in page.
+- Saving the url for the add game title page and tries to access it after logging out and this redirects the user to the log in page.
+-  Saving the url for the title page page as one user and tries to access it after loggin in as a differnt user and this redirects the user to the home page with a flash message "You don't have access to the page you tried to visit" shows.
+- Saving the url for the game title page for one game title that then are deleted and try to access the url and the user gets redirected back to the home page with a flash message "The title you are trying to edit don't exist" shows. 
 
 ### Edit Title
+
+#### User stories testing Edit Title
+
+- I want to be able to edit a game title that I have added.
+    - On the edit title page the user can make changes on a game title that has been added by the user. 
+
+#### Manual testing of Edit Title
+
+- Trying to delete the test in title field and save the changes on the game title and a message appears to fill out this field.
+- Trying to change the title field to be less than five characthers and a message appears that the text needs to be five charachters or more.
+- Trying to delete the text in image URL field and save the changes on the game title and a message appears to fill out this field.
+- Trying to delete the text in description field and save the changes on the game title and a message appears to fill out this field.
+- Trying to change the description field to be less than 20 characthers and a message appears that the text needs to be 20 charachters or more.
+- Trying to take away the choosen consoles and save the changes on the game title and a message appears to select an item from the list.
+- Trying to take away the choosen coop experience and save the changes on the game title and a message appears to select an item from the list.
+- Trying to edit a game title with all fields filled out and save the changed and the user gets redirected back to the profile page, a flash message appears with the text "title updated", the game title has been changed and the changes gets added to the titles in mongodb. 
+- Saving the url for the edit title page and tries to access it after logging out and this redirects the user to the log in page.
 
 ### Title
 
