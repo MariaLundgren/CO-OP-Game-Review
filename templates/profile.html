@@ -35,7 +35,7 @@
                                 <div>
                                     <p class="inline-elements">Consoles:</p>
                                     {% for console in title.consoles %}
-                                        <p class="inline-elements">{{ console }}</p>
+                                        <p class="inline-elements">{{ console }}{{ "," if not loop.last }}</p>
                                     {% endfor %}
                                 </div>
                                 <div>
