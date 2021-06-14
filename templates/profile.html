@@ -80,8 +80,8 @@
             {% if session.user|lower == review.created_by|lower %}
             <div class="card review-card">
                 <div class="card-content">
-                    <p>Review: {{ review.review }}</p>
                     <p class="rating"><i class="material-icons inline-elements star-icon">star</i> {{ review.rating }}</p>
+                    <p>Review: {{ review.review }}</p>
                     <p>Created by: {{ review.created_by }}</p>
                     <div class="center-align">
                         <a href="{{ url_for('edit_review', review_id=review._id) }}"
