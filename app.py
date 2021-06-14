@@ -32,7 +32,7 @@ def get_titles():
     title_ratings = list(mongo.db.reviews.aggregate([
                 {"$group": {
                     "_id": "$title_id",
-                        "avg_rating": {"$avg": "$rating"}}}
+                    "avg_rating": {"$avg": "$rating"}}}
                 ]))
     return render_template("titles.html",
                            titles=titles,
@@ -103,7 +103,7 @@ def selected_game_title(title_id):
     title_ratings = list(mongo.db.reviews.aggregate([
                 {"$group": {
                     "_id": "$title_id",
-                        "avg_rating": {"$avg": "$rating"}}}
+                    "avg_rating": {"$avg": "$rating"}}}
                 ]))
     return render_template("selected_game_title.html",
                            title=title, reviews=reviews,
@@ -223,13 +223,15 @@ def edit_profile():
     '''
     if "user" in session:
         username = mongo.db.users.find_one(
-        {"username": session["user"]})
+            {"username": session["user"]})
         if request.method == "POST":
             user_update = {"$set":
-                {
-                    "profile_image_url": request.form.get("profile_image_url"),
-                    "favourite_game": request.form.get("favourite_game")
-                }}
+                           {
+                            "profile_image_url": request.form.get(
+                                "profile_image_url"),
+                            "favourite_game": request.form.get(
+                                "favourite_game")
+                           }}
             mongo.db.users.update({"username": session["user"]}, user_update)
             flash("Profile Updated")
             return redirect(url_for("profile"))
@@ -313,11 +315,12 @@ def edit_review(review_id):
             if review['created_by'] == session["user"]:
                 if request.method == "POST":
                     review_update = {"$set":
-                    {
-                        "review": request.form.get("review"),
-                        "rating": int(request.form.get("rating")),
-                        "created_by": session["user"]
-                    }}
+                                     {
+                                        "review": request.form.get("review"),
+                                        "rating": int(request.form.get(
+                                            "rating")),
+                                        "created_by": session["user"]
+                                     }}
                     mongo.db.reviews.update(
                         {"_id": ObjectId(review_id)}, review_update)
                     flash("Review Updated")
