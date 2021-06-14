@@ -264,19 +264,6 @@ gets added to the titles collection in mongodb.
 
 ![screenshot of edit title page](static/images/edit-title.jpg)
 
-### Title
-
-#### User stories testing Title 
-
-- I want to be able to see the reviews and titles that others have posted.
-    - On the titles page the user can see all the avalible information on a specific game title and all the reviews that have been added to that specific game title.
-
-#### Manual testing of Title
-
-- Visiting the title page as an anonymous and the button to add a review to the game title don't show. 
-. Visting the user as a registered user logged in to teir account and th button to add a review to the game title shows. 
-- Clicking on the add review button and this takes the user to the page to add a review to that game title. 
-
 ## Responsiveness 
 
 To test the responsiveness Chrome and Mozilla Firefox DevTools have been used.
