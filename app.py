@@ -314,7 +314,7 @@ def edit_review(review_id):
                 if request.method == "POST":
                     submit = {
                         "review": request.form.get("review"),
-                        "rating": request.form.get("rating"),
+                        "rating": int(request.form.get("rating")),
                         "created_by": session["user"]
                     }
                     mongo.db.reviews.update(
