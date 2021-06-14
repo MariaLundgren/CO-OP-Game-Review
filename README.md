@@ -1,3 +1,9 @@
+# CO-OP Game Review
+
+![mockups of the homepage on different devices](static/images/mockup.jpg)
+
+Co-op Game Review is a community based website where users can share game titles and reviews of co-op games with eachother. The website is created educational purposes only.
+
 # UX
 
 ## Strategy
