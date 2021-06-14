@@ -2,6 +2,19 @@
 
 ## Validation 
 
+- To thest the HTML the [W3C Markup Validation Service] was used. 
+
+- To test the CSS the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used. 
+    - The CSS validator showed no errors or warnings.
+
+    ![printscreen of css validator output](static/images/css-validation.jpg)
+- To test JQuery [JSHint](https://jshint.com/) was used. 
+    - JSHint showed no errors or warnings. 
+
+    ![printscreen of JSHint output](static/images/jshint.jpg)
+
+- Pylint was used to test the Python code.
+
 ## Features 
 
 ### Navbar
