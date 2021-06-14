@@ -1,5 +1,5 @@
 '''
-This file connects the website to the database.
+This file handels all the connections to the database.
 '''
 import os
 from flask import (
