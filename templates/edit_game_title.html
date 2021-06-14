@@ -33,10 +33,10 @@
             <div class="row">
                 <div class="input-field col s12 m3 offset-m3">
                     <select id="consoles" name="consoles" class="validate" multiple required>
-                        <option value="PS" {% if "PS" in title.consoles %} selected {% endif %}>PS</option>
+                        <option value="PS" {% if "PlayStation" in title.consoles %} selected {% endif %}>PlayStation</option>
                         <option value="Xbox" {% if "Xbox" in title.consoles %} selected {% endif %}>X-box</option>
-                        <option value="Nintendo Switch" {% if "Nintendo Switch" in title.consoles %} selected {% endif %}>
-                            Nintendo Switch</option>
+                        <option value="Nintendo Switch" {% if "Nintendo" in title.consoles %} selected {% endif %}>
+                            Nintendo</option>
                         <option value="PC" {% if "PC" in title.consoles %} selected {% endif %}>PC</option>
                         <option value="Other" {% if "Other" in title.consoles %} selected {% endif %}>Other</option>
                     </select>
