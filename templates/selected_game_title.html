@@ -12,10 +12,10 @@
                 <div class="card-content">
                     <span class="card-title">{{ title.title_name }}</span>
                     <div>
-                        <i class="material-icons inline-elements">star</i>
+                        <i class="material-icons inline-elements star-icon">star</i>
                         {% for avg_rating in title_ratings %}
                             {% if avg_rating._id == title._id|string %}
-                                <p class="inline-elements">{{ '%0.1f'|format(avg_rating.avg_rating) }}</p>
+                                <p class="inline-elements rating">{{ '%0.1f'|format(avg_rating.avg_rating) }}</p>
                             {% endif %}
                         {% endfor %}
                     </div>
@@ -52,8 +52,8 @@
             {% for review in reviews %}
                 <div class="card review-card">
                     <div class="card-content">
-                        <i class="material-icons inline-elements">star</i>
-                        <p class="inline-elements">{{ review.rating }}</p>
+                        <i class="material-icons inline-elements star-icon">star</i>
+                        <p class="inline-elements rating">{{ review.rating }}</p>
                         <p>{{ review.review }}</p>
                         <p>Created by: {{ review.created_by }}</p>
                     </div>

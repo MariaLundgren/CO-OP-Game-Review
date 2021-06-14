@@ -122,6 +122,16 @@ input {
     overflow-wrap: break-word;
 }
 
+/* rating */
+
+.rating {
+    font-size: 18pt;
+}
+
+.star-icon {
+    font-size: 12pt;
+}
+
 /* flash messages */
 
 .flash-messages {
