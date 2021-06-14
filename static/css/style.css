@@ -299,13 +299,13 @@ input {
 }
 
 @media screen and (min-width: 996px) and (max-width: 1600px) {
-    .title-card {
+    .title-cards {
         height: 550px;
     }
 }
 
 @media (min-width: 1600px) {
-    .title-card {
+    .title-cards {
         height: 600px;
     }
 }
