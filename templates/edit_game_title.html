@@ -35,8 +35,7 @@
                     <select id="consoles" name="consoles" class="validate" multiple required>
                         <option value="PS" {% if "PlayStation" in title.consoles %} selected {% endif %}>PlayStation</option>
                         <option value="Xbox" {% if "Xbox" in title.consoles %} selected {% endif %}>X-box</option>
-                        <option value="Nintendo Switch" {% if "Nintendo" in title.consoles %} selected {% endif %}>
-                            Nintendo</option>
+                        <option value="Nintendo Switch" {% if "Nintendo" in title.consoles %} selected {% endif %}>Nintendo</option>
                         <option value="PC" {% if "PC" in title.consoles %} selected {% endif %}>PC</option>
                         <option value="Other" {% if "Other" in title.consoles %} selected {% endif %}>Other</option>
                     </select>
@@ -47,10 +46,8 @@
             <div class="row">
                 <div class="input-field col s12 m3 offset-m3">
                     <select id="co_op_type" name="co_op_type" class="validate" multiple required>
-                        <option value="Local" {% if "Local" in title.co_op_type %} selected="selected" {% endif %}>Local
-                        </option>
-                        <option value="Online" {% if "Online" in title.co_op_type %} selected="selected" {% endif %}>Online
-                        </option>
+                        <option value="Local" {% if "Local" in title.co_op_type %} selected="selected" {% endif %}>Local</option>
+                        <option value="Online" {% if "Online" in title.co_op_type %} selected="selected" {% endif %}>Online</option>
                     </select>
                     <label for="co_op_type">Coop Experience</label>
                 </div>
