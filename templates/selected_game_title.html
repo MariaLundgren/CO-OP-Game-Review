@@ -36,10 +36,11 @@
                     <p>Created by: {{ title.created_by }}</p>
                     <!-- add review button-->
                     {% if session.user %}
-                    <div class="center-align">
-                        <a href="{{ url_for('add_review', title_id=title._id) }}" class="btn green-button review-button">Add review</a>
-                    </div>
-                {% endif %}
+                        <div class="center-align">
+                            <a href="{{ url_for('add_review', title_id=title._id) }}"
+                                class="btn green-button review-button">Add review</a>
+                        </div>
+                    {% endif %}
                 </div>
             </div>
         </div>

@@ -4,10 +4,10 @@
     <!-- hero img-->
     <div class="row">
         <div class="col s12 m6 offset-m3">
-            <img src="{{ url_for('static', filename='images/hero4.png') }}" class="hero-img" alt="name of website with triangles, circles and lightning bolts around"/>
+            <img src="{{ url_for('static', filename='images/hero4.png') }}" class="hero-img"
+                alt="name of website with triangles, circles and lightning bolts around" />
         </div>
     </div>
-
     <!--serach -->
     <div class="row">
         <form action="{{ url_for('search') }}" method="POST">
@@ -22,50 +22,49 @@
             </div>
         </form>
     </div>
-
     <!-- game titles -->
     {% if titles|length >= 1 %}
         <div class="row">
             <div class="offset">
-            {% for title in titles %}
-                <div class="col s12 m6 xl4">
-                    <a href="{{ url_for('selected_game_title', title_id=title._id) }}">
-                        <div class="card title-card title-cards hoverable">
-                            <div class="card-image">
-                                <img src="{{ title.image_url }}" alt="image of game title">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title title-name">{{ title.title_name }}</span>
-                                <div>
-                                    <i class="material-icons inline-elements star-icon">star</i>
-                                    {% for avg_rating in title_ratings %}
-                                        {% if avg_rating._id == title._id|string %}
-                                            <p class="inline-elements rating">{{ '%0.1f'|format(avg_rating.avg_rating) }}</p>
-                                        {% endif %}
-                                    {% endfor %}
+                {% for title in titles %}
+                    <div class="col s12 m6 xl4">
+                        <a href="{{ url_for('selected_game_title', title_id=title._id) }}">
+                            <div class="card title-card title-cards hoverable">
+                                <div class="card-image">
+                                    <img src="{{ title.image_url }}" alt="image of game title">
                                 </div>
-                                <div>
-                                    <p class="inline-elements">Consoles:</p>
+                                <div class="card-content">
+                                    <span class="card-title title-name">{{ title.title_name }}</span>
+                                    <div>
+                                        <i class="material-icons inline-elements star-icon">star</i>
+                                        {% for avg_rating in title_ratings %}
+                                            {% if avg_rating._id == title._id|string %}
+                                                <p class="inline-elements rating">{{ '%0.1f'|format(avg_rating.avg_rating) }}</p>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </div>
+                                    <div>
+                                        <p class="inline-elements">Consoles:</p>
                                         {% for console in title.consoles %}
                                             <p class="inline-elements">{{ console }}</p>
                                         {% endfor %}
-                                </div>
-                                <div>
-                                    <p class="inline-elements">Co-op type:</p>
+                                    </div>
+                                    <div>
+                                        <p class="inline-elements">Co-op type:</p>
                                         {% for co_op_type in title.co_op_type %}
                                             <p class="inline-elements">{{ co_op_type }}</p>
                                         {% endfor %}
-                                    <p>Created by: {{ title.created_by }}</p>    
+                                        <p>Created by: {{ title.created_by }}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
-                </div>
-            {% endfor %}
-        </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
         {% else %}
-            <p class="search-error center-align">Couldn't find game title.</p>
+        <p class="search-error center-align">Couldn't find game title.</p>
     {% endif %}
 
 {% endblock %}
