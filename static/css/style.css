@@ -247,6 +247,7 @@ input {
 
 .selected-game-title {
     background-color: #501f3a;
+    overflow-wrap: break-word;
 }
 
 /* titles */ 
