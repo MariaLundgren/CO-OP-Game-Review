@@ -52,7 +52,7 @@
                                     <div>
                                         <p class="inline-elements">Co-op type:</p>
                                         {% for co_op_type in title.co_op_type %}
-                                            <p class="inline-elements">{{ co_op_type }}</p>
+                                            <p class="inline-elements">{{ co_op_type }} {{ "and" if not loop.last }}</p>
                                         {% endfor %}
                                         <p>Created by: {{ title.created_by }}</p>
                                     </div>
