@@ -79,6 +79,18 @@ input {
     fill: #cccccc !important;
 }
 
+#co_op_type {
+    border: #0F292F;
+}
+
+#consoles {
+    border: #0f292F;
+}
+
+#rating {
+    border: #0f292F;
+}
+
 /* title card */ 
 
 .title-card {
