@@ -237,6 +237,7 @@ Now go back to heroku to enable deplyment.
 - In [this](https://stackoverflow.com/questions/46144767/how-to-format-a-float-number-in-python-flask-and-jinja) thred on Stack Overflow I found how to format my average rating on the game titles card so that it rounds the number to one decimal.  
 - I used [this](https://www.youtube.com/watch?v=Kk6Er0c7srU) YouTube video to understand aggregation and grouping to be able to calculate the avrage ratings for the game titles from the reviews. 
 - In [this](https://stackoverflow.com/questions/11974318/how-to-output-a-comma-delimited-list-in-jinja-python-template) thred on Stack Overflow I found this code `{{ "," if not forloop.last }}` for adding in commas between the consoles and "and" if co-op type is both local and online but not if it is the last item in the array from db. 
+- I tokk the scale hover effect from [this](https://css-tricks.com/snippets/css/scale-on-hover-with-webkit-transition/) website, to make the game titles card scale when hovering over them. 
 
 ## Media 
 
