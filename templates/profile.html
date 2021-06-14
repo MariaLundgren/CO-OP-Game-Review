@@ -25,7 +25,7 @@
             {% if session.user|lower == title.created_by|lower %}
                 <div class="col s12 l6 xl4">
                     <a href="{{ url_for('selected_game_title', title_id=title._id) }}">
-                        <div class="card title-card title-cards hoverable">
+                        <div class="card title-cards hoverable">
                             <div class="card-image">
                                 <img src="{{ title.image_url }}">
                             </div>

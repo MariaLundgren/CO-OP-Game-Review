@@ -93,12 +93,9 @@ input {
 
 /* title card */ 
 
-.title-card {
-    background-color: #501f3a;
-}
-
 .title-cards {
     overflow-wrap: break-word;
+    background-color: #501f3a;
 }
 
 .card-title {
