@@ -222,6 +222,28 @@ Now go back to heroku to enable deplyment.
 
 ## Code 
 
+- In this project I have used the Code Institute Educational material for the fondation and then bult my own code upon that, [Tim Nelson's Flask Task Manager Project](https://github.com/TravelTimN/flask-task-manager-project/tree/demo) The login, registration and log out function is completely taken from this. I have also taken the form validation for Materialize forms from this material.
+-  I have used [Materialize](https://materializecss.com/) in this project to make the website responsive and to style objects, and then i have customized the components used to fit my project. I have used materialize for the following:
+    - For the navbar and mobile side nav. 
+    - For the footer and css code to body and main to make the footer always stay at the bottom of the page. 
+    - For the cards that holds game titles and reviews. 
+    - For all the forms, to add edit, register and login. 
+    - For the modals when clicking on a delete button. 
+    - For buttons.
+    - For most of the icons.
+- I used [this](https://www.makeschool.com/mediabook/oa/tutorials/playlistr-video-playlists-with-flask-and-mongodb-1c/adding-route-for-comments/) tutorial to better understand how to assosciate a review with a specific game title through the title_id. It is from this that i got the idea to make a hidden form field that adds the title_id to the review when it's created to make a connection between the review and game title.
+- In [this](https://stackoverflow.com/questions/12196885/text-flowing-out-of-div) thred on Stack Overflow I found this `overflow-wrap: break-word;` that is added to the cards holding the game titles and reviews so that the text don't go outside the card if someone adds in a log text with no spaces in it. 
+- In [this](https://stackoverflow.com/questions/46144767/how-to-format-a-float-number-in-python-flask-and-jinja) thred on Stack Overflow I found how to format my average rating on the game titles card so that it rounds the number to one decimal.  
+- I used [this](https://www.youtube.com/watch?v=Kk6Er0c7srU) YouTube video to understand aggregation and grouping to be able to calculate the avrage ratings for the game titles from the reviews. 
+
 ## Media 
+
+- Hero image from [freepik](https://www.freepik.com/vectors/banner) created by freepik.
+- Image used for 404 and 500 error page from [freepik](https://www.freepik.com/vectors/background) created by freepik.
+
+Images for game titles added: 
+- Image for Rayman Legends taken from flickr by [Jorge Figueroa](https://www.flickr.com/photos/jiff01/10936113976/in/photostream/), link to [license](https://creativecommons.org/licenses/by/2.0/legalcode).
+- Image for Unravel 2 taken from flickr by [PlayStation Europe](https://www.flickr.com/photos/playstationblogeurope/41739937825/in/photostream/), link to [license](https://creativecommons.org/licenses/by-nc/2.0/legalcode).
+- Image for A Way Out taken from flickr by [BagoGames](https://www.flickr.com/photos/bagogames/27157402518), link to [license](https://creativecommons.org/licenses/by/2.0/legalcode)
 
 ## Acknowledgements 
