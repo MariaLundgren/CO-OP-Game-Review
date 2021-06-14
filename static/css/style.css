@@ -96,6 +96,11 @@ input {
 .title-cards {
     overflow-wrap: break-word;
     background-color: #501f3a;
+    transition: all .1s ease-in-out;
+}
+
+.title-cards:hover { 
+    transform: scale(1.02); 
 }
 
 .card-title {
