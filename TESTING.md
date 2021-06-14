@@ -46,6 +46,8 @@
 - Hovering over the contact link and social icons to make sure they become lighter when hovering over them.
 - This was repeated on all pages to make sure the footer works on every page.
 
+![screenshot of footer](static/images/footer.jpg)
+
 ### Home
 
 #### User stories testing Home 
@@ -61,6 +63,8 @@ Also tested to search in all lower and uppercase to see that this also works, an
 - Clicking on the restet button after a search and this shows all tha added game titles again, as expected. 
 - Clicking on the card of a geme title brings me to the selected game title page of that specific title.
 
+![screenshot of home page](static/images/home.jpg)
+
 ### Selected Game Title
 
 #### User stories testing Selected Game Title
@@ -75,6 +79,9 @@ Also tested to search in all lower and uppercase to see that this also works, an
 - Visit the site as a regitred user that are logged in to their account and the add a review button is visible. 
 - Hovering over add review button to make sure it become lighter when hovering over.
 - Clicking on add review button and this brings the user to the add review page.
+
+![screenshot of selected game title page](static/images/selected-game-title-1.jpg)
+![screenshot of selected game title page](static/images/selected-game-title-2.jpg)
 
 ### Log In
 
@@ -92,6 +99,8 @@ Also tested to search in all lower and uppercase to see that this also works, an
 - Trying to log in with the wrong username and the wrong password the flash message "Incorrect username and/or password" appears.
 - Trying to log in with an existing user and correct password and this brings me to the profile page of this user,
 and shows flash message "Welcome, username". 
+
+![screenshot of log in page](static/images/log-in.jpg)
 
 ### Register
 
@@ -113,6 +122,8 @@ and shows flash message "Welcome, username".
 - Trying to register a password with a charachter that is not allowed and a message appears that the username must match requested format. 
 - Trying to register a user with a username that already exist in the db and flash message "Username already exist. Please choose another username." appears. 
 - Trying to register with all the forms filled out correctlly and the user gets redirect to their profile page with the flash message "Registration Successful" showing, and the user gets added to the users collection in mongodb. 
+
+![screenshot of register page](static/images/register.jpg)
 
 ### Profile
 
@@ -140,6 +151,9 @@ and shows flash message "Welcome, username".
 - Saving the url for a logged in users profile page and tries to access it after logging out and this redirects the user to the log in page.
 - Saving the url for a logged in users profile page and tries to access it after logging in as a different user and this brings the user to their own profile page.
 
+![screenshot of profile page](static/images/profile-1.jpg)
+![screenshot of profile page](static/images/profile-2.jpg)
+
 ### Edit Profile
 
 #### User stories testing Edit Prfofile
@@ -160,6 +174,9 @@ and the favourite game is stored on the user in the db.
 - Saving the url for the edit profile page and tries to access it after logging in as a different user and this brings the user to their
 own edit profile page. 
 
+![screenshot of profile with edit button page](static/images/edit-profile-1.jpg)
+![screenshot of profile page](static/images/edit-profile-2.jpg)
+
 ### New Review
 
 #### User stories testing New Review
@@ -175,6 +192,8 @@ own edit profile page.
 a flash message appear with the text "review added", the review are added underneath the game title with the rating and the review
 gets added to the reviews collection in mongodb.
 - Saving the url for the add a review page and tries to access it after logging out and this redirects the user to the log in page.
+
+![screenshot of add review page](static/images/add-review.jpg)
 
 ### Edit Review
 
@@ -193,6 +212,8 @@ gets added to the reviews collection in mongodb.
 - Saving the url for the edit review page and tries to access it after logging out and this redirects the user to the log in page.
 -  Saving the url for the edit review page as one user and tries to access it after loggin in as a differnt user and this redirects the user to the home page with a flash message "You don't have access to the page you tried to visit" shows.
 - Saving the url for the edit a review page for one review that then are deleted and try to access the url and the user gets redirected back to the home page with a flash message "The review you are trying to edit don't exist" shows. 
+
+![screenshot of edit review page](static/images/edit-review.jpg)
 
 ### New Title 
 
@@ -218,6 +239,8 @@ gets added to the titles collection in mongodb.
 -  Saving the url for the title page page as one user and tries to access it after loggin in as a differnt user and this redirects the user to the home page with a flash message "You don't have access to the page you tried to visit" shows.
 - Saving the url for the game title page for one game title that then are deleted and try to access the url and the user gets redirected back to the home page with a flash message "The title you are trying to edit don't exist" shows. 
 
+![screenshot of add title page](static/images/add-title.jpg)
+
 ### Edit Title
 
 #### User stories testing Edit Title
@@ -238,6 +261,8 @@ gets added to the titles collection in mongodb.
 - Trying to take away the choosen coop experience and save the changes on the game title and a message appears to select an item from the list.
 - Trying to edit a game title with all fields filled out and save the changed and the user gets redirected back to the profile page, a flash message appears with the text "title updated", the game title has been changed and the changes gets added to the titles in mongodb. 
 - Saving the url for the edit title page and tries to access it after logging out and this redirects the user to the log in page.
+
+![screenshot of edit title page](static/images/edit-title.jpg)
 
 ### Title
 
