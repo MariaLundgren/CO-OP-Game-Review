@@ -15,16 +15,16 @@
     <title>Document</title>
 </head>
 
+<!-- header -->
 <header>
-    <!-- navbar from materialized -->
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper">
                 <a href="{{ url_for('get_titles') }}" class="brand-logo">
                     <h1 class="green-text logo">CO-OP GR</h1>
                 </a>
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i
-                        class="material-icons green-text">dehaze</i></a>
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
+                    <i class="material-icons green-text">dehaze</i></a>
                 <ul class="right hide-on-med-and-down nav-links">
                     <li><a href="{{ url_for('get_titles')}}" class="green-text">Home</a></li>
                     {% if session.user %}
@@ -39,8 +39,6 @@
             </div>
         </nav>
     </div>
-
-    <!-- mobile collapsable nav from materialized -->
     <ul class="sidenav green-text" id="mobile-demo">
         <li><a href="{{ url_for('get_titles')}}">Home</a></li>
         {% if session.user %}
@@ -54,8 +52,8 @@
     </ul>
 </header>
 
+<!-- body -->
 <body>
-
     <!-- flash messages -->
     <div>
         {% with messages = get_flashed_messages() %}
@@ -71,6 +69,7 @@
         {% endwith %}
     </div>
 
+    <!-- main -->
     <main>
         {% block content %}
         {% endblock %}
