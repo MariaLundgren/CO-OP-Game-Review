@@ -93,6 +93,8 @@ input {
 
 /* title card */ 
 
+/* overflow-wrap: break-word; found on Stack Overlow, see readme for more information and link */
+/* took the scale hover effect from css-tricks, see readme for more information and link */ 
 .title-cards {
     overflow-wrap: break-word;
     background-color: #501f3a;
@@ -119,6 +121,7 @@ input {
 
 /* reviews card */
 
+/* overflow-wrap: break-word; found on Stack Overlow, see readme for more information and link */
 .review-card {
     background-color: #501f3a;
     overflow-wrap: break-word;
@@ -186,6 +189,7 @@ input {
 
 /* profile */ 
 
+/* overflow-wrap: break-word; found on Stack Overlow, see readme for more information and link */
 .profile-card {
     margin-top: 3rem;
     padding-top: 1rem;
@@ -247,6 +251,7 @@ input {
     margin-top: 20px;
 }
 
+/* overflow-wrap: break-word; found on Stack Overlow, see readme for more information and link */
 .selected-game-title {
     background-color: #501f3a;
     overflow-wrap: break-word;
