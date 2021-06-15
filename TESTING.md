@@ -17,6 +17,8 @@
 
 ## Features 
 
+Below the user stories testing, manual testing and testing of the added security is presented. 
+
 ### Navbar
 
 #### Manual testing of Navbar
