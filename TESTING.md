@@ -283,6 +283,15 @@ gets added to the titles collection in mongodb.
 
 ![screenshot of edit title page](static/images/edit-title.jpg)
 
+### 404
+
+#### Manual testing of 404
+
+- Trying to go to a page that doesn't exist on my website and I come to the 404 page.
+- Clicking on the take me back button and I go back to the homepage of the website.
+
+![screenshot of 404 page](static/images/404.jpg)
+
 ## Responsiveness 
 
 To test the responsiveness Chrome and Mozilla Firefox DevTools have been used.
