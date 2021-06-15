@@ -85,7 +85,7 @@ def add_game_title():
             }
             mongo.db.titles.insert_one(title)
             flash("Game title added.")
-            return redirect(url_for("get_titles"))
+            return redirect(url_for("get_titles", _scheme="https"))
     else:
         return redirect(url_for("log_in"))
     return render_template("add_game_title.html")
@@ -134,7 +134,8 @@ def add_review(title_id):
                 }
             mongo.db.reviews.insert_one(review)
             flash("Review added.")
-            return redirect(url_for("selected_game_title", title_id=title_id))
+            return redirect(url_for(
+                "selected_game_title", _scheme="https", title_id=title_id))
     else:
         return redirect(url_for("log_in"))
     return render_template("add_review.html", title=title)
@@ -240,7 +241,7 @@ def edit_profile():
                            }}
             mongo.db.users.update({"username": session["user"]}, user_update)
             flash("Profile Updated")
-            return redirect(url_for("profile"))
+            return redirect(url_for("profile", _scheme="https"))
 
         mongo.db.users.find_one({"username": session["user"]})
     else:
@@ -273,7 +274,7 @@ def edit_game_title(title_id):
                     }
                     mongo.db.titles.update({"_id": ObjectId(title_id)}, submit)
                     flash("Title Updated")
-                    return redirect(url_for("profile"))
+                    return redirect(url_for("profile", _scheme="https"))
             else:
                 flash(
                     "You don't have access to the page you tried to visit")
@@ -302,7 +303,8 @@ def delete_game_title(title_id):
         flash("Title deleted")
     else:
         return redirect(url_for("get_titles"))
-    return redirect(url_for("profile", username=session["user"]))
+    return redirect(url_for(
+        "profile", username=session["user"], _scheme="https"))
 
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
@@ -330,7 +332,7 @@ def edit_review(review_id):
                     mongo.db.reviews.update(
                         {"_id": ObjectId(review_id)}, review_update)
                     flash("Review Updated")
-                    return redirect(url_for("profile"))
+                    return redirect(url_for("profile", _scheme="https"))
             else:
                 flash(
                     "You don't have access to the page you tried to visit")
@@ -358,7 +360,8 @@ def delete_review(review_id):
         flash("Review deleted")
     else:
         return redirect(url_for("get_titles"))
-    return redirect(url_for("profile", username=session["user"]))
+    return redirect(url_for(
+        "profile", username=session["user"], _scheme="https"))
 
 
 @app.route("/log_out")
