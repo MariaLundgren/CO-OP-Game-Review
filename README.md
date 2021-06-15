@@ -126,7 +126,8 @@ The reviews are connected to the game titles by the title_id which is added to t
 - Profile page 
     - Navbar (described under navbar) 
     - On the profile page the user can see the information they have added to their profile.
-    - Underneath the profile area the user can see all the titles and reviews that they have added to the website and can edit or delete them.  
+    - Underneath the profile area the user can see all the titles and reviews that they have added to the website and can edit or delete them.
+    - When clicking on the delete button for a review or title a modal appears to make sure the user wants to delete item. 
     - Footer (described under footer)
 - Edit profile page 
     - Navbar (described under navbar) 
