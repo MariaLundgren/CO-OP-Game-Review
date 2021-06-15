@@ -251,6 +251,8 @@ Now go back to Heroku to enable deployment.
 Images for game titles added: 
 - Image for Rayman Legends taken from flickr by [Jorge Figueroa](https://www.flickr.com/photos/jiff01/10936113976/in/photostream/), link to [license](https://creativecommons.org/licenses/by/2.0/legalcode).
 - Image for Unravel 2 taken from flickr by [PlayStation Europe](https://www.flickr.com/photos/playstationblogeurope/41739937825/in/photostream/), link to [license](https://creativecommons.org/licenses/by-nc/2.0/legalcode).
-- Image for A Way Out taken from flickr by [BagoGames](https://www.flickr.com/photos/bagogames/27157402518), link to [license](https://creativecommons.org/licenses/by/2.0/legalcode)
+- Image for A Way Out taken from flickr by [BagoGames](https://www.flickr.com/photos/bagogames/27157402518), link to [license](https://creativecommons.org/licenses/by/2.0/legalcode).
+- Image for Trine 4 taken from flickr by [Instacodez](https://www.flickr.com/photos/161227653@N02/47234821902/).
+- Image for Trine 2 taken from Wikimedia Commons by [Frozenbyte](https://commons.wikimedia.org/wiki/File:Trine_2_-_Deadly_Dustland_Three_Heroes.jpg), link to locense(https://creativecommons.org/licenses/by-sa/3.0/legalcode).
 
 ## Acknowledgments
