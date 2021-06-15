@@ -111,8 +111,9 @@ The reviews are connected to the game titles by the title_id which is added to t
 - Selected game title 
     - Navbar (described under navbar) 
     - The selected game title page contains a card with an image of the selected game title and all the information avalible on that title.
-    - If the user are a registred user that are logged in to their account there is also a add review button on the game title where the user can add their own review to that specific game title. 
-    - Underneath the game title all the reviews to that specific game title are presented.
+    - If the user are a registred user that are logged in to their account there is also a add review button on the game title where the user can add their own review to that specific game title.
+    - Underneath the game title all the reviews to that specific game title are presented. If the review are created by the session user option for editing or the deleting the review are presented.
+    - When clicking on the delete button for a review a modal appears to make sure the user wants to delete item. 
 - Log In page
     - Navbar (described under navbar) 
     - The log in page contains a field for filling in your username and password and a button to log in to your account as a registered user.
