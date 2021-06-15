@@ -99,7 +99,7 @@ input {
     transition: all .1s ease-in-out;
 }
 
-.title-cards:hover { 
+.title-card-home:hover { 
     transform: scale(1.02); 
 }
 
