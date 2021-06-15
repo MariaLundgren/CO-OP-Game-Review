@@ -66,11 +66,12 @@ Below the user stories testing, manual testing and testing of the added security
 
 #### Manual testing of Home
 
+- Hovering over the cards with game titles on to make sure the hover effect works. 
 - Searching for a existing game title and i get that game title displaying underneath the searchfield.
 Also tested to search in all lower and uppercase to see that this also works, and this also displays the game title.
 -  Searching for a title that don't exist in the DB and this shows the text "couldn't finde game title", as expected. 
 - Clicking on the restet button after a search and this shows all tha added game titles again, as expected. 
-- Clicking on the card of a geme title brings me to the selected game title page of that specific title.
+- Clicking on the card of a game title brings me to the selected game title page of that specific title.
 
 ![screenshot of home page](static/images/home.jpg)
 
