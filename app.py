@@ -187,7 +187,8 @@ def log_in():
                existing_user["password"], request.form.get("password")):
                 session["user"] = request.form.get("username").lower()
                 flash("Welcome, {}".format(request.form.get("username")))
-                return redirect(url_for("profile", username=session["user"]))
+                return redirect(url_for(
+                    "profile", username=session["user"], _scheme="https"))
 
             flash("Incorrect username and/or password")
             return redirect(url_for("log_in"))
@@ -368,7 +369,7 @@ def log_out():
     '''
     flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("log_in"))
+    return redirect(url_for("log_in", _scheme="https"))
 
 
 @app.errorhandler(404)
