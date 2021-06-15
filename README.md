@@ -129,7 +129,7 @@ The reviews are connected to the game titles by the title_id which is added to t
     - Navbar (described under navbar) 
     - On the edit profile page the user can change their profile, they can add a profile image and their favorite game. 
     - Footer (described under footer)
-- New review page
+- Add review page
     - Navbar (described under navbar) 
     - This page contains the function to add a new review to a title. The user writes their review and their rating and then they can submit the review to the website on the submit button. 
     - Footer (described under footer) 

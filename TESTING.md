@@ -196,14 +196,14 @@ own edit profile page.
 ![screenshot of profile with edit button page](static/images/edit-profile-1.jpg)
 ![screenshot of profile page](static/images/edit-profile-2.jpg)
 
-### New Review
+### Add Review
 
-#### User stories testing New Review
+#### User stories testing Add Review
 - I want to be able write my own game reviews. 
     - On the add review page a registered user that are logged in to their account can add a review to a game title and
     add a rating from one to five.
 
-#### Manual testing of New Review
+#### Manual testing of Add Review
 - Trying to add a review without filling out the review field and a message appears to fill out this field. 
 - Trying to add a review with less than 20 charachters and a message appears that the text needs to be 20 charachters or more. 
 - Trying to add a review without chhosing a rating and a message appers that i need to select one item from the list. 
