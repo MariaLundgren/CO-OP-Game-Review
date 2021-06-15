@@ -1,59 +1,59 @@
 {% extends "base.html" %}
 {% block content %}
 
-<!-- users profile -->
-<div class="row">
-    <div class="col s12 m6 offset-m3 center-align">
-        <div class="card center-align profile-card">
-            <h2 class="username">{{ username.username }}'s Profile</h2>
-            <div class="img-circl row cecenter-align">
-                <img src="{{ username.profile_image_url }}" alt="users profile picture">
+    <!-- users profile -->
+    <div class="row">
+        <div class="col s12 m6 offset-m3 center-align">
+            <div class="card center-align profile-card">
+                <h2 class="username">{{ username.username }}'s Profile</h2>
+                <div class="img-circl row cecenter-align">
+                    <img src="{{ username.profile_image_url }}" alt="users profile picture">
+                </div>
+                <p>Favourite Game: {{ username.favourite_game }}</p>
+                <a href="{{ url_for('edit_profile') }}" class="btn green-button edit-button">
+                    Edit Profile
+                </a>
             </div>
-            <p>Favourite Game: {{ username.favourite_game }}</p>
-            <a href="{{ url_for('edit_profile') }}" class="btn green-button edit-button">
-                Edit Profile
-            </a>
         </div>
     </div>
-</div>
 
-<!-- Game titles added by user-->
-<h2 class="center-align">Game titles</h2>
-<div class="row">
-    <div class="offset">
-        {% for title in titles %}
-            {% if session.user|lower == title.created_by|lower %}
-                <div class="col s12 l6 xl4">
-                    <a href="{{ url_for('selected_game_title', title_id=title._id) }}">
-                        <div class="card title-cards hoverable">
-                            <div class="card-image">
-                                <img src="{{ title.image_url }}" alt="image of game title">
-                            </div>
-                            <div class="card-content">
-                                <span class="card-title">{{ title.title_name }}</span>
-                                <p>{{ title.title_rating }}</p>
-                                <div>
-                                    <p class="inline-elements">Consoles:</p>
-                                    {% for console in title.consoles %}
-                                        <!-- code for adding commas between consoles found on Stack Overflow, see readme for more information and link -->
-                                        <p class="inline-elements">{{ console }}{{ "," if not loop.last }}</p>
-                                    {% endfor %}
+    <!-- Game titles added by user-->
+    <h2 class="center-align">Game titles</h2>
+    <div class="row">
+        <div class="offset">
+            {% for title in titles %}
+                {% if session.user|lower == title.created_by|lower %}
+                    <div class="col s12 l6 xl4">
+                        <a href="{{ url_for('selected_game_title', title_id=title._id) }}">
+                            <div class="card title-cards hoverable">
+                                <div class="card-image">
+                                    <img src="{{ title.image_url }}" alt="image of game title">
                                 </div>
-                                <div>
-                                    <p class="inline-elements">Co-op type:</p>
-                                    {% for co_op_type in title.co_op_type %}
-                                        <!-- code for adding and between co-op types found on Stack Overflow, see readme for more information and link -->
-                                        <p class="inline-elements">{{ co_op_type }} {{ "and" if not loop.last }}</p>
-                                    {% endfor %}
+                                <div class="card-content">
+                                    <span class="card-title">{{ title.title_name }}</span>
+                                    <p>{{ title.title_rating }}</p>
+                                    <div>
+                                        <p class="inline-elements">Consoles:</p>
+                                        {% for console in title.consoles %}
+                                            <!-- code for adding commas between consoles found on Stack Overflow, see readme for more information and link -->
+                                            <p class="inline-elements">{{ console }}{{ "," if not loop.last }}</p>
+                                        {% endfor %}
+                                    </div>
+                                    <div>
+                                        <p class="inline-elements">Co-op type:</p>
+                                        {% for co_op_type in title.co_op_type %}
+                                            <!-- code for adding and between co-op types found on Stack Overflow, see readme for more information and link -->
+                                            <p class="inline-elements">{{ co_op_type }} {{ "and" if not loop.last }}</p>
+                                        {% endfor %}
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="center-align">
-                                <a href="{{ url_for('edit_game_title', title_id=title._id)}}"
-                                    class="btn green-button title-buttons">Edit
-                                </a>
-                                <a data-target="modal1" class="btn pink-button title-buttons modal-trigger">Delete
-                                </a>
-                                <!-- Modal game title -->
+                                <div class="center-align">
+                                    <a href="{{ url_for('edit_game_title', title_id=title._id)}}"
+                                        class="btn green-button title-buttons">Edit
+                                    </a>
+                                    <a data-target="modal1" class="btn pink-button title-buttons modal-trigger">Delete
+                                    </a>
+                                    <!-- Modal game title -->
                                 <div id="modal1" class="modal">
                                     <div class="modal-content">
                                         <h4>Are you sure you want to delete this game title and all reviews added to it?</h4>
@@ -72,42 +72,42 @@
             {% endif %}
         {% endfor %}
     </div>
-</div>
+    </div>
 
-<!-- Reviews added by user-->
-<h2 class="center-align">Reviews</h2>
-<div class="row">
-    <div class="col s12 m6 offset-m3">
-        {% for review in reviews %}
-            {% if session.user|lower == review.created_by|lower %}
-                <div class="card review-card">
-                    <div class="card-content">
-                        <p class="rating"><i class="material-icons inline-elements star-icon">star</i> {{ review.rating }}</p>
-                        <p>Review: {{ review.review }}</p>
-                        <p>Created by: {{ review.created_by }}</p>
-                        <div class="center-align">
-                            <a href="{{ url_for('edit_review', review_id=review._id) }}"
-                                class="btn green-button review-buttons">Edit
-                            </a>
-                            <a data-target="modal2" class="btn pink-button review-buttons modal-trigger">Delete
-                            </a>
-                            <!-- Modal review -->
-                            <div id="modal2" class="modal">
-                                <div class="modal-content">
-                                    <h4>Are you sure you want to delete this review?</h4>
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="#!" class="modal-close waves-effect waves-green btn-flat green-button">Canel</a>
-                                    <a href="{{ url_for('delete_review', review_id=review._id) }}"
-                                        class="modal-close waves-effect waves-green btn-flat pink-button">Delete</a>
+    <!-- Reviews added by user-->
+    <h2 class="center-align">Reviews</h2>
+    <div class="row">
+        <div class="col s12 m6 offset-m3">
+            {% for review in reviews %}
+                {% if session.user|lower == review.created_by|lower %}
+                    <div class="card review-card">
+                        <div class="card-content">
+                            <p class="rating"><i class="material-icons inline-elements star-icon">star</i> {{ review.rating }}</p>
+                            <p>Review: {{ review.review }}</p>
+                            <p>Created by: {{ review.created_by }}</p>
+                            <div class="center-align">
+                                <a href="{{ url_for('edit_review', review_id=review._id) }}"
+                                    class="btn green-button review-buttons">Edit
+                                </a>
+                                <a data-target="modal2" class="btn pink-button review-buttons modal-trigger">Delete
+                                </a>
+                                <!-- Modal review -->
+                                <div id="modal2" class="modal">
+                                    <div class="modal-content">
+                                        <h4>Are you sure you want to delete this review?</h4>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#!" class="modal-close waves-effect waves-green btn-flat green-button">Canel</a>
+                                        <a href="{{ url_for('delete_review', review_id=review._id) }}"
+                                            class="modal-close waves-effect waves-green btn-flat pink-button">Delete</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            {% endif %}
-        {% endfor %}
+                {% endif %}
+            {% endfor %}
+        </div>
     </div>
-</div>
 
 {% endblock %}
