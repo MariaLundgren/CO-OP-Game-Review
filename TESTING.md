@@ -157,11 +157,15 @@ and shows flash message "Welcome, username".
 - Hovering over edit profile button to make sure it become lighter when hovering over.
 - Clicking on edit profile button and this takes the user to edit profile page.
 - Hovering over delete buttons on reviews and game titles to make sure it become lighter when hovering over.
-- Clicking on delete button on review and this deletes the review and flash message "Review deleted" appears.
-- Clicking on delete button on game title and this deletes the title and flash message "Title deleted" appears.
+- Clicking on the delete button to one of the reviews and the modal appears. 
+    - Clicking on the cansel button on the modal and the review isn't beeing deleted. 
+    - Clicking on the delete button on the modal and the review is deleted and flash message "review deleted" appears. 
+- Clicking on the delete button to one of the game titles and the modal appears. 
+    - Clicking on the cansel button on the modal and the title isn't beeing deleted. 
+    - Clicking on the delete button on the modal and the title is deleted and flash message "title deleted" appears. 
 - Hovering over edit buttons on reviews and game titles to make sure it become lighter when hovering over.
-- Clicking on edit button on review and this takes the user to edit review page. 
-- Clicking on edit button on game title and this takes the user to edit title page.
+- Clicking on edit button on review and this takes the user to edit review page of thet review. 
+- Clicking on edit button on game title and this takes the user to edit title page of that title.
 - Clicking on the card of a geme title brings me to the selected game title page of that specific title.
 - Saving the url for a logged in users profile page and tries to access it after logging out and this redirects the user to the log in page.
 - Saving the url for a logged in users profile page and tries to access it after logging in as a different user and this brings the user to their own profile page.
