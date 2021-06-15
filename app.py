@@ -85,10 +85,12 @@ def add_game_title():
             }
             mongo.db.titles.insert_one(title)
             flash("Game title added.")
-            return redirect(url_for("get_titles", _scheme="https"))
+            return redirect(url_for(
+                "get_titles", _external=True, _scheme="https"))
     else:
-        return redirect(url_for("log_in"))
-    return render_template("add_game_title.html")
+        return redirect(url_for("log_in", _external=True, _scheme="https"))
+    return render_template(
+        "add_game_title.html", _external=True, _scheme="https")
 
 
 @app.route("/selected_game_title/<title_id>")
@@ -135,10 +137,12 @@ def add_review(title_id):
             mongo.db.reviews.insert_one(review)
             flash("Review added.")
             return redirect(url_for(
-                "selected_game_title", _scheme="https", title_id=title_id))
+                "selected_game_title", _external=True,
+                _scheme="https", title_id=title_id))
     else:
-        return redirect(url_for("log_in"))
-    return render_template("add_review.html", title=title)
+        return redirect(url_for("log_in", _external=True, _scheme="https"))
+    return render_template(
+        "add_review.html", _external=True, _scheme="https", title=title)
 
 
 @app.route("/register", methods=["GET", "POST"])
@@ -154,7 +158,8 @@ def register():
 
         if existing_user:
             flash("Username already exist. Please choose another username.")
-            return redirect(url_for("register"))
+            return redirect(url_for(
+                "register", _external=True, _scheme="https"))
 
         register_user = {
             "username": request.form.get("username").lower(),
@@ -166,7 +171,7 @@ def register():
         session["user"] = request.form.get("username").lower()
         flash("Registration Successful")
         return redirect(url_for("profile", _external=True, _scheme="https"))
-    return render_template("register.html")
+    return render_template("register.html", _external=True, _scheme="https")
 
 
 @app.route("/log_in", methods=["GET", "POST"])
@@ -193,10 +198,10 @@ def log_in():
                     _external=True, _scheme="https"))
 
             flash("Incorrect username and/or password")
-            return redirect(url_for("log_in"))
+            return redirect(url_for("log_in", _external=True, _scheme="https"))
         flash("Incorrect username and/or password")
-        return redirect(url_for("log_in"))
-    return render_template("log_in.html")
+        return redirect(url_for("log_in", _external=True, _scheme="https"))
+    return render_template("log_in.html", _external=True, _scheme="https")
 
 
 @app.route("/profile", methods=["GET", "POST"])
@@ -216,7 +221,7 @@ def profile():
     else:
         return redirect("log_in")
     return render_template(
-        "profile.html", _scheme="https", username=username,
+        "profile.html", username=username,
         reviews=reviews, titles=titles)
 
 
@@ -241,12 +246,15 @@ def edit_profile():
                            }}
             mongo.db.users.update({"username": session["user"]}, user_update)
             flash("Profile Updated")
-            return redirect(url_for("profile", _scheme="https"))
+            return redirect(url_for(
+                "profile", _external=True, _scheme="https"))
 
         mongo.db.users.find_one({"username": session["user"]})
     else:
-        return redirect("log_in")
-    return render_template("edit_profile.html", username=username)
+        return redirect(url_for("log_in", _external=True, _scheme="https"))
+    return render_template(
+        "edit_profile.html", _external=True,
+        _scheme="https", username=username)
 
 
 @app.route("/edit_game_title/<title_id>", methods=["GET", "POST"])
@@ -274,17 +282,21 @@ def edit_game_title(title_id):
                     }
                     mongo.db.titles.update({"_id": ObjectId(title_id)}, submit)
                     flash("Title Updated")
-                    return redirect(url_for("profile", _scheme="https"))
+                    return redirect(url_for(
+                        "profile", _external=True, _scheme="https"))
             else:
                 flash(
                     "You don't have access to the page you tried to visit")
-                return redirect(url_for("get_titles"))
+                return redirect(url_for(
+                    "get_titles", _external=True, _scheme="https"))
         else:
             flash("The title you are trying to edit don't exist")
-            return redirect(url_for("get_titles"))
+            return redirect(url_for(
+                "get_titles", _external=True, _scheme="https"))
     else:
-        return redirect(url_for("log_in"))
-    return render_template("edit_game_title.html", title=title)
+        return redirect(url_for("log_in", _external=True, _scheme="https"))
+    return render_template(
+        "edit_game_title.html", _external=True, _scheme="https", title=title)
 
 
 @app.route("/delete_game_title/<title_id>")
@@ -302,9 +314,9 @@ def delete_game_title(title_id):
         mongo.db.reviews.remove({"title_id": (title_id)})
         flash("Title deleted")
     else:
-        return redirect(url_for("get_titles"))
+        return redirect(url_for("get_titles", _external=True, _scheme="https"))
     return redirect(url_for(
-        "profile", username=session["user"], _scheme="https"))
+        "profile", username=session["user"], _external=True, _scheme="https"))
 
 
 @app.route("/edit_review/<review_id>", methods=["GET", "POST"])
@@ -332,17 +344,21 @@ def edit_review(review_id):
                     mongo.db.reviews.update(
                         {"_id": ObjectId(review_id)}, review_update)
                     flash("Review Updated")
-                    return redirect(url_for("profile", _scheme="https"))
+                    return redirect(url_for(
+                        "profile", _external=True, _scheme="https"))
             else:
                 flash(
                     "You don't have access to the page you tried to visit")
-                return redirect(url_for("get_titles"))
+                return redirect(url_for(
+                    "get_titles", _external=True, _scheme="https"))
         else:
             flash("The review you are trying to edit don't exist")
-            return redirect(url_for("get_titles"))
+            return redirect(url_for(
+                "get_titles", _external=True, _scheme="https"))
     else:
-        return redirect(url_for("log_in"))
-    return render_template("edit_review.html", review=review)
+        return redirect(url_for("log_in", _external=True, _scheme="https"))
+    return render_template(
+        "edit_review.html", _external=True, _scheme="https", review=review)
 
 
 @app.route("/delete_review/<review_id>")
@@ -359,9 +375,9 @@ def delete_review(review_id):
         mongo.db.reviews.remove({"_id": ObjectId(review_id)})
         flash("Review deleted")
     else:
-        return redirect(url_for("get_titles"))
+        return redirect(url_for("get_titles", _external=True, _scheme="https"))
     return redirect(url_for(
-        "profile", username=session["user"], _scheme="https"))
+        "profile", username=session["user"], _external=True, _scheme="https"))
 
 
 @app.route("/log_out")
