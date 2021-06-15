@@ -32,6 +32,8 @@ def get_titles():
     Renders titles page.
     '''
     titles = list(mongo.db.titles.find().sort('_id', -1))
+    # Youtube tutorial used to understand aggregation and
+    # grouping, see readme for more information and link.
     title_ratings = list(mongo.db.reviews.aggregate([
                 {'$group': {
                     '_id': '$title_id',
