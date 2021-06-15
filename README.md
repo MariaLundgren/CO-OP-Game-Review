@@ -156,19 +156,18 @@ The reviews are connected to the game titles by the title_id which is added to t
 
 - [HTML5](https://en.wikipedia.org/wiki/HTML5) used to make the structure of the website.
 - [CSS3](https://en.wikipedia.org/wiki/CSS) used to add style to the project. 
-- [Python3](https://www.python.org/) 
-- [JQuery](https://jquery.com/)
-- [Jinja](https://jinja.palletsprojects.com/en/3.0.x/)
-- [PyMongo]() 
-- [Flask](https://flask.palletsprojects.com/en/2.0.x/) 
+- [Python3](https://www.python.org/) used as the backend language. 
+- [JQuery](https://jquery.com/) used to create interactive eliments.
+- [Jinja](https://jinja.palletsprojects.com/en/3.0.x/) used for templating. 
+- [PyMongo](https://pypi.org/project/pymongo/) used for interacting with mongoDB.
+- [Flask](https://flask.palletsprojects.com/en/2.0.x/) chosen micro framework. 
 - [MongoDB](https://www.mongodb.com/) used to host the database.
-- [Heroku](https://www.heroku.com/) used to deply live website. 
-- [Werkzeug](https://werkzeug.palletsprojects.com/en/2.0.x/)
+- [Heroku](https://www.heroku.com/) used to deploy live website.
 - [Materialize](https://materializecss.com/) used to style certain elements and to make the website responsive. 
 - [Font Awesome](https://fontawesome.com/) used for the icons in the footer. 
 - [Google Fonts](https://fonts.google.com/) was used to import the fonts used in the project. 
 - [Gitpod](https://www.gitpod.io/) used to develop the project. 
-- [Github](https://github.com/) used to store the project. 
+- [Github](https://github.com/) used to store the source code for the project. 
 - [Figma](https://www.figma.com/) used to make wireframes for the project.  
 - [Illustrator](https://www.adobe.com/products/illustrator.html) used to make some changes in the hero image. 
 - [RandomKeyGen](https://randomkeygen.com/) to generate the SECRET KEY.  
