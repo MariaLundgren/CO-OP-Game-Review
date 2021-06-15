@@ -15,11 +15,6 @@ if os.path.exists("env.py"):
 app = Flask(__name__)
 
 
-app.config.update(dict(
-    PREFERRED_URL_SCHEME='https'
-))
-
-
 app.config["MONGO_DBNAME"] = os.environ.get("MONGO_DBNAME")
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
 app.secret_key = os.environ.get("SECRET_KEY")
@@ -218,7 +213,8 @@ def profile():
     else:
         return redirect("log_in")
     return render_template(
-        "profile.html", username=username, reviews=reviews, titles=titles)
+        "profile.html", _scheme="https", username=username,
+        reviews=reviews, titles=titles)
 
 
 @app.route("/edit_profile", methods=["GET", "POST"])
