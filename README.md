@@ -147,7 +147,13 @@ The reviews are connected to the game titles by the title_id which is added to t
     - The new title page contains the function to add a new game title to the webpage. The user fills out the title of the game, adds a URL to an image, a description of the game, the console it is available on, and if you can play it local, online or both and then they can submit the new title to the webpage on the submit button. 
     - Footer (described under footer) 
 
-## Features left to implement
+## Possible Future Features
+
+- For users to be able to visit eachothers profiles. 
+- A function for users to be able to get a new password if they forget their current password. 
+- Possibility for users to add more information to their profile. 
+- A possibility for users to save games that they want to play to their profile. 
+- A way for users to be able to like reviews and game titles that other users have added to the website.
 
 # Technologies Used 
 
