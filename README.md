@@ -137,7 +137,7 @@ The reviews are connected to the game titles by the title_id which is added to t
     - Navbar (described under navbar)
     - This page contains the function to edit a review that the user has previously added to a game title. The current review and rating are already filled in on this page and the user can make the canges and then save the changes on the edit review button. 
     - Footer (described under footer)
-- New Title page 
+- Add Game Title page 
     - Navbar (described under navbar) 
     - The new title page contains the function to add a new game title to the webpage. The user fills out the title of the game, adds a URL to an image, a description of the game, the console it is available on, and if you can play it local, online or both and then they can submit the new title to the webpage on the submit button. 
     - Footer (described under footer) 

@@ -234,15 +234,15 @@ gets added to the reviews collection in mongodb.
 
 ![screenshot of edit review page](static/images/edit-review.jpg)
 
-### New Title 
+### Add Title 
 
-#### User stories testing New title
+#### User stories testing Add title
 
 - I want to be able to add a new game title. 
     - On the add game title a registred user that are logged in can add a game title to the website. 
 
 
-#### Manual testing of New Title 
+#### Manual testing of Add Game Title 
 
 - Trying to add a game title without filling out the title field and a message appears to fill out this field. 
 - Trying to add a game title with the title field beeing less than five charachters and a message appears that the text needs to be five charachters or more.
