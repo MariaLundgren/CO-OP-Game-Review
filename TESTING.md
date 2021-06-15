@@ -2,7 +2,10 @@
 
 ## Validation 
 
-- To thest the HTML the [W3C Markup Validation Service] was used. 
+- To thest the HTML the [W3C Markup Validation Service](https://validator.w3.org/) was used.
+    - The HTML validator showed no errors or warnings. 
+
+    ![printscreen of html validator output](static/images/html-validation.jpg)
 
 - To test the CSS the [W3C CSS Validation Service](https://jigsaw.w3.org/css-validator/) was used. 
     - The CSS validator showed no errors or warnings.
