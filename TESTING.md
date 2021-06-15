@@ -325,6 +325,109 @@ Not supported browsers:
 
 - Internet Explorer
 
+## Performance with lighthouse
+
+To improve the lighthouse scores I made sure that all pages used https, changed some images, added rel attribute to social links in the footer, changed some of the text/background color to have more contarst between them. 
+
+### Home
+Score on mobile 
+
+![lighthouse score for home page on mobile](static/images/lighthouse-home-m.jpg)
+
+Score on desktop 
+
+![lighthouse score for home page on desktop](static/images/lighthouse-home-d.jpg)
+
+### Selected Game Title 
+Score on mobile 
+
+![lighthouse score for selected game title page on mobile](static/images/lighthouse-selected-game-title-m.jpg)
+
+Score on desktop 
+
+![lighthouse score for selected game title page on desktop](static/images/lighthouse-selected-game-title-d.jpg)
+
+### Log In
+
+Score on mobile 
+
+![lighthouse score for log in page on mobile](static/images/lighthouse-log-in-m.jpg)
+
+Score on desktop 
+
+![lighthouse score for log in page on desktop](static/images/lighthouse-log-in-d.jpg)
+
+
+### Register
+
+Score on mobile 
+
+![lighthouse score for register page on mobile](static/images/lighthouse-register-m.jpg)
+
+Score on desktop 
+
+![lighthouse score for register page on desktop](static/images/lighthouse-register-d.jpg)
+
+### Profile 
+
+Score on mobile 
+
+![lighthouse score for profile page on mobile](static/images/lighthouse-profile-m.jpg)
+
+Score on desktop 
+
+![lighthouse score for profile page on desktop](static/images/lighthouse-profile-d.jpg)
+
+### Edit Profile 
+
+Score on mobile 
+
+![lighthouse score for edit profile page on mobile](static/images/lighthouse-edit-profile-m.jpg)
+
+Score on desktop 
+
+![lighthouse score for edit profile page on desktop](static/images/lighthouse-edit-profile-d.jpg)
+
+### Add review
+
+Score on mobile 
+
+![lighthouse score for add review page on mobile](static/images/lighthouse-add-review-m.jpg)
+
+Score on desktop 
+
+![lighthouse score for add review page on desktop](static/images/lighthouse-add-review-d.jpg)
+
+### Edit review
+
+Score on mobile 
+
+![lighthouse score for edit review page on mobile](static/images/lighthouse-edit-review-m.jpg)
+
+Score on desktop 
+
+![lighthouse score for edit review page on desktop](static/images/lighthouse-edit-review-d.jpg)
+
+### Add Game Title 
+
+Score on mobile 
+
+![lighthouse score for add title page on mobile](static/images/lighthouse-add-title-m.jpg)
+
+Score on desktop 
+
+![lighthouse score for add title page on desktop](static/images/lighthouse-add-title-d.jpg)
+
+### Edit Title 
+
+Score on mobile 
+
+![lighthouse score for edit title page on mobile](static/images/lighthouse-edit-title-m.jpg)
+
+Score on desktop 
+
+![lighthouse score for edit title page on desktop](static/images/lighthouse-edit-title-d.jpg)
+
 ## Bugs 
 - There was an excessively big distance between the headings game titles and reviews on the profile page and the content below them. When looking at the code in Chrome DevTools I saw that this was happening because I had placed two divs between the for loop that looed through all the reviews and game titles and the if statement so the for loop created a row for every existing title and review even if it wasn’t created by the user, so the rows took up place on the screen even if no content was shown. When placing the for loop just outside the if statement the problem was solved, and all the extra space disappeared. 
 - There was a problem if a user would but in a lot of text in the input fields for adding or editing game titles or reviews that the text would go outside the card and off the screen. This problem was solved by using this `overflow-wrap: break-word;` code found in [this](https://stackoverflow.com/questions/12196885/text-flowing-out-of-div) thred on Stack Overflow so that the text would always stad inside the card.
