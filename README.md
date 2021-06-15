@@ -41,14 +41,9 @@ Since the main purpose of this website is for people to share can take part of e
 
 ## Skeleton
 
-Figma was used to create wireframes that are linked below.
+Figma was used to create wireframes that you can find [here](https://www.figma.com/file/83F87vUQyOssETz7TmWQMp/MS3?node-id=0%3A1).
 
-- [Desktop](static/wireframes/desktop-wireframes.pdf)
-- [Desktop when logged in](static/wireframes/desktop-wireframes-logged-in.pdf) 
-- [Tablet](static/wireframes/tablet-wireframes.pdf) 
-- [Tablet when logged in](static/wireframes/tablet-wireframes-logged-in.pdf) 
-- [Mobile](static/wireframes/mobile-wireframes.pdf) 
-- [Mobile when logged in](static/wireframes/mobile-wireframes-logged-in.pdf)
+During the couse of this project i decided to redo my wireframes one time because i changed a lot in the project in the beginning. In the wireframes I haven't done any for the edit titles and reviews, this is because this pages looks exactlly the same as the add review and title pages with the exeption that they already have the information from the db filled in. 
 
 ## Surface 
 
@@ -154,6 +149,8 @@ The reviews are connected to the game titles by the title_id which is added to t
 - Possibility for users to add more information to their profile. 
 - A possibility for users to save games that they want to play to their profile. 
 - A way for users to be able to like reviews and game titles that other users have added to the website.
+- Possibilty for users to sort and fiilter searches.
+- Adding affiliate links to where you can buy the games.
 
 # Technologies Used 
 
