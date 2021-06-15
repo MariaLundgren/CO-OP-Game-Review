@@ -5,6 +5,7 @@
     <h2 class="center-align">Add Review</h2>
     <div class="row">
         <form class="col s12" method="POST" action="{{ url_for('add_review', title_id=title._id) }}">
+            <!-- idea for hidden input field taken from Make School tutorial, see readme for more infomation and link-->
             <input type="hidden" value="{{ title._id }}" id="title_id" name="title_id" />
             <!-- review -->
             <div class="row">
