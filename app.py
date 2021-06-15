@@ -352,7 +352,7 @@ def edit_review(review_id):
                 return redirect(url_for(
                     'get_titles', _external=True, _scheme='https'))
         else:
-            flash("The review you are trying to edit don't exist")
+            flash("The review you are trying to edit doesn't exist")
             return redirect(url_for(
                 'get_titles', _external=True, _scheme='https'))
     else:
