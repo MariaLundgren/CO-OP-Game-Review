@@ -370,7 +370,7 @@ def log_out():
     '''
     flash("You have been logged out")
     session.pop("user")
-    return redirect(url_for("log_in", _scheme="https"))
+    return redirect(url_for("log_in", _external=True, _scheme="https"))
 
 
 @app.errorhandler(404)
