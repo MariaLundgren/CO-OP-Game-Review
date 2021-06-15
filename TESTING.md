@@ -16,7 +16,11 @@
 
     ![printscreen of JSHint output](static/images/jshint.jpg)
 
-- Pylint was used to test the Python code.
+- [Pylint](https://www.pylint.org/) was used to test the Python code.
+    - I have one error in Pylint, see below, but this is because i techinacally using the vaiable in the code but i use the code above to get the variables from it, 
+    so the code works as expected and this error will be ignored.
+
+    ![printscreen of Pylint output](static/images/pylint.jpg)
 
 ## Features 
 
