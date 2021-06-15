@@ -85,7 +85,12 @@ Also tested to search in all lower and uppercase to see that this also works, an
 
 #### Manual testing of Selected Game Title
 
-- Visit the selected game title page as an anonymous user to make sure the add game title button isn't appearing.
+- Visit the selected game title page as an anonymous user to make sure the add game title button or edit and delete button isn't appearing.
+- Visit the selected game title page as an registered user logged in to their account and make sure that the edit and delete buttons only appears on the reviews created by the session user.
+- Visit the selected game title page as an registered user logged in to their account and clicking on the delete button to one of the reviews created by the session user and the modal appears. 
+    - Clicking on the cansel button on the modal and the review isn't beeing deleted. 
+    - Clicking on the delete button on the modal and the review is deleted and flash message "review deleted" appears. 
+- Visit the selected game title page as an registered user logged in to their account and clicking on the edit button to one of the reviews created by the session user and this takes the user to the edit review page of that review.
 - Visit the site as a regitred user that are logged in to their account and the add a review button is visible. 
 - Hovering over add review button to make sure it become lighter when hovering over.
 - Clicking on add review button and this brings the user to the add review page.
