@@ -39,6 +39,7 @@
                                         <i class="material-icons inline-elements star-icon">star</i>
                                         {% for avg_rating in title_ratings %}
                                             {% if avg_rating._id == title._id|string %}
+                                                <!-- formatting for average rating found on Stack Overflow, see readme for more information and link -->
                                                 <p class="inline-elements rating">{{ '%0.1f'|format(avg_rating.avg_rating) }}</p>
                                             {% endif %}
                                         {% endfor %}
