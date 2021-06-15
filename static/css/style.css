@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap');
 
 /*general*/
-
 * {
     margin: 0;
     padding: 0;
@@ -18,11 +17,19 @@ main {
     flex: 1 0 auto;
 }
 
-h1, h2, h3, h4, p, i {
+h1,
+h2,
+h3,
+h4,
+p,
+i {
     color: #cccccc;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     font-family: "Montserrat", sans-serif;
     font-weight: 500;
 }
@@ -37,11 +44,11 @@ h2 {
     font-weight: 700;
 }
 
-.green-text{
+.green-text {
     color: #0F292F !important;
 }
 
-.green-button{
+.green-button {
     background-color: #14A098;
     font-family: "Raleway", sans-serif;
     font-weight: 700;
@@ -53,7 +60,7 @@ h2 {
     background-color: #1db6ae;
 }
 
-.pink-button{
+.pink-button {
     background-color: #cb2d6f;
     font-family: "Raleway", sans-serif;
     font-weight: 600;
@@ -65,8 +72,7 @@ h2 {
     background-color: #ff3c8d !important;
 }
 
-/* forms */ 
-
+/* forms */
 input {
     color: #cccccc;
 }
@@ -91,18 +97,17 @@ input {
     border: #0f292F;
 }
 
-/* title card */ 
-
+/* title card */
 /* overflow-wrap: break-word; found on Stack Overlow, see readme for more information and link */
-/* took the scale hover effect from css-tricks, see readme for more information and link */ 
+/* took the scale hover effect from css-tricks, see readme for more information and link */
 .title-cards {
     overflow-wrap: break-word;
     background-color: #501f3a;
     transition: all .1s ease-in-out;
 }
 
-.title-card-home:hover { 
-    transform: scale(1.02); 
+.title-card-home:hover {
+    transform: scale(1.02);
 }
 
 .card-title {
@@ -120,7 +125,6 @@ input {
 }
 
 /* reviews card */
-
 /* overflow-wrap: break-word; found on Stack Overlow, see readme for more information and link */
 .review-card {
     background-color: #501f3a;
@@ -128,7 +132,6 @@ input {
 }
 
 /* rating */
-
 .rating {
     font-size: 18pt;
 }
@@ -138,7 +141,6 @@ input {
 }
 
 /* flash messages */
-
 .flash-messages {
     line-height: 2;
     background-color: #cccccc;
@@ -152,9 +154,8 @@ input {
     font-family: "Montserrat", sans-serif;
 }
 
-/* navbar */ 
-
-.nav-wrapper{
+/* navbar */
+.nav-wrapper {
     background-color: #14A098;
     padding-left: 1rem;
 }
@@ -175,20 +176,17 @@ input {
     font-weight: 500;
 }
 
-/* Log In */ 
-
+/* Log In */
 .login-card {
     background-color: #501f3a;
 }
 
 /* register */
-
 .register-card {
     background-color: #501f3a;
 }
 
-/* profile */ 
-
+/* profile */
 /* overflow-wrap: break-word; found on Stack Overlow, see readme for more information and link */
 .profile-card {
     margin-top: 3rem;
@@ -200,7 +198,9 @@ input {
 .username {
     font-size: 250%;
 }
-.profile-card img, p {
+
+.profile-card img,
+p {
     padding-top: 10px;
 }
 
@@ -219,7 +219,7 @@ input {
 .edit-button {
     margin: 30px 0 20px 0;
 
-} 
+}
 
 .title-buttons {
     margin-bottom: 10px;
@@ -241,8 +241,7 @@ input {
     color: #0F292F;
 }
 
-/* selected game title */ 
-
+/* selected game title */
 .rating {
     font-size: 18pt;
 }
@@ -257,8 +256,7 @@ input {
     overflow-wrap: break-word;
 }
 
-/* titles */ 
-
+/* titles */
 .hero-img {
     width: 100%;
     padding-top: 20px;
@@ -270,8 +268,7 @@ input {
     margin-bottom: 20px;
 }
 
-/* footer */ 
-
+/* footer */
 .page-footer {
     background-color: #14A098;
 }
@@ -297,15 +294,14 @@ input {
 }
 
 /* 404 */
-
 .img-404 {
     max-width: 100%;
     width: 500px;
     margin-bottom: 50px;
 }
 
-/* media queries */ 
-@media (min-width: 720px){
+/* media queries */
+@media (min-width: 720px) {
     .offset {
         margin-left: 25%;
         margin-right: 25%;
