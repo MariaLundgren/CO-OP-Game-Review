@@ -34,7 +34,7 @@
                         <li><a href="{{ url_for('get_titles')}}" class="green-text">Home</a></li>
                         {% if session.user %}
                             <li><a href="{{ url_for('profile')}}" class="green-text">Profile</a></li>
-                            <li><a href="{{ url_for('add_game_title')}}" class="green-text">New game title</a></li>
+                            <li><a href="{{ url_for('add_game_title')}}" class="green-text">Add game title</a></li>
                             <li><a href="{{ url_for('log_out')}}" class="green-text">Log Out</a></li>
                         {% else %}
                             <li><a href="{{ url_for('log_in')}}" class="green-text">Log In</a></li>
@@ -48,7 +48,7 @@
             <li><a href="{{ url_for('get_titles')}}">Home</a></li>
             {% if session.user %}
                 <li><a href="{{ url_for('profile')}}">Profile</a></li>
-                <li><a href="{{ url_for('add_game_title')}}">New game title</a></li>
+                <li><a href="{{ url_for('add_game_title')}}">Add game title</a></li>
                 <li><a href="{{ url_for('log_out')}}">Log Out</a></li>
             {% else %}
                 <li><a href="{{ url_for('log_in')}}">Log In</a></li>
