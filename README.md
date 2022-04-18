@@ -2,6 +2,8 @@
 
 ![mockups of the homepage on different devices](static/images/mockup.jpg)
 
+[Link to the website](https://co-op-game-review.herokuapp.com/)
+
 Co-op Game Review is a community-based website where users can share game titles and reviews of co-op games with each other. The website is created for educational purposes only.
 
 # UX
